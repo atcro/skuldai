@@ -4,17 +4,16 @@
 schema_version: skuld.gate-report.v1
 gate: G02
 status: NOT_STARTED    # PASS | FAIL | BLOCKED | NOT_STARTED
-source_revision: '<pending>'
-environment: '<pending: WSL2 Ubuntu 24.04 + Python version>'
+source_revision: '16a76015c85b101af33a785177b125ac4b6083e2 (scaffold only)'
+environment: 'WSL2 Ubuntu 24.04.5, Python 3.12.3, venv ~/.venvs/skuld (G01 PASS)'
 commands: []
 evidence_paths: []
 provider_run_ids: []
 actual_test_results: []
 spend_approved: false
 approved_by: null
-blockers:
-  - 'Depends on G01 (WSL2 environment) to run tests with evidence.'
-next_action: 'Once WSL2 exists: implement skuld/core/schemas.py (Pydantic v2, extra=forbid, SI units), sim adapter interface, artifact manifest + sha256, tests (one pass, one collision fail, one malformed-data rejection), confirm CI passes.'
+blockers: []
+next_action: 'Implement skuld/core/schemas.py (Pydantic v2, extra=forbid, SI units), sim adapter interface, artifact manifest + sha256, tests (one pass, one collision fail, one malformed-data rejection), commit requirements.lock.txt, push so CI runs.'
 ```
 
 ## Scaffold created on 2026-10-25 (host side, not yet executed in WSL2)
