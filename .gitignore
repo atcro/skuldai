@@ -1,0 +1,46 @@
+# secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+token-factory-results/
+
+# python
+__pycache__/
+*.py[cod]
+.venv*/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+
+# node (none planned, but just in case)
+node_modules/
+
+# large or regenerable artifacts
+runs/
+artifacts/runs/
+*.pt
+*.ckpt
+*.safetensors
+*.onnx
+*.engine
+
+# evidence that must stay local (raw provider responses before redaction)
+evidence/**/raw/
+
+# editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# dropped credential files
+tavilly.txt
+tavily.txt
+*.secret

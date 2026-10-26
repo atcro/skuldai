@@ -1,0 +1,18 @@
+Skuld name availability check
+Date: 2026-10-25
+Method: curl -s -o /dev/null -w "%{http_code}" https://github.com/<handle> ; nslookup <domain>
+Host: Windows 11 Pro, Git Bash
+
+== github handles (200 = taken, 404 = available) ==
+skuld        200
+skuld-ai     200
+skuld-odin   404
+skuldai      404
+
+== domains (nslookup) ==
+skuld.ai       has DNS record
+skuld.dev      has DNS record
+skuldai.com    no DNS record
+skuld-ai.com   no DNS record
+
+Note: "no DNS record" is not proof of availability; confirm with a registrar before purchase.

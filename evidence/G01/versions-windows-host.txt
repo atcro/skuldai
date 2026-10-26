@@ -1,0 +1,24 @@
+Windows host inventory (the WSL2 Ubuntu inventory will be recorded separately once installed)
+Date: 2026-10-25
+Collected via Git Bash on the host
+
+OS:        Windows 11 Pro 10.0.26200
+CPU:       11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz (4 cores)
+RAM:       15.69 GB
+GPU:       no NVIDIA GPU (nvidia-smi: command not found)
+
+python     3.12.10   (py launcher: -V:3.12 *)
+git        2.55.0.windows.5
+node       v24.20.0
+npm        11.19.0
+docker     Docker version 29.8.2, build 7fc2dff
+wsl        WSL2 present; distros: docker-desktop (Running, v2) only; no Ubuntu
+ffmpeg     9.0.2-full_build-www.gyan.dev
+jq         not installed
+uv         not installed
+gh         not installed
+claude     2.1.310 (Claude Code)
+
+Wheel availability check (pip download --only-binary=:all:):
+  mujoco-3.17.0-cp312-cp312-win_amd64.whl   OK
+  tavily_python-0.8.5-py3-none-any.whl      OK

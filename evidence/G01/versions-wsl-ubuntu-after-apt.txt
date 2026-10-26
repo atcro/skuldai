@@ -1,0 +1,25 @@
+date_utc: 2026-10-26T03:14:45Z
+user: kang
+kernel: Linux Kang2 6.18.54.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Tue Oct  6 19:13:07 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+os: Ubuntu 24.04.5 LTS
+nproc: 8
+mem: 7.6Gi total, 5.5Gi available
+disk_home: 954G free of 1007G
+python3: Python 3.12.3
+python3_venv: ok
+pip: pip 24.0 from /usr/lib/python3/dist-packages/pip (python 3.12)
+git: git version 2.43.0
+curl: curl 8.5.0
+ffmpeg: ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+jq: jq-1.7
+gcc: gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+cmake: cmake version 3.28.3
+node: /mnt/c/Skuld/scripts/inventory_wsl.sh: line 21: node: command not found
+docker: 
+claude: /mnt/c/Skuld/scripts/inventory_wsl.sh: line 23: claude: command not found
+nebius_cli: not installed
+npa: not installed
+sudo: needs password
+repo_mount: /mnt/c/Skuld visible
+gl: glxinfo not installed
+wslg_display: :0 wayland=wayland-0
