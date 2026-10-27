@@ -29,6 +29,7 @@ from skuld.sim.episode import run_episode
 from skuld.sim.mujoco_adapter import MuJoCoPushAdapter
 
 P = PROTOCOL_V1
+LF = "\n"  # csv rows end with LF so git never rewrites evidence files
 SPEC = PUSH_SPEC_V1
 DOMAIN = P.domain
 
@@ -160,18 +161,15 @@ def main() -> int:
         )
 
     with (out / "random_baseline.csv").open("w", newline="") as fh:
-        w = csv.DictWriter(fh, lineterminator="
-", fieldnames=list(rows[0].keys()))
+        w = csv.DictWriter(fh, lineterminator=LF, fieldnames=list(rows[0].keys()))
         w.writeheader()
         w.writerows(rows)
     with (out / "random_baseline_curve.csv").open("w", newline="") as fh:
-        w = csv.DictWriter(fh, lineterminator="
-", fieldnames=list(curve[0].keys()))
+        w = csv.DictWriter(fh, lineterminator=LF, fieldnames=list(curve[0].keys()))
         w.writeheader()
         w.writerows(curve)
     with (out / "nominal_runs.csv").open("w", newline="") as fh:
-        w = csv.DictWriter(fh, lineterminator="
-", fieldnames=list(nominal_rows[0].keys()))
+        w = csv.DictWriter(fh, lineterminator=LF, fieldnames=list(nominal_rows[0].keys()))
         w.writeheader()
         w.writerows(nominal_rows)
 
