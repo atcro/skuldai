@@ -49,3 +49,7 @@ select = ["E", "F", "I", "B", "UP"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
+filterwarnings = [
+  # fastapi.testclient imports starlette's httpx-based client; harmless for our one health test
+  "ignore:Using `httpx` with `starlette.testclient` is deprecated",
+]
