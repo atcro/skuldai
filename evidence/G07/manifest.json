@@ -12,13 +12,6 @@
       "kind": "derived"
     },
     {
-      "path": "g07_run.log",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "size_bytes": 0,
-      "producer": "scripts/g07_run.py",
-      "kind": "derived"
-    },
-    {
       "path": "heldout_configs.json",
       "sha256": "d70aee24e5d8a2f11bb66b1b057c14690739293c854867b159da1b8c7e8d46fb",
       "size_bytes": 1722,
@@ -76,8 +69,8 @@
     },
     {
       "path": "nominal_runs.csv",
-      "sha256": "166b5cb2e5147ce68b6f8666571896f75df8b7f696d4831122300e8c2376e57d",
-      "size_bytes": 449,
+      "sha256": "91a09536939a2864fe8c72ef7c0ac371af379375873ba5c016c17c779454d50a",
+      "size_bytes": 445,
       "producer": "scripts/g07_run.py",
       "kind": "derived"
     },
@@ -454,15 +447,15 @@
     },
     {
       "path": "random_baseline.csv",
-      "sha256": "eb647fc81846ffc19720798ed470a4b0e4bc6e8213ee26853b42f873c8b96d48",
-      "size_bytes": 2854,
+      "sha256": "0eb6e78f1fe6977ebe1fef35ce86a240ed48cc32471e70220aeee6c1554d31f8",
+      "size_bytes": 2828,
       "producer": "scripts/g07_run.py",
       "kind": "derived"
     },
     {
       "path": "random_baseline_curve.csv",
-      "sha256": "985e85b1c30d83454be7cb8422c0921b9b195d6f853d96c548ddaff249fc719b",
-      "size_bytes": 560,
+      "sha256": "7698bb04e7b086e7e8e30163b1d4dabc801ebca7e7696e08022b0b65d3162dd0",
+      "size_bytes": 534,
       "producer": "scripts/g07_run.py",
       "kind": "derived"
     },
