@@ -1,0 +1,28 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "episode_id": "traj-g08-hypothesis-corner-s0",
+  "scenario_ref": "g08-hypothesis-corner",
+  "policy_ref": "push-dls-ik-v1",
+  "spec_ref": "push-block-v1",
+  "status": "SAFETY_FAIL",
+  "violations": [
+    {
+      "kind": "safety",
+      "rule": "NEVER collision",
+      "step": 180,
+      "measured": 28.22460239775324,
+      "limit": null,
+      "detail": "finger in contact with the floor: world/floor vs left_finger/68 at t=3.620 s; 47 control steps with forbidden contact"
+    }
+  ],
+  "robustness": 0.018095758004708026,
+  "distance_from_nominal": 1.337954953199144,
+  "wallclock_s": 0.6996228909993079,
+  "artifact_uris": [
+    "scenario.trajectory.json",
+    "hypothesis.json",
+    "https://download.franka.de/Datasheet-EN.pdf"
+  ],
+  "correlation_id": "traj-g08-hypothesis-corner-s0",
+  "detail": "spec_sha256=0078d5522508b17c830546c7ecc136e40dcc3b4b1674987c8d81ede4239529aa; goal_time_s=10.08; min_distance_m=0.0013; max_contact_normal_n=28.74 (reported, no limit claimed)"
+}

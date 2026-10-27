@@ -1,0 +1,56 @@
+{
+  "gate": "G08",
+  "tavily": {
+    "status": "ok",
+    "request_id": "8910bea1-3236-4d6c-830f-2b1db32038b6",
+    "response_time_s": 1.57,
+    "started_utc": "2026-10-27T03:38:53.672941+00:00",
+    "result_count": 5,
+    "urls": [
+      "https://robodk.com/robot/Franka/Emika-Panda",
+      "https://www.wiredworkers.io/wp-content/uploads/2019/12/Panda_FrankaEmika_ENG.pdf",
+      "https://download.franka.de/Datasheet-EN.pdf",
+      "https://www.generationrobots.com/media/panda-franka-emika-datasheet.pdf",
+      "https://www.cbinsights.com/company/franka-emika"
+    ]
+  },
+  "constraint": {
+    "id": "panda-payload-kg",
+    "property": "object_mass_kg",
+    "value": 3.0,
+    "unit": "kg",
+    "source_url": "https://download.franka.de/Datasheet-EN.pdf",
+    "approved_by": "Adam Crozier",
+    "approved_at": "2026-10-27T03:40:27.876727+00:00"
+  },
+  "domain_check": {
+    "property": "object_mass_kg",
+    "in_domain": true,
+    "domain_min": 0.05,
+    "domain_max": 0.5,
+    "documented_limit": 3.0,
+    "unit": "kg",
+    "consistent": true
+  },
+  "protocol_sha256": "6c2b89e735255c64cb358e716aed453debff5d3be30759e5620a73872486c909",
+  "hypothesis_author": "human:Adam Crozier (Nemotron authoring pending G04)",
+  "scenario": {
+    "schema_version": "skuld.schemas.v1",
+    "scenario_id": "g08-hypothesis-corner",
+    "domain_ref": "push-v1",
+    "values": {
+      "object_offset_m": 0.0,
+      "object_mass_kg": 0.5,
+      "friction_coefficient": 0.6,
+      "observation_delay_ms": 200.0
+    },
+    "seed": 0
+  },
+  "verdict": "SAFETY_FAIL",
+  "violations": [
+    "NEVER collision"
+  ],
+  "expected_failure_signature": "SAFETY_FAIL: NEVER collision (finger vs floor) during descent",
+  "hypothesis_confirmed": true,
+  "written_utc": "2026-10-27T03:40:29.031737+00:00"
+}

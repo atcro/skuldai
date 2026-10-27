@@ -11,8 +11,11 @@ export MUJOCO_GL="${MUJOCO_GL:-egl}"
 # shellcheck disable=SC1091
 source "$VENV/bin/activate"
 cd "$REPO"
-if [ -f .env ]; then set -a; # shellcheck disable=SC1091
-  source ./.env; set +a; fi
+if [ -f .env ]; then
+  # tolerate a CRLF .env written from Windows: strip CRs before exporting
+  set -a; # shellcheck disable=SC1090
+  source <(tr -d '\r' < ./.env); set +a
+fi
 python -m pip install -e ".[dev,sim]" -q 2>&1 | tail -2
 mkdir -p evidence/G08
 

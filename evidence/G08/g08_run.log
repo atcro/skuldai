@@ -1,0 +1,11 @@
+tavily: status=ok results=5 request_id=8910bea1-3236-4d6c-830f-2b1db32038b6 response_time=1.57s
+   0.93911994 https://robodk.com/robot/Franka/Emika-Panda
+   0.8482825 https://www.wiredworkers.io/wp-content/uploads/2019/12/Panda_FrankaEmika_ENG.pdf
+   0.8005209 https://download.franka.de/Datasheet-EN.pdf
+   0.7036111 https://www.generationrobots.com/media/panda-franka-emika-datasheet.pdf
+   0.49875546 https://www.cbinsights.com/company/franka-emika
+proposed panda-payload-kg: object_mass_kg <= 3.0 kg from https://download.franka.de/Datasheet-EN.pdf
+awaiting human approval: re-run with --approved-by "<name>"
+domain check: {"property": "object_mass_kg", "in_domain": true, "domain_min": 0.05, "domain_max": 0.5, "documented_limit": 3.0, "unit": "kg", "consistent": true}
+scenario: {'object_offset_m': 0.0, 'object_mass_kg': 0.5, 'friction_coefficient': 0.6, 'observation_delay_ms': 200.0}
+executed: SAFETY_FAIL ['NEVER collision'] wall=0.7s

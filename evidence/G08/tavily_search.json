@@ -1,0 +1,48 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "kind": "tavily_search",
+  "query": "Franka Emika Panda robot arm payload kg technical specification",
+  "search_depth": "basic",
+  "max_results": 5,
+  "include_domains": [],
+  "started_utc": "2026-10-27T03:38:53.672941Z",
+  "finished_utc": "2026-10-27T03:38:55.402413Z",
+  "status": "ok",
+  "request_id": "8910bea1-3236-4d6c-830f-2b1db32038b6",
+  "response_time_s": 1.57,
+  "result_count": 5,
+  "results": [
+    {
+      "title": "Franka Emika Panda robot - RoboDK",
+      "url": "https://robodk.com/robot/Franka/Emika-Panda",
+      "content": ";\n\n# Franka Emika Panda robot\n\nFranka Emika Panda robot\n\nThe Franka Emika Panda robot is a 7-axis robot arm, it has a payload of 3 kg and a reach of 850 mm. Manufacturing applications include Material Handling.\n\nCommon applications of the Franka Emika Panda include: Assembly, Collaborative, Dispensing, Material Handling, Remote TCP.\n\nThe Franka Emika Panda is manufactured by Franka.\n\nUse this robot comparator to find similar robots to the Franka Emika Panda.\n\nBrowse the full RoboDK library. [...] ## Specifications\n\n|  |  |\n --- |\n| Brand | Franka |\n| Model | Emika Panda |\n| Type | Robot Arm |\n| Axes | 7 |\n| Payload | 3.0 kg |\n| Reach | 850 mm |\n| Repeatability | 0.1 mm |\n| Weight | 18 kg |\n\nDownload Franka Emika Panda\n\nToggle 3D View\n\nAll robots by Franka\n\nShow similar robots\n\nAccess RoboDK\n\nRoboDK software is a licensed robotic simulation software providing flexible pricing options.\n\nDownload RoboDK Pricing options\n\nAdd-ins and Extras [...] Polishing\n\nFlawless polishing with optimized paths\n\n Polishing application\n\nPalettizing logo\n\nPalletizing\n\nRobotic palletizing made simple\n\n Palletizing application\n\n## Success Stories\n\nRobot Machining for Sculptural Precision \n\nRobot Machining for Sculptural Precision\n\nDiscover how RoboDK empowered artists like Neoset Designs to use robotic machining for creating intricate and precise sculptures with unparalleled efficiency.",
+      "score": 0.93911994
+    },
+    {
+      "title": "PANDA - DATASHEET - WiredWorkers",
+      "url": "https://www.wiredworkers.io/wp-content/uploads/2019/12/Panda_FrankaEmika_ENG.pdf",
+      "content": "© Copyright 2019 by Franka Emika PANDA - DATASHEET 1 HARDWARE SOFT-ROBOT PERFORMANCE ADD-ONS Arm Motion Force Interaction Degrees of freedom 7 Payload 3 kg F/T Sensing link-side torque sensors in all 7 axes Maximum reach Workspace Joint velocity limits [°/s] Cartesian velocity limits Force range [N] -125 − 95 -150 − 115 -70 − 70 Nominal case Nominal case Best case Best case -10 − 10 -100 − 100 -275 − 275 -16 − 12 -10 − 10 -50 − 150 -115 − 155 -12 − 12 -10 − 10 Torque range [Nm] Fx Mx Fy My Fz Mz [...] Weight ~ 7 kg Power consumption ~ 80 W Mains frequency Protection rating Active power factor correction (PFC) 47 − 63 Hz IP20 yes Guiding force Collision detection time 1 kHz Control 3 Minimum controllable force (Fz) Force controller bandwidth (-3 dB) 0.05 N 10 Hz ~ 2 N <2 ms Adjustable translational stiffness Monitored signals 0 − 300 Nm/rad 0 − 3000 N/m Joint position, velocity, torque Cartesian position, velocity, force Adjustable rotational stiffness Nominal collision reaction time 3,4 [...] reaction time 3,4 Worst case collision reaction time 3 <50 ms <100 ms May 2019 Weight ~ 17.8 kg Protection rating IP30 Air humidity 20 − 80 % non-condensing Relative torque accuracy 0.15 Nm Torque repeatability <0.05 Nm Torque noise (RMS) <0.005 Nm Expected nominal lifetime 3,4 20,000 h © Copyright 2019 1. Technical data are subject to change.",
+      "score": 0.8482825
+    },
+    {
+      "title": "DATA SHEET 1 ROBOT ARM & CONTROL - FRANKA",
+      "url": "https://download.franka.de/Datasheet-EN.pdf",
+      "content": "velocity, force Adjustable rotational stiffness Nominal collision reaction time 3,4 Worst case collision reaction time 3 <50 ms <100 ms Weight ~ 17.8 kg Protection rating IP30 Air humidity 20 − 80 % non-condensing Relative torque accuracy 0.15 Nm Torque repeatability 0.05 Nm Torque noise (RMS) 0.005 Nm Expected nominal lifetime 3,4 20,000 h © Copyright 2020 by Franka Emika 1. Technical data are subject to change. [...] © Copyright 2020 by Franka Emika DATA SHEET 1 ROBOT ARM & CONTROL Release Version: April 2020 Data sheet HARDWARE SOFT-ROBOT PERFORMANCE ADD-ONS Arm Motion Force Interaction Degrees of freedom 7 Payload 3 kg Force/ Torque sensing link-side torque sensors in all 7 axes Maximum reach Workspace Joint velocity limits Cartesian velocity limits Force range [N] -125 − 95 -150 − 115 -70 − 70 Nominal case Nominal case Local best case Local best case -10 − 10 -100 − 100 -275 − 275 -16 − 12 -10 − 10 -50 − [...] size (19”) 355 x 483 x 89 mm (D x W x H) Supply voltage 100 − 240 VAC Weight ~ 7 kg Power consumption ~ 80 W Mains frequency Protection rating Active power factor correction (PFC) 47 − 63 Hz IP20 yes Guiding force Collision detection time 1 kHz Control 3 Minimum controllable force (Fz) Force controller bandwidth (-3 dB) 0.05 N 10 Hz ~ 2 N <2 ms Adjustable translational stiffness Monitored signals 0 − 300 Nm/rad 0 − 3000 N/m joint position, velocity, torque cartesian position, velocity, force",
+      "score": 0.8005209
+    },
+    {
+      "title": "Panda TECHNICAL DATA 1,2 - Génération Robots",
+      "url": "https://www.generationrobots.com/media/panda-franka-emika-datasheet.pdf",
+      "content": "use and applicable standards and laws. 3 performance can be reduced when operating outside the typical temperature range Arm degrees of freedom 7 DOF payload 3 kg sensitivity torque sensors in all 7 axes maximum reach 855 mm joint position limits [°] A1: -166/166, A2: -101/101, A3: -166/166, A4: -176/-4, A5: -166/166, A6: -1/215, A7: -166/166 joint velocity limits [°/s] A1: 150, A2: 150, A3: 150, A4: 150, A5: 180, A6: 180, A7: 180 Cartesian velocity limits Up to 2 m/s end effector speed [...] (typical) ▪ +5°C to + 45°C (extended) 3 air humidity 20% to 80% non-condensing Hand parallel gripper with exchangeable fingers grasping force continuous force: 70 N maximum force: 140 N travel (travel speed) 80 mm (50 mm/s per finger) weight ~ 0.7 kg Desk platform via modern web browser programming visual & intuitive, dialog-based Apps can be composed into complex workflows to create Tasks and Solutions CE out of the box solutions Check www.franka.de to see if for your application a CE out of [...] ▪ +5°C to + 45°C (extended) 3 air humidity 20% to 80% non-condensing Control interfaces ▪ Ethernet (TCP/IP) for Internet and/or shop-floor connection ▪ power connector IEC 60320-C14 (V-Lock) ▪ Arm connector controller size (19”) 355 x 483 x 89 mm (D x W x H) supply voltage 100 VAC - 240 VAC mains frequency 47- 63 Hz power consumption ▪ max. 600 W ▪ average ~ 300 W active power factor correction (PFC) yes weight ~ 7 kg protection rating IP20 ambient temperature ▪ +15°C to 25°C (typical) ▪ +5°C",
+      "score": 0.7036111
+    },
+    {
+      "title": "Franka Emika - Products, Competitors, Financials, Employees, Headquarters Locations",
+      "url": "https://www.cbinsights.com/company/franka-emika",
+      "content": "第2章には、世界の協働ロボット市場の概要として、2021年から2032年までの年間販売台数、地域別および国/地域別の現在および将来の市場分析（2021年、2025年、2032年）が収録されています。さらに、可搬重量（5kg以下、5-10kg、10kg超）、アーム長（短いリーチ、中程度のリーチ、長いリーチ）、自由度（4軸、6軸、7軸/冗長軸）、および自動車産業、IT、金属加工、プラスチック・ポリマー、食品・飲料などの用途別の協働ロボット市場セグメントについて、各セグメントの販売台数、市場シェア、収益、販売価格（2021年～2026年）の詳細な分析が示されています。 第3章には、企業別の世界協働ロボット市場のデータとして、各企業の年間販売台数と販売市場シェア、年間収益と収益市場シェア、販売価格（2021年～2026年）が詳細に分析されています。また、主要メーカーの生産地域分布、販売地域、製品タイプに関する情報、競争状況とCR3、CR5、CR10などの市場集中度分析（2024年～2026年予測）、新製品および潜在的な市場参入企業、ならびに市場のM&A活動と戦略が提示されています。 [...] 協働ロボットの種類にはさまざまなものがあります。まずは「軽量協働ロボット」です。これは通常、10㎏以下の軽い部品を持ち上げたり、移動させたりする用途に特化したロボットです。次に「モバイル協働ロボット」は、自走式で工場内を移動しながら物品を運ぶ機能を持っています。さらに「ビジョン協働ロボット」もあり、カメラを用いて周囲の状況を認識し、動的に対応する能力があります。 協働ロボットの用途は多岐にわたります。例えば、組立作業、倉庫でのピッキング、検査や梱包、さらには材料の搬送などが挙げられます。特に小規模な製造業や中小企業では人的リソースの不足が課題となることが多いため、協働ロボットの導入により効率を向上させ、コスト削減を図る企業が増えています。また、単純作業から高度な作業まで対応できるため、ラインの柔軟性が向上し、さまざまな製品に対応可能です。 [...] |  |  |\n --- |\n| Application Date | 8/20/2020 |\n| Grant Date | 9/2/2025 |\n| Title | System and method for controlling at least one machine, more particularly a collective of machines |\n| Related Topics | Instruction set architectures, Instruction processing, Machine code, Embedded systems, Computers |\n| Status | Grant |\n\n## LatestFranka Emika News\n\n協働ロボットの世界市場（2026年～2032年）、市場規模（5kg以下、5～10kg、10kg超）・分析レポートを発表\n\nSep 13, 2026",
+      "score": 0.49875546
+    }
+  ],
+  "error": null,
+  "sdk": "tavily-python 0.8.5"
+}

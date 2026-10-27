@@ -1,0 +1,24 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "hypothesis": "At the heaviest admissible object (0.5 kg, within the documented payload limit of 3.0 kg) combined with observation delay in [150.0, 200.0] ms, the push controller overshoots its descent and the fingers touch the floor.",
+  "variables": [
+    {
+      "name": "object_mass_kg",
+      "min": 0.4,
+      "max": 0.5
+    },
+    {
+      "name": "observation_delay_ms",
+      "min": 150.0,
+      "max": 200.0
+    }
+  ],
+  "reason_to_test": "G07 random baseline: all 3 of 3 valid failures had delay >= 152 ms; mass effect unknown. The documented payload bounds how heavy an object is worth testing.",
+  "expected_failure_signature": "SAFETY_FAIL: NEVER collision (finger vs floor) during descent",
+  "model_id": "human:Adam Crozier (Nemotron authoring pending G04)",
+  "request_id": "8910bea1-3236-4d6c-830f-2b1db32038b6",
+  "evidence_refs": [
+    "panda-payload-kg",
+    "https://download.franka.de/Datasheet-EN.pdf"
+  ]
+}

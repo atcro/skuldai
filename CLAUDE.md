@@ -17,13 +17,14 @@ regression test, and blocks releases that fail. Built for the Nebius x NVIDIA
 Global AI Hackathon, Physical AI track.
 
 - **Deadline:** Fri 2026-10-30 10:00 AM PDT. Internal target: submit Thu 2026-10-29.
-- **Status (2026-10-26):** G01, G02, G05, G06 and G07 PASS (toolchain,
+- **Status (2026-10-26):** G01, G02, G05, G06, G07 and G08 PASS (toolchain,
   contracts, closed-loop MuJoCo Panda push with 4 perturbations, replay, video,
   deterministic oracle with fault injection, locked protocol + 25-episode
-  random baseline; 60 tests). TestSpec push-block-v1 approved by Adam
-  2026-10-26. G00 BLOCKED on human Devpost confirmation. G03/G04 (credits,
-  Nemotron) not started. Current gate: G08 Tavily, then G10 search.
-  See the newest `docs/gates/G##_report.md`.
+  random baseline, live Tavily evidence -> approved constraint -> hypothesis
+  -> executed scenario; 63 tests). TestSpec push-block-v1 and constraint
+  panda-payload-kg approved by Adam 2026-10-26. G00 BLOCKED on human Devpost
+  confirmation. G03/G04 (credits, Nemotron) not started. Current gate: G10
+  active search + minimization. See the newest `docs/gates/G##_report.md`.
 - **Critical path:** closed-loop MuJoCo simulator -> deterministic oracle ->
   random baseline -> active search -> minimized reproducible counterexample ->
   fail-closed release gate -> verified sponsor integrations -> demo.
@@ -147,8 +148,9 @@ anything needing root goes in a script the human runs.
 - full G02 check (EXECUTED 2026-10-26): `scripts/g02_verify.sh`, writes `evidence/G02/` and `requirements.lock.txt`
 - full G06 check (EXECUTED 2026-10-26): `scripts/g06_run.sh [--approved-by NAME]`; app venv, no MuJoCo; runs the oracle over `evidence/G05/*.trajectory.json` plus fault injection, writes `evidence/G06/`
 - full G07 check (EXECUTED 2026-10-26): `scripts/g07_run.sh [--no-video]`; sim venv; locked protocol, 3 nominal + 25 random unrendered episodes (~0.6 s each), spot-check replays, one 15 s video (~2 min); writes `evidence/G07/`
+- full G08 check (EXECUTED 2026-10-26): `scripts/g08_run.sh` (phase 1: live Tavily search + proposed constraint) then `scripts/g08_run.sh --approved-by "Name"` (phase 2: human approval, domain check, hypothesis, one executed scenario). Reads `TAVILY_API_KEY` from the git-ignored `.env`; set it with `scripts/set_tavily_key.ps1` (hidden input)
 - inventory: `scripts/inventory_wsl.sh`
-- smoke tests: `python scripts/smoke_tavily.py` (needs `TAVILY_API_KEY` in `.env`); Token Factory smoke arrives in G04 from the pinned npa docs
+- Token Factory smoke arrives in G04 from the pinned npa docs (the old `scripts/smoke_tavily.py` is superseded by G08)
 - simulator env (EXECUTED 2026-10-26): `~/.venvs/skuld-mujoco` with `skuld[dev,sim]`, created by `scripts/g05_setup.sh` (also sparse-clones the pinned Menagerie Panda to `~/src/mujoco_menagerie` and runs the EGL smoke test)
 - full G05 check (EXECUTED 2026-10-26): `scripts/g05_run.sh`; runs ruff + pytest in the sim venv (MuJoCo tests need `SKULD_MENAGERIE_DIR`, skipped elsewhere), then `scripts/g05_run.py` which writes trajectories, MP4s and `g05_run_report.json` to `evidence/G05/`. About 2 min per rendered episode on this laptop; run it in the background.
 

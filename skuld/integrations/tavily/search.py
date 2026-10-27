@@ -14,6 +14,7 @@ anywhere.
 from __future__ import annotations
 
 import os
+import re
 from datetime import UTC, datetime
 from typing import Annotated, Literal
 
@@ -63,9 +64,15 @@ def live_search(
     include_domains: list[str] | None = None,
     timeout_s: float = 60.0,
 ) -> TavilySearchRecord:
-    api_key = os.environ.get("TAVILY_API_KEY")
+    # strip: a CRLF .env or a trailing space would otherwise reach the HTTP header
+    api_key = (os.environ.get("TAVILY_API_KEY") or "").strip()
     if not api_key:
         raise MissingApiKeyError("TAVILY_API_KEY is not set; refusing to fake a search")
+
+    def redact(text: str) -> str:
+        """Exceptions can echo the Authorization header; never let the key into evidence."""
+        text = text.replace(api_key, "<REDACTED>")
+        return re.sub(r"tvly-[A-Za-z0-9_\-]+", "tvly-<REDACTED>", text)
 
     from importlib.metadata import version as _v
 
@@ -88,7 +95,7 @@ def live_search(
             finished_utc=datetime.now(UTC),
             status="error",
             result_count=0,
-            error=f"{type(e).__name__}: {str(e)[:300]}",
+            error=redact(f"{type(e).__name__}: {str(e)[:300]}"),
             sdk=f"tavily-python {_v('tavily-python')}",
         )
     finished = datetime.now(UTC)

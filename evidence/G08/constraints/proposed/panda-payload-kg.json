@@ -1,0 +1,14 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "constraint_id": "panda-payload-kg",
+  "property": "object_mass_kg",
+  "value": 3.0,
+  "unit": "kg",
+  "source_url": "https://download.franka.de/Datasheet-EN.pdf",
+  "quote_or_paraphrase": "velocity, force Adjustable rotational stiffness Nominal collision reaction time 3,4 Worst case collision reaction time 3 <50 ms <100 ms Weight ~ 17.8 kg Protection rating IP30 Air humidity 20 − 80 % non-condensing Relative torque accuracy 0.15 Nm Torque repeatability 0.05 Nm Torque noise (RMS) 0.005 Nm Expected nominal lifetime 3,4 20,000 h © Copyright 2020 by Franka Emika 1. Technical data are subject to change. [...] © Copyright 2020 by Franka Emika DATA SHEET 1 ROBOT ARM & CONTROL Release Version: April 2020 Data sheet HARDWARE SOFT-ROBOT PERFORMANCE ADD-ONS Arm Motion Force Interaction Degrees of freedom 7 Payload 3 kg Force/ Torque sensing link-side torque sensors in all 7 axes Maximum reach Workspace Joint velocity limits Cartesian velocity limits Force range [N] -125 − 95 -150 − 115 -70 − 70 Nominal case Nominal case Local best case Local best case -10 − 10 -100 − 100 -275 − 275 -16 − 12 -10 − 10 -50 − [...] size (19”) 355 x 483 x 89 mm (D x W x H) Supply voltage 100 − 240 VAC Weight ~ 7 kg Power consumption ~ 80 W Mains frequency Protection rating Active power factor correction (PFC) 47 − 63 Hz IP20 yes Guiding force Collision detection time 1 kHz Control 3 Minimum controllable force (Fz) Force controller bandwidth (-3 dB) 0.05 N 10 Hz ~ 2 N <2 ms Adjustable translational stiffness Monitored signals 0 − 300 Nm/rad 0 − 3000 N/m joint position, velocity, torque cartesian position, velocity, force",
+  "extraction_confidence": 0.6,
+  "retrieved_at": "2026-10-27T03:38:55.402413Z",
+  "approval_state": "proposed",
+  "authorizer": null,
+  "approved_at": null
+}
