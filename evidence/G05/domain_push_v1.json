@@ -1,0 +1,39 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "domain_id": "push-v1",
+  "variables": [
+    {
+      "name": "object_offset_m",
+      "unit": "m",
+      "nominal": 0.0,
+      "min": -0.1,
+      "max": 0.1,
+      "weight": 1.0
+    },
+    {
+      "name": "object_mass_kg",
+      "unit": "kg",
+      "nominal": 0.1,
+      "min": 0.05,
+      "max": 0.5,
+      "weight": 1.0
+    },
+    {
+      "name": "friction_coefficient",
+      "unit": "1",
+      "nominal": 0.6,
+      "min": 0.2,
+      "max": 1.0,
+      "weight": 1.0
+    },
+    {
+      "name": "observation_delay_ms",
+      "unit": "ms",
+      "nominal": 0.0,
+      "min": 0.0,
+      "max": 200.0,
+      "weight": 1.0
+    }
+  ],
+  "distance_fn": "weighted_normalized_l2"
+}

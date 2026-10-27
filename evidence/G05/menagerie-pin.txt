@@ -1,0 +1,19 @@
+repo: https://github.com/google-deepmind/mujoco_menagerie
+commit: f3b6013629c7b94f8ee93fd977b161fa8350f9bc
+cloned_utc: 2026-10-27T01:42:48Z
+path: /home/kang/src/mujoco_menagerie
+sparse: franka_emika_panda
+files:
+  franka_emika_panda/CHANGELOG.md
+  franka_emika_panda/LICENSE
+  franka_emika_panda/README.md
+  franka_emika_panda/hand.xml
+  franka_emika_panda/mjx_hand.xml
+  franka_emika_panda/mjx_panda.xml
+  franka_emika_panda/mjx_panda_nohand.xml
+  franka_emika_panda/mjx_scene.xml
+  franka_emika_panda/mjx_single_cube.xml
+  franka_emika_panda/panda.png
+  franka_emika_panda/panda.xml
+  franka_emika_panda/panda_nohand.xml
+  franka_emika_panda/scene.xml

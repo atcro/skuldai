@@ -501,6 +501,28 @@ Consequences: Isaac Lab, GR00T and Cosmos cannot run locally. They are cloud-onl
 
 ---
 
+### 12.2 Test and compute discipline (DECIDED 2026-10-26)
+
+Tests and evidence runs exist to prove a gate, not to look thorough. Rules:
+
+- **No redundant tests.** Before adding a test, check whether an existing one
+  already exercises the same path; extend it rather than duplicating it. One
+  well-chosen case per behaviour beats five near-copies.
+- **Combine runs that share setup.** When several checks need the same scene,
+  episode or model load, run them in one fixture or one episode and assert
+  several things, instead of re-simulating per assertion. Module-scoped
+  fixtures for simulator handles.
+- **Budget evidence runs.** Rendered episodes cost about two minutes each on
+  the development laptop. A gate run records only the episodes the acceptance
+  criteria call for (nominal, one replay, the perturbation extremes that could
+  plausibly fail). Sweeps belong to G07+ and run unrendered; video is produced
+  only for the episodes that will be shown.
+- **Skip, do not fake.** Simulator tests skip cleanly where MuJoCo or the
+  Menagerie checkout is absent (CI, app venv) and run in the sim venv. A
+  skipped test is never reported as a pass.
+- **Keep the fast suite fast.** `python -m pytest -q` in the app venv stays
+  under a few seconds so it runs before every commit.
+
 ## 13. Gates
 
 ### 13.1 Gate table (DECIDED: structure and acceptance from the runbook; owners OPEN)

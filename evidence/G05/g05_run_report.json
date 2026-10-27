@@ -1,0 +1,310 @@
+{
+  "gate": "G05",
+  "policy_id": "push-dls-ik-v1",
+  "policy_source_sha256": "528a4cf61bd74775d8d896b1bf2aa0181b2dc2572f4776e23dd2a415c4baea9f",
+  "scene_sha256": "66b5b39e65dbe6366486019e744c4c45c12b296de92eff40e495f9b7fb463f35",
+  "sim": "mujoco 3.17.0",
+  "control_hz": 50.0,
+  "max_time_s": 15.0,
+  "episodes": {
+    "nominal": {
+      "steps": 360,
+      "sim_time_s": 7.199999999999429,
+      "reached_goal": true,
+      "time_to_goal_s": 6.679999999999486,
+      "final_block_to_target_m": 0.005856625041442531,
+      "min_block_to_target_m": 0.005856625041442531,
+      "robot_collision_steps": 0,
+      "block_toppled": false,
+      "video_path": "evidence/G05/nominal.mp4",
+      "video_frames": 181,
+      "trajectory_id": "traj-nominal-s0",
+      "scene_sha256": "66b5b39e65dbe6366486019e744c4c45c12b296de92eff40e495f9b7fb463f35",
+      "scenario": {
+        "schema_version": "skuld.schemas.v1",
+        "scenario_id": "nominal",
+        "domain_ref": "push-v1",
+        "values": {
+          "object_offset_m": 0.0,
+          "object_mass_kg": 0.1,
+          "friction_coefficient": 0.6,
+          "observation_delay_ms": 0.0
+        },
+        "seed": 0
+      },
+      "distance_from_nominal": 0.0,
+      "wallclock_s": 47.967504877000465,
+      "realtime_factor": 0.15010161605157196
+    },
+    "nominal_replay": {
+      "steps": 360,
+      "sim_time_s": 7.199999999999429,
+      "reached_goal": true,
+      "time_to_goal_s": 6.679999999999486,
+      "final_block_to_target_m": 0.005856625041442531,
+      "min_block_to_target_m": 0.005856625041442531,
+      "robot_collision_steps": 0,
+      "block_toppled": false,
+      "video_path": null,
+      "video_frames": 0,
+      "trajectory_id": "traj-nominal-s0",
+      "scene_sha256": "66b5b39e65dbe6366486019e744c4c45c12b296de92eff40e495f9b7fb463f35",
+      "scenario": {
+        "schema_version": "skuld.schemas.v1",
+        "scenario_id": "nominal",
+        "domain_ref": "push-v1",
+        "values": {
+          "object_offset_m": 0.0,
+          "object_mass_kg": 0.1,
+          "friction_coefficient": 0.6,
+          "observation_delay_ms": 0.0
+        },
+        "seed": 0
+      },
+      "distance_from_nominal": 0.0,
+      "wallclock_s": 0.6607679950011516,
+      "realtime_factor": 10.896411530929068
+    },
+    "heavy": {
+      "steps": 363,
+      "sim_time_s": 7.2599999999994225,
+      "reached_goal": true,
+      "time_to_goal_s": 6.73999999999948,
+      "final_block_to_target_m": 0.030190006935908852,
+      "min_block_to_target_m": 0.020366728488814864,
+      "robot_collision_steps": 0,
+      "block_toppled": false,
+      "video_path": "evidence/G05/heavy.mp4",
+      "video_frames": 183,
+      "trajectory_id": "traj-heavy-s0",
+      "scene_sha256": "66b5b39e65dbe6366486019e744c4c45c12b296de92eff40e495f9b7fb463f35",
+      "scenario": {
+        "schema_version": "skuld.schemas.v1",
+        "scenario_id": "heavy",
+        "domain_ref": "push-v1",
+        "values": {
+          "object_offset_m": 0.0,
+          "object_mass_kg": 0.5,
+          "friction_coefficient": 0.6,
+          "observation_delay_ms": 0.0
+        },
+        "seed": 0
+      },
+      "distance_from_nominal": 0.888888888888889,
+      "wallclock_s": 50.820400554001026,
+      "realtime_factor": 0.1428560168919773
+    },
+    "slippery": {
+      "steps": 360,
+      "sim_time_s": 7.199999999999429,
+      "reached_goal": true,
+      "time_to_goal_s": 6.679999999999486,
+      "final_block_to_target_m": 0.00744627832003402,
+      "min_block_to_target_m": 0.00744627832003402,
+      "robot_collision_steps": 0,
+      "block_toppled": false,
+      "video_path": "evidence/G05/slippery.mp4",
+      "video_frames": 181,
+      "trajectory_id": "traj-slippery-s0",
+      "scene_sha256": "66b5b39e65dbe6366486019e744c4c45c12b296de92eff40e495f9b7fb463f35",
+      "scenario": {
+        "schema_version": "skuld.schemas.v1",
+        "scenario_id": "slippery",
+        "domain_ref": "push-v1",
+        "values": {
+          "object_offset_m": 0.0,
+          "object_mass_kg": 0.1,
+          "friction_coefficient": 0.2,
+          "observation_delay_ms": 0.0
+        },
+        "seed": 0
+      },
+      "distance_from_nominal": 0.49999999999999994,
+      "wallclock_s": 49.11553186200035,
+      "realtime_factor": 0.14659313921773728
+    },
+    "sticky": {
+      "steps": 366,
+      "sim_time_s": 7.319999999999416,
+      "reached_goal": true,
+      "time_to_goal_s": 6.799999999999473,
+      "final_block_to_target_m": 0.007338071049071207,
+      "min_block_to_target_m": 0.007338071049071207,
+      "robot_collision_steps": 0,
+      "block_toppled": false,
+      "video_path": "evidence/G05/sticky.mp4",
+      "video_frames": 184,
+      "trajectory_id": "traj-sticky-s0",
+      "scene_sha256": "66b5b39e65dbe6366486019e744c4c45c12b296de92eff40e495f9b7fb463f35",
+      "scenario": {
+        "schema_version": "skuld.schemas.v1",
+        "scenario_id": "sticky",
+        "domain_ref": "push-v1",
+        "values": {
+          "object_offset_m": 0.0,
+          "object_mass_kg": 0.1,
+          "friction_coefficient": 1.0,
+          "observation_delay_ms": 0.0
+        },
+        "seed": 0
+      },
+      "distance_from_nominal": 0.5,
+      "wallclock_s": 48.473058425001,
+      "realtime_factor": 0.1510117215179468
+    },
+    "offset_pos": {
+      "steps": 485,
+      "sim_time_s": 9.699999999999909,
+      "reached_goal": true,
+      "time_to_goal_s": 9.199999999999742,
+      "final_block_to_target_m": 0.005932488185090152,
+      "min_block_to_target_m": 0.005932488185090152,
+      "robot_collision_steps": 0,
+      "block_toppled": false,
+      "video_path": "evidence/G05/offset_pos.mp4",
+      "video_frames": 244,
+      "trajectory_id": "traj-offset_pos-s0",
+      "scene_sha256": "66b5b39e65dbe6366486019e744c4c45c12b296de92eff40e495f9b7fb463f35",
+      "scenario": {
+        "schema_version": "skuld.schemas.v1",
+        "scenario_id": "offset_pos",
+        "domain_ref": "push-v1",
+        "values": {
+          "object_offset_m": 0.1,
+          "object_mass_kg": 0.1,
+          "friction_coefficient": 0.6,
+          "observation_delay_ms": 0.0
+        },
+        "seed": 0
+      },
+      "distance_from_nominal": 0.5,
+      "wallclock_s": 66.01883657600047,
+      "realtime_factor": 0.14692776339421446
+    },
+    "offset_neg": {
+      "steps": 493,
+      "sim_time_s": 9.859999999999962,
+      "reached_goal": true,
+      "time_to_goal_s": 9.359999999999795,
+      "final_block_to_target_m": 0.006584880091113745,
+      "min_block_to_target_m": 0.006584880091113745,
+      "robot_collision_steps": 0,
+      "block_toppled": false,
+      "video_path": "evidence/G05/offset_neg.mp4",
+      "video_frames": 248,
+      "trajectory_id": "traj-offset_neg-s0",
+      "scene_sha256": "66b5b39e65dbe6366486019e744c4c45c12b296de92eff40e495f9b7fb463f35",
+      "scenario": {
+        "schema_version": "skuld.schemas.v1",
+        "scenario_id": "offset_neg",
+        "domain_ref": "push-v1",
+        "values": {
+          "object_offset_m": -0.1,
+          "object_mass_kg": 0.1,
+          "friction_coefficient": 0.6,
+          "observation_delay_ms": 0.0
+        },
+        "seed": 0
+      },
+      "distance_from_nominal": 0.5,
+      "wallclock_s": 63.90457121399959,
+      "realtime_factor": 0.15429256174775693
+    },
+    "delay_100": {
+      "steps": 354,
+      "sim_time_s": 7.079999999999442,
+      "reached_goal": true,
+      "time_to_goal_s": 6.5599999999995,
+      "final_block_to_target_m": 0.005630699346617678,
+      "min_block_to_target_m": 0.004553755310865992,
+      "robot_collision_steps": 0,
+      "block_toppled": false,
+      "video_path": "evidence/G05/delay_100.mp4",
+      "video_frames": 178,
+      "trajectory_id": "traj-delay_100-s0",
+      "scene_sha256": "66b5b39e65dbe6366486019e744c4c45c12b296de92eff40e495f9b7fb463f35",
+      "scenario": {
+        "schema_version": "skuld.schemas.v1",
+        "scenario_id": "delay_100",
+        "domain_ref": "push-v1",
+        "values": {
+          "object_offset_m": 0.0,
+          "object_mass_kg": 0.1,
+          "friction_coefficient": 0.6,
+          "observation_delay_ms": 100.0
+        },
+        "seed": 0
+      },
+      "distance_from_nominal": 0.5,
+      "wallclock_s": 50.33419336999941,
+      "realtime_factor": 0.14065984822594416
+    },
+    "delay_200": {
+      "steps": 528,
+      "sim_time_s": 10.560000000000196,
+      "reached_goal": true,
+      "time_to_goal_s": 10.060000000000029,
+      "final_block_to_target_m": 0.016310110606308565,
+      "min_block_to_target_m": 0.005622234604993307,
+      "robot_collision_steps": 46,
+      "block_toppled": false,
+      "video_path": "evidence/G05/delay_200.mp4",
+      "video_frames": 265,
+      "trajectory_id": "traj-delay_200-s0",
+      "scene_sha256": "66b5b39e65dbe6366486019e744c4c45c12b296de92eff40e495f9b7fb463f35",
+      "scenario": {
+        "schema_version": "skuld.schemas.v1",
+        "scenario_id": "delay_200",
+        "domain_ref": "push-v1",
+        "values": {
+          "object_offset_m": 0.0,
+          "object_mass_kg": 0.1,
+          "friction_coefficient": 0.6,
+          "observation_delay_ms": 200.0
+        },
+        "seed": 0
+      },
+      "distance_from_nominal": 1.0,
+      "wallclock_s": 73.30097055099941,
+      "realtime_factor": 0.14406357679333917
+    },
+    "combo": {
+      "steps": 507,
+      "sim_time_s": 10.140000000000056,
+      "reached_goal": true,
+      "time_to_goal_s": 9.639999999999889,
+      "final_block_to_target_m": 0.016816771384665193,
+      "min_block_to_target_m": 0.004552884411315538,
+      "robot_collision_steps": 44,
+      "block_toppled": false,
+      "video_path": "evidence/G05/combo.mp4",
+      "video_frames": 255,
+      "trajectory_id": "traj-combo-s0",
+      "scene_sha256": "66b5b39e65dbe6366486019e744c4c45c12b296de92eff40e495f9b7fb463f35",
+      "scenario": {
+        "schema_version": "skuld.schemas.v1",
+        "scenario_id": "combo",
+        "domain_ref": "push-v1",
+        "values": {
+          "object_offset_m": 0.1,
+          "object_mass_kg": 0.1,
+          "friction_coefficient": 0.2,
+          "observation_delay_ms": 200.0
+        },
+        "seed": 0
+      },
+      "distance_from_nominal": 1.224744871391589,
+      "wallclock_s": 73.94083256700105,
+      "realtime_factor": 0.1371366760147278
+    }
+  },
+  "replay": {
+    "steps_compared": 360,
+    "same_length": true,
+    "max_abs_qpos_diff": 0.0,
+    "max_abs_object_pos_diff": 0.0,
+    "bit_identical": true
+  },
+  "observed_failures": [],
+  "note": "Provisional goal check (block within target radius for 25 control steps). Authoritative verdicts come from the G06 oracle. Nothing here is a safety claim."
+}

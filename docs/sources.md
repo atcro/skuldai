@@ -23,7 +23,7 @@ Epistemic labels: **DOC-VERIFIED** = page seen in official docs on the date give
 | S05 | MuJoCo Python bindings | https://mujoco.readthedocs.io/en/stable/python.html | DOC-VERIFIED by D2 author; EXECUTED 2026-10-25: `mujoco-3.17.0-cp312-cp312-win_amd64.whl` downloads | mujoco 3.17.0 (latest on PyPI 2026-10-25) |
 | S06 | Isaac Lab | https://github.com/isaac-sim/IsaacLab | DOC-VERIFIED by D2 author | stretch only |
 | S07 | Isaac GR00T N1.7 | https://github.com/NVIDIA/Isaac-GR00T | DOC-VERIFIED by D2 author | stretch only |
-| S08 | MuJoCo Menagerie (Franka Panda model) | https://github.com/google-deepmind/mujoco_menagerie | DOC-VERIFIED by D2 author | commit + model LICENSE: _pin in G05_ |
+| S08 | MuJoCo Menagerie (Franka Panda model) | https://github.com/google-deepmind/mujoco_menagerie | DOC-VERIFIED by D2 author; EXECUTED 2026-10-26: sparse clone of `franka_emika_panda/` | commit `f3b6013629c7b94f8ee93fd977b161fa8350f9bc`; `franka_emika_panda/LICENSE` is Apache-2.0 (copy in `evidence/G05/panda-model-LICENSE.txt`), compatible with our Apache-2.0 |
 | S09 | Tavily Search API and Python SDK | https://docs.tavily.com/documentation/api-reference/endpoint/search ; https://github.com/tavily-ai/tavily-python | DOC-VERIFIED by D2 author; EXECUTED 2026-10-25: `tavily_python-0.8.5` wheel downloads | tavily-python 0.8.5 |
 | S10 | Nebius CLI install | https://docs.nebius.com/cli/install | DOC-VERIFIED 2026-10-25: Ubuntu and macOS only; `curl -sSL https://artifacts.nebius.cloud/cli/install.sh \| bash` | version: _pin to the one S02 quickstart names, in G04_ |
 | S11 | Claude Code quickstart | https://code.claude.com/docs/en/quickstart | DOC-VERIFIED by D2 author | Claude Code 2.1.310 installed on host |

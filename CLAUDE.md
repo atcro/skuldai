@@ -17,9 +17,10 @@ regression test, and blocks releases that fail. Built for the Nebius x NVIDIA
 Global AI Hackathon, Physical AI track.
 
 - **Deadline:** Fri 2026-10-30 10:00 AM PDT. Internal target: submit Thu 2026-10-29.
-- **Status (2026-10-26):** G01 and G02 PASS (toolchain, contracts, 35 tests).
-  G00 BLOCKED on human Devpost confirmation. No simulation has run yet.
-  Current gate: see the newest `docs/gates/G##_report.md`.
+- **Status (2026-10-26):** G01, G02 and G05 PASS (toolchain, contracts,
+  closed-loop MuJoCo Panda push with 4 perturbations, replay, video; 44 tests).
+  G00 BLOCKED on human Devpost confirmation. G03/G04 (credits, Nemotron) not
+  started. Current gate: G06 oracle. See the newest `docs/gates/G##_report.md`.
 - **Critical path:** closed-loop MuJoCo simulator -> deterministic oracle ->
   random baseline -> active search -> minimized reproducible counterexample ->
   fail-closed release gate -> verified sponsor integrations -> demo.
@@ -143,7 +144,8 @@ anything needing root goes in a script the human runs.
 - full G02 check (EXECUTED 2026-10-26): `scripts/g02_verify.sh`, writes `evidence/G02/` and `requirements.lock.txt`
 - inventory: `scripts/inventory_wsl.sh`
 - smoke tests: `python scripts/smoke_tavily.py` (needs `TAVILY_API_KEY` in `.env`); Token Factory smoke arrives in G04 from the pinned npa docs
-- simulator env (separate, not yet created): `python3 -m venv ~/.venvs/skuld-mujoco && source ~/.venvs/skuld-mujoco/bin/activate && python -m pip install mujoco numpy pytest`
+- simulator env (EXECUTED 2026-10-26): `~/.venvs/skuld-mujoco` with `skuld[dev,sim]`, created by `scripts/g05_setup.sh` (also sparse-clones the pinned Menagerie Panda to `~/src/mujoco_menagerie` and runs the EGL smoke test)
+- full G05 check (EXECUTED 2026-10-26): `scripts/g05_run.sh`; runs ruff + pytest in the sim venv (MuJoCo tests need `SKULD_MENAGERIE_DIR`, skipped elsewhere), then `scripts/g05_run.py` which writes trajectories, MP4s and `g05_run_report.json` to `evidence/G05/`. About 2 min per rendered episode on this laptop; run it in the background.
 
 ## How to work with the team
 
@@ -161,6 +163,9 @@ anything needing root goes in a script the human runs.
 - **When stuck on vendor tooling for more than half a day:** invoke the stop-loss
   in `spec.md` section 14.2 and preserve the MuJoCo MVP.
 - **Negative results are results.** If active search does not beat random, say so.
+- **Do not overdo tests.** No redundant tests; combine checks that share a
+  scene or episode into one fixture or run; record only the episodes a gate
+  needs; render video only for what will be shown (spec 12.2).
 - **Pre-submission:** run the adversarial review below before any grand claim.
 
 ## Division of labour

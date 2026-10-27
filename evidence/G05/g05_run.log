@@ -1,0 +1,12 @@
+nominal      goal=True  t_goal=6.679999999999486 final=0.006m min=0.006m collisions=0 toppled=False steps=360 wall=48.0s
+nominal_replay goal=True  t_goal=6.679999999999486 final=0.006m min=0.006m collisions=0 toppled=False steps=360 wall=0.7s
+replay: {"steps_compared": 360, "same_length": true, "max_abs_qpos_diff": 0.0, "max_abs_object_pos_diff": 0.0, "bit_identical": true}
+heavy        goal=True  t_goal=6.73999999999948 final=0.030m min=0.020m collisions=0 toppled=False steps=363 wall=50.8s
+slippery     goal=True  t_goal=6.679999999999486 final=0.007m min=0.007m collisions=0 toppled=False steps=360 wall=49.1s
+sticky       goal=True  t_goal=6.799999999999473 final=0.007m min=0.007m collisions=0 toppled=False steps=366 wall=48.5s
+offset_pos   goal=True  t_goal=9.199999999999742 final=0.006m min=0.006m collisions=0 toppled=False steps=485 wall=66.0s
+offset_neg   goal=True  t_goal=9.359999999999795 final=0.007m min=0.007m collisions=0 toppled=False steps=493 wall=63.9s
+delay_100    goal=True  t_goal=6.5599999999995 final=0.006m min=0.005m collisions=0 toppled=False steps=354 wall=50.3s
+delay_200    goal=True  t_goal=10.060000000000029 final=0.016m min=0.006m collisions=46 toppled=False steps=528 wall=73.3s
+combo        goal=True  t_goal=9.639999999999889 final=0.017m min=0.005m collisions=44 toppled=False steps=507 wall=73.9s
+observed failures: none

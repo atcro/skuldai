@@ -1,0 +1,27 @@
+{
+  "gate": "G05",
+  "kind": "mujoco_smoke",
+  "mujoco_version": "3.17.0",
+  "numpy_version": "2.5.4",
+  "scene": "/home/kang/src/mujoco_menagerie/franka_emika_panda/scene.xml",
+  "nq": 9,
+  "nv": 9,
+  "nu": 8,
+  "timestep_s": 0.002,
+  "time_after_100_steps_s": 0.20000000000000015,
+  "joint1_delta_rad_after_command": 2.8972136456094337,
+  "actuator_changes_state": true,
+  "render": {
+    "attempted": true,
+    "ok": true,
+    "error": null,
+    "gl": "egl",
+    "shape": [
+      240,
+      320,
+      3
+    ],
+    "mean_intensity": 90.10045138888889,
+    "png": "/mnt/c/Skuld/evidence/G05/panda-frame.png"
+  }
+}
