@@ -16,6 +16,7 @@ Status precedence: INVALID > SAFETY_FAIL > TASK_FAIL | TIMEOUT > PASS.
 
 from __future__ import annotations
 
+import gzip
 import json
 import math
 from dataclasses import dataclass, field
@@ -284,8 +285,12 @@ def load_trajectory(path: str | Path) -> Trajectory | str:
     """Parse a trajectory file. Returns the Trajectory, or a reason string if it is unusable."""
     p = Path(path)
     try:
-        raw = p.read_text(encoding="utf-8")
-    except OSError as e:
+        if p.suffix == ".gz":
+            with gzip.open(p, "rt", encoding="utf-8") as fh:
+                raw = fh.read()
+        else:
+            raw = p.read_text(encoding="utf-8")
+    except (OSError, EOFError) as e:
         return f"unreadable artifact: {e}"
     try:
         data = json.loads(raw)

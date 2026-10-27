@@ -1,8 +1,14 @@
 """Run one closed-loop episode: observe -> act -> step, with telemetry and video.
 
-The goal check here is a *provisional* convenience for G05 so a run can be
-labelled on the spot. The authoritative verdict comes from the deterministic
-oracle (G06) applied to the saved Trajectory against an approved TestSpec.
+The goal check here is a *provisional* convenience so a run can be labelled on
+the spot. The authoritative verdict comes from the deterministic oracle (G06)
+applied to the saved Trajectory against an approved TestSpec.
+
+Every episode is recorded for the full `max_time_s` (the spec deadline). The
+runner never stops early: the first G07 attempt showed that cutting the
+recording after the goal made verdicts depend on where the cut fell (a block
+still sliding, an arm still re-approaching). The oracle judges the state at
+the deadline, and nothing else.
 """
 
 from __future__ import annotations
@@ -56,7 +62,6 @@ def run_episode(
     max_time_s: float = 15.0,
     goal_radius_m: float = S.TARGET_RADIUS_M,
     hold_steps: int = 25,
-    settle_time_after_goal_s: float = 0.5,
     video_path: str | Path | None = None,
     fps: int = 25,
 ) -> EpisodeRun:
@@ -79,7 +84,6 @@ def run_episode(
     min_dist = float("inf")
     collision_steps = 0
     toppled = False
-    settle_until: float | None = None
 
     try:
         while adapter.sim_time < max_time_s:
@@ -100,14 +104,11 @@ def run_episode(
                 if in_goal_run >= hold_steps and not reached:
                     reached = True
                     time_to_goal = step.sim_time_s
-                    settle_until = step.sim_time_s + settle_time_after_goal_s
             else:
                 in_goal_run = 0
 
             if writer is not None and step.step % frame_every == 0:
                 writer.write(adapter.render_frame())
-            if settle_until is not None and step.sim_time_s >= settle_until:
-                break
     finally:
         frames = writer.close() if writer is not None else 0
         adapter.terminate()

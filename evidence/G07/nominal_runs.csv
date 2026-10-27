@@ -1,0 +1,4 @@
+index,scenario_id,seed,object_offset_m,object_mass_kg,friction_coefficient,observation_delay_ms,status,valid_failure,distance_from_nominal,robustness_m,first_violation,violation_step,wallclock_s,trajectory_sha256_source
+0,nominal-s0,0,0.0,0.1,0.6,0.0,PASS,False,0.0,0.0342,,,0.454,manifest.json
+1,nominal-s1,1,0.0,0.1,0.6,0.0,PASS,False,0.0,0.0342,,,0.464,manifest.json
+2,nominal-s2,2,0.0,0.1,0.6,0.0,PASS,False,0.0,0.0342,,,0.439,manifest.json

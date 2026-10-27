@@ -205,6 +205,12 @@ class MuJoCoPushAdapter(SimulatorAdapter):
         return self.data.xpos[self._block_body].copy()
 
     @property
+    def block_vel(self) -> np.ndarray:
+        """Linear velocity of the block's free joint, world frame, m/s."""
+        assert self.data is not None
+        return self.data.qvel[self._block_dof : self._block_dof + 3].copy()
+
+    @property
     def ee_pos(self) -> np.ndarray:
         assert self.data is not None
         return self.data.site_xpos[self._ee_site].copy()
@@ -254,6 +260,7 @@ class MuJoCoPushAdapter(SimulatorAdapter):
         self._grip_act = name2id(m, obj.mjOBJ_ACTUATOR, S.GRIPPER_ACTUATOR)
         block_joint = name2id(m, obj.mjOBJ_JOINT, S.BLOCK_JOINT)
         self._block_qpos = int(m.jnt_qposadr[block_joint])
+        self._block_dof = int(m.jnt_dofadr[block_joint])
         arm_joints = [name2id(m, obj.mjOBJ_JOINT, n) for n in S.ARM_JOINTS]
         self._arm_qpos = np.array([m.jnt_qposadr[j] for j in arm_joints])
         self._arm_dof = np.array([m.jnt_dofadr[j] for j in arm_joints])

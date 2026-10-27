@@ -1,0 +1,56 @@
+{
+  "gate": "G07",
+  "protocol_sha256": "6c2b89e735255c64cb358e716aed453debff5d3be30759e5620a73872486c909",
+  "spec_sha256": "0078d5522508b17c830546c7ecc136e40dcc3b4b1674987c8d81ede4239529aa",
+  "spec_approved_by": "Adam Crozier",
+  "policy_id": "push-dls-ik-v1",
+  "policy_source_sha256": "528a4cf61bd74775d8d896b1bf2aa0181b2dc2572f4776e23dd2a415c4baea9f",
+  "scene_sha256": "66b5b39e65dbe6366486019e744c4c45c12b296de92eff40e495f9b7fb463f35",
+  "sim": "mujoco 3.17.0",
+  "nominal": {
+    "runs": 3,
+    "statuses": [
+      "PASS",
+      "PASS",
+      "PASS"
+    ],
+    "bit_identical": true
+  },
+  "random_baseline": {
+    "episodes_to_first_valid_failure": 16,
+    "valid_failures_within_budget": 3,
+    "min_distance_from_nominal_among_valid_failures": 0.8846445254130554,
+    "wallclock_s_to_first_valid_failure": 8.81,
+    "budget_n_random": 25,
+    "status_counts": {
+      "PASS": 22,
+      "SAFETY_FAIL": 3
+    },
+    "total_wallclock_s": 14.1,
+    "mean_wallclock_s_per_episode": 0.56
+  },
+  "spot_checks": [
+    {
+      "label": "first_valid_failure",
+      "scenario_id": "rand-015",
+      "bit_identical": true,
+      "same_verdict": true,
+      "status": "SAFETY_FAIL"
+    },
+    {
+      "label": "first_pass",
+      "scenario_id": "rand-000",
+      "bit_identical": true,
+      "same_verdict": true,
+      "status": "PASS"
+    }
+  ],
+  "video": {
+    "scenario_id": "rand-015",
+    "path": "first_random_failure.mp4",
+    "frames": 376,
+    "status": "SAFETY_FAIL",
+    "wallclock_s": 114.1
+  },
+  "artifact_count": 71
+}

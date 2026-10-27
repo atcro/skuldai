@@ -1,0 +1,144 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "protocol_id": "skuld-push-protocol",
+  "version": 1,
+  "domain": {
+    "schema_version": "skuld.schemas.v1",
+    "domain_id": "push-v1",
+    "variables": [
+      {
+        "name": "object_offset_m",
+        "unit": "m",
+        "nominal": 0.0,
+        "min": -0.1,
+        "max": 0.1,
+        "weight": 1.0
+      },
+      {
+        "name": "object_mass_kg",
+        "unit": "kg",
+        "nominal": 0.1,
+        "min": 0.05,
+        "max": 0.5,
+        "weight": 1.0
+      },
+      {
+        "name": "friction_coefficient",
+        "unit": "1",
+        "nominal": 0.6,
+        "min": 0.2,
+        "max": 1.0,
+        "weight": 1.0
+      },
+      {
+        "name": "observation_delay_ms",
+        "unit": "ms",
+        "nominal": 0.0,
+        "min": 0.0,
+        "max": 200.0,
+        "weight": 1.0
+      }
+    ],
+    "distance_fn": "weighted_normalized_l2"
+  },
+  "spec_ref": "push-block-v1",
+  "spec_sha256": "0078d5522508b17c830546c7ecc136e40dcc3b4b1674987c8d81ede4239529aa",
+  "policy_ref": "push-dls-ik-v1",
+  "seeds": {
+    "nominal": [
+      0,
+      1,
+      2
+    ],
+    "regression": [],
+    "held_out": [
+      1000,
+      1001,
+      1002,
+      1003,
+      1004
+    ]
+  },
+  "sampler_seeds": {
+    "random_baseline": 20261026,
+    "active_search": 20261027,
+    "held_out_configs": 1000
+  },
+  "budget": {
+    "n_nominal": 3,
+    "n_random": 25,
+    "n_active": 25
+  },
+  "held_out_configs": [
+    {
+      "schema_version": "skuld.schemas.v1",
+      "scenario_id": "heldout-000",
+      "domain_ref": "push-v1",
+      "values": {
+        "object_offset_m": 0.004277147595012548,
+        "object_mass_kg": 0.32172883115284834,
+        "friction_coefficient": 0.5767534378578032,
+        "observation_delay_ms": 40.649588508935764
+      },
+      "seed": 1000
+    },
+    {
+      "schema_version": "skuld.schemas.v1",
+      "scenario_id": "heldout-001",
+      "domain_ref": "push-v1",
+      "values": {
+        "object_offset_m": 0.005751805124010523,
+        "object_mass_kg": 0.13596632603635495,
+        "friction_coefficient": 0.4252364789134814,
+        "observation_delay_ms": 150.7363104383188
+      },
+      "seed": 1001
+    },
+    {
+      "schema_version": "skuld.schemas.v1",
+      "scenario_id": "heldout-002",
+      "domain_ref": "push-v1",
+      "values": {
+        "object_offset_m": 0.01033435534624283,
+        "object_mass_kg": 0.43867493406877484,
+        "friction_coefficient": 0.8442977767247375,
+        "observation_delay_ms": 49.67453264122776
+      },
+      "seed": 1002
+    },
+    {
+      "schema_version": "skuld.schemas.v1",
+      "scenario_id": "heldout-003",
+      "domain_ref": "push-v1",
+      "values": {
+        "object_offset_m": -0.06202851758369195,
+        "object_mass_kg": 0.4927980118514774,
+        "friction_coefficient": 0.7359977327569858,
+        "observation_delay_ms": 56.076565995757676
+      },
+      "seed": 1003
+    },
+    {
+      "schema_version": "skuld.schemas.v1",
+      "scenario_id": "heldout-004",
+      "domain_ref": "push-v1",
+      "values": {
+        "object_offset_m": -0.059217353145159746,
+        "object_mass_kg": 0.33127910845360437,
+        "friction_coefficient": 0.7220834526896447,
+        "observation_delay_ms": 179.761505749693
+      },
+      "seed": 1004
+    }
+  ],
+  "primary_metrics": [
+    "episodes_to_first_valid_failure (lower is better; null if none within budget)",
+    "valid_failures_within_budget (TASK_FAIL + SAFETY_FAIL only; INVALID, TIMEOUT and EXEC_ERROR are excluded)",
+    "min_distance_from_nominal_among_valid_failures (domain.distance; lower is better)",
+    "wallclock_s_to_first_valid_failure",
+    "curve: valid_failures_found vs cumulative_episodes",
+    "curve: running_min_distance vs cumulative_episodes"
+  ],
+  "locked_at": "2026-10-27T02:45:00Z",
+  "notes": "Simulator and policy are deterministic (G05 bit-identical replay), so a scenario fails 0 or 1 times out of 1; repeat counts add no information and are not run. Three nominal runs confirm the policy is worth testing and re-confirm determinism. Held-out configurations are reserved for release evaluation (G11) and are excluded from search and repair. Distance weights are all 1.0 (published in domain)."
+}

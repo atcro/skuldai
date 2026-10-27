@@ -1,0 +1,505 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "manifest_id": "g07-evidence",
+  "correlation_id": "g07-6c2b89e73525",
+  "created_at": "2026-10-27T03:00:52.542518Z",
+  "entries": [
+    {
+      "path": "first_random_failure.mp4",
+      "sha256": "d1c9d9390a5385de1a858c8468ba357c69152e12f1123e882f0d3baa571b6a8f",
+      "size_bytes": 488663,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "g07_run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "heldout_configs.json",
+      "sha256": "d70aee24e5d8a2f11bb66b1b057c14690739293c854867b159da1b8c7e8d46fb",
+      "size_bytes": 1722,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "metrics.json",
+      "sha256": "c6797cc5a2d64a20213733e974a97bc8b66d29f90e0472637154406db4085caf",
+      "size_bytes": 355,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "nominal/nominal-s0.result.json",
+      "sha256": "39ea164611d03395f52ef175c504f8edbb4942a11e54619fcee5afb297d7725d",
+      "size_bytes": 626,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "nominal/nominal-s0.trajectory.json.gz",
+      "sha256": "98c8c07802d989db4b06b4602e369d9c12463ceab9062f050261d8aab0792f83",
+      "size_bytes": 293603,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "nominal/nominal-s1.result.json",
+      "sha256": "600429c2406e1174998a40df2b99fd836e3b94afe9aef0e861385d9799db2528",
+      "size_bytes": 625,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "nominal/nominal-s1.trajectory.json.gz",
+      "sha256": "d2da5deb056059a89b41ec09d39768f3061884cee4a0d290221ab771e0588755",
+      "size_bytes": 293604,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "nominal/nominal-s2.result.json",
+      "sha256": "ea7fd9147104b214b0468b9d12371fcb49de8c1d77230d42a849a871e1356ca6",
+      "size_bytes": 626,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "nominal/nominal-s2.trajectory.json.gz",
+      "sha256": "f4845d252e4c542e7333fe42c322f3d659e9e3d01f30e457a44295fa05b1badf",
+      "size_bytes": 293604,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "nominal_runs.csv",
+      "sha256": "166b5cb2e5147ce68b6f8666571896f75df8b7f696d4831122300e8c2376e57d",
+      "size_bytes": 449,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "policy_manifest.json",
+      "sha256": "fd94b6db423fc3b28d8975dd63e08e5e07319559e9be15b98a93e234995ed6b5",
+      "size_bytes": 443,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "protocol.json",
+      "sha256": "bed4bc677a838aad20e17ff877aad7780036bb8e01c65b5c90bf1bfa5d68acc9",
+      "size_bytes": 4222,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "protocol_sha256.txt",
+      "sha256": "38cba981543c7f55d8c6b83c232e31dd03e62ded94f09ecd70c8ceaec7535cd2",
+      "size_bytes": 65,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-000.result.json",
+      "sha256": "e3c0690211db4ebdf642f205c31129eeb92f26813a8e788ad670d3be7925efea",
+      "size_bytes": 631,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-000.trajectory.json.gz",
+      "sha256": "cbdf4c9ff2887d159fb07bd868512238dad1b5af1bf0981358e1d11fa7688d66",
+      "size_bytes": 362516,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-001.result.json",
+      "sha256": "d0f02e2afb0b609726c7ca64c280de5297fa13d2692df6c56b29026a4b663d52",
+      "size_bytes": 631,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-001.trajectory.json.gz",
+      "sha256": "98c9e461ac78d522470cf180eedffe124db69f57a3de0232f7a39d0b2b275de6",
+      "size_bytes": 319239,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-002.result.json",
+      "sha256": "77fae924d4a5b46c97753e82b398f7528a6b9aa684ed5bc42db900e4ff3e12ec",
+      "size_bytes": 631,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-002.trajectory.json.gz",
+      "sha256": "128b2746814e7fb945fdfc166bf77f1bc62f72b9771bd0ccb131fe66a88347be",
+      "size_bytes": 344946,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-003.result.json",
+      "sha256": "56292666a2b7b3d0a3fc7d58f76e74de3e2cd43da00e949d4e1abb818c4a7860",
+      "size_bytes": 630,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-003.trajectory.json.gz",
+      "sha256": "e87dffd6e28e2d1fc8132705a74860b2b6486b7be91f30739093eb3ca13a7370",
+      "size_bytes": 350944,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-004.result.json",
+      "sha256": "7f3e1da3ba62cb6a0ee685c8ea79c3c34c8211f87209337f6f05bf9bb139ff0f",
+      "size_bytes": 631,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-004.trajectory.json.gz",
+      "sha256": "40fc3b056250d3e532ca12f12d690b6986c9dc5f7953b828d9bca1b2416c1574",
+      "size_bytes": 356254,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-005.result.json",
+      "sha256": "69bce1ee681c2ae49e6d24c85ff93f7992dc87053d6eff95082b4b2ff88e14c1",
+      "size_bytes": 630,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-005.trajectory.json.gz",
+      "sha256": "7750c398f632848490d6c98c450e8e6c98b29bf2e46c8672f38b053f5244b839",
+      "size_bytes": 344240,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-006.result.json",
+      "sha256": "f2eb8e10d3a1f416d727ad4837a30299a4f545d4bff16109ef9ba7624a254eb2",
+      "size_bytes": 631,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-006.trajectory.json.gz",
+      "sha256": "6cba16604a5508ecef78a7900dd34a8ebf05e2e3bbe60542d4961cf0cdaf89ba",
+      "size_bytes": 302500,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-007.result.json",
+      "sha256": "bc0817b36c753872cceca394119575af2712892d3a6d6958099538d2735ed710",
+      "size_bytes": 631,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-007.trajectory.json.gz",
+      "sha256": "1b15aa29c73bd32fabb7c78fede784f319b0babab8800b9b7e9316da976c57c0",
+      "size_bytes": 315366,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-008.result.json",
+      "sha256": "24c3f18b7fd0a87a0351190eaaa77a0fc6bf2777cd8c2edef6dfab215d41f0ca",
+      "size_bytes": 631,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-008.trajectory.json.gz",
+      "sha256": "61e3f7e75e75a164e7d82f724327a57b563b7a3e7899dfccedbe848aacae7cb5",
+      "size_bytes": 300603,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-009.result.json",
+      "sha256": "05a51516d195239b58e076d0f25188e588fb36e68236769717d12b86d52d66dd",
+      "size_bytes": 630,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-009.trajectory.json.gz",
+      "sha256": "e55eb4de48dd2d06a0bec6983a7ba4a4427377fafb3eb187b1948e5d48d88836",
+      "size_bytes": 358632,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-010.result.json",
+      "sha256": "ef3069c9c685bb0c09344ac7f8397b3d8079c365a3d420b5be23871a271aa610",
+      "size_bytes": 633,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-010.trajectory.json.gz",
+      "sha256": "d4a9942e23a7fae4563eca23d8efd16eeb9f81a0f2df85695aace5618be5e0df",
+      "size_bytes": 356289,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-011.result.json",
+      "sha256": "ad42ae6236e1fbd9c839e370945f8510374b4fabcde2ed5173361df5ebea5aa9",
+      "size_bytes": 632,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-011.trajectory.json.gz",
+      "sha256": "31ce8689606f9af5b891b4f40d2a0f78abdddfcd69907536dbbd644a75858fee",
+      "size_bytes": 337314,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-012.result.json",
+      "sha256": "3a7239c5c217427cec900538ad4e2e5a17a7cba8b20333964d2d81a06dfaa010",
+      "size_bytes": 632,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-012.trajectory.json.gz",
+      "sha256": "5b49e6d802f38b2948e45225223d5a1618b47407b9317819de2694e9f463daed",
+      "size_bytes": 358035,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-013.result.json",
+      "sha256": "a4f93013eed7b7103a25a66a2ff15a59c7947e52cfef62313395f828a5c70cc5",
+      "size_bytes": 632,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-013.trajectory.json.gz",
+      "sha256": "2b4c7d306399c49b8a9fdbdfaf25c3bf66750200b2a7f3a8e9d14957508adfcc",
+      "size_bytes": 339198,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-014.result.json",
+      "sha256": "ec6ecc426d0846f14bc9c8ab4cf3a215684d6937333ff021207ea93a696ea67e",
+      "size_bytes": 632,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-014.trajectory.json.gz",
+      "sha256": "f6cf15494bc81208e2b3f2d1205e3b94f090059d0e69c725a10abb839fe78e7f",
+      "size_bytes": 353192,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-015.result.json",
+      "sha256": "f5a2605077d31c059c682820423447a10b36dfecbf2a775d7db76c5e2849053b",
+      "size_bytes": 924,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-015.trajectory.json.gz",
+      "sha256": "d1d8a8ae00ec1e858aaf63f261c9ecc0d58ac288dab67a8639077cc5234227a3",
+      "size_bytes": 354561,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-016.result.json",
+      "sha256": "3f984ce32cced1dffeea5c55a30d41e2f8823cc293f23f1b90351566dedeab06",
+      "size_bytes": 926,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-016.trajectory.json.gz",
+      "sha256": "ab18a50c587995ed2fa2f32f52a1b3b49d5f0da3cb1064457f2cebcc12268cdb",
+      "size_bytes": 370802,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-017.result.json",
+      "sha256": "91c648c0ba1a525acf9688cc07c2408b31518f22befea4e8eee59807832e6a6f",
+      "size_bytes": 632,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-017.trajectory.json.gz",
+      "sha256": "a2055f8915570294da644d95a6977243e00bf02390aa68db498a581ae0323d82",
+      "size_bytes": 312710,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-018.result.json",
+      "sha256": "ca7e795560ea8d3b01ad1a9c5bd78ebe32138ec356f0c2753c3cfaf14b81b284",
+      "size_bytes": 632,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-018.trajectory.json.gz",
+      "sha256": "601a028b1665e521dcdaff08ad01fb638803f535d526147ebc6e6dc865bcbd06",
+      "size_bytes": 351150,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-019.result.json",
+      "sha256": "38e76fea1ab5c4b3e6618afe8565a8c50a0a0c5a99742a64b7f6e175ca00b605",
+      "size_bytes": 631,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-019.trajectory.json.gz",
+      "sha256": "c45e59ca57100127285d4c3c77bb29157d0e75e3f042152f59d1e10526c02e2a",
+      "size_bytes": 328697,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-020.result.json",
+      "sha256": "7f933dbb852cf4508283c2954f76b1030acaf232b6f48bfed8a2bedbade2781d",
+      "size_bytes": 633,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-020.trajectory.json.gz",
+      "sha256": "57d1451e7434436634d0712994e299e965cd123a20f49c6c913aef2fd44733f1",
+      "size_bytes": 298971,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-021.result.json",
+      "sha256": "db4ae6682da37c4f337ae0ea595f63d76b831e8ec9c56b527cbba40f5e24c274",
+      "size_bytes": 631,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-021.trajectory.json.gz",
+      "sha256": "4b0522c778d5a8ad12c0167f229f010822ecb35a99c1ffae6c0f18f741184d61",
+      "size_bytes": 292510,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-022.result.json",
+      "sha256": "17b16bd92bb07c18652987450f95b3eec88dcd21ed7a15a2cf7f30fcabe2a156",
+      "size_bytes": 632,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-022.trajectory.json.gz",
+      "sha256": "d360a70304baf084c8b763a33939bc4330c8e983a211b8fb68df9780c823baca",
+      "size_bytes": 329986,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-023.result.json",
+      "sha256": "337f893ae1868b21c7dbcded82095f8795ba090c97510a4cb9aa4aaea60d6d57",
+      "size_bytes": 631,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-023.trajectory.json.gz",
+      "sha256": "1c2f655e0f0606e40adfbe64d6d82127cbce03127466dd6b0e8a4863392c6f69",
+      "size_bytes": 298220,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random/rand-024.result.json",
+      "sha256": "2433e873f86a22406c561c61c83c7de93c005284a233b9f63b587bcb0e762422",
+      "size_bytes": 924,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random/rand-024.trajectory.json.gz",
+      "sha256": "f05e5602d58c4e307b178cfa64ae930f1274356283571b6c94cbd7645a191b67",
+      "size_bytes": 356502,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "random_baseline.csv",
+      "sha256": "eb647fc81846ffc19720798ed470a4b0e4bc6e8213ee26853b42f873c8b96d48",
+      "size_bytes": 2854,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "random_baseline_curve.csv",
+      "sha256": "985e85b1c30d83454be7cb8422c0921b9b195d6f853d96c548ddaff249fc719b",
+      "size_bytes": 560,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "spotcheck/rand-000.result.json",
+      "sha256": "4cb3c443a27466aaba7fe24f2b73da715bc3eff262f730b45cead44c5f817fc1",
+      "size_bytes": 634,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "spotcheck/rand-000.trajectory.json.gz",
+      "sha256": "0162bea678cb07b55a4992f356807781d839480a523eecada34f410346265c5a",
+      "size_bytes": 362516,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "spotcheck/rand-015.result.json",
+      "sha256": "e68612aad1a83ee33eaf68d97456bac3f928f499e828bf4b3fab3cb45fd79954",
+      "size_bytes": 927,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "spotcheck/rand-015.trajectory.json.gz",
+      "sha256": "0dfa353f26c7338a9d3714f5c911c35471f6bc246a614d32f878cb2806181d4b",
+      "size_bytes": 354561,
+      "producer": "scripts/g07_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "tests-sim-venv.txt",
+      "sha256": "0b5565f09b9dbc1f8cd607fafae36d970f7b5020b3f3532454e9800ec80fe253",
+      "size_bytes": 99,
+      "producer": "scripts/g07_run.py",
+      "kind": "derived"
+    }
+  ]
+}
