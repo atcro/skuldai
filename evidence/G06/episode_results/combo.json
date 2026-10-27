@@ -1,0 +1,26 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "episode_id": "traj-combo-s0",
+  "scenario_ref": "combo",
+  "policy_ref": "push-dls-ik-v1",
+  "spec_ref": "push-block-v1",
+  "status": "SAFETY_FAIL",
+  "violations": [
+    {
+      "kind": "safety",
+      "rule": "NEVER collision",
+      "step": 144,
+      "measured": 18.280891062783855,
+      "limit": null,
+      "detail": "finger in contact with the floor: world/floor vs left_finger/68 at t=2.900 s; 44 control steps with forbidden contact"
+    }
+  ],
+  "robustness": 0.023183228615334808,
+  "distance_from_nominal": 1.224744871391589,
+  "wallclock_s": 73.94083256700105,
+  "artifact_uris": [
+    "evidence/G05/combo.trajectory.json"
+  ],
+  "correlation_id": "traj-combo-s0",
+  "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=9.64; min_distance_m=0.0046; max_contact_normal_n=21.06 (reported, no limit claimed)"
+}

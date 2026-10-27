@@ -1,0 +1,192 @@
+{
+  "gate": "G06",
+  "spec_ref": "push-block-v1",
+  "spec_sha256": "3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85",
+  "spec_approved_by": null,
+  "target_xy_m": [
+    0.45,
+    0.15
+  ],
+  "g05_scene_sha256": "66b5b39e65dbe6366486019e744c4c45c12b296de92eff40e495f9b7fb463f35",
+  "policy_id": "push-dls-ik-v1",
+  "episodes": [
+    {
+      "episode": "nominal",
+      "status": "PASS",
+      "valid_failure": false,
+      "violations": [],
+      "robustness_m": 0.034143374958557474,
+      "distance_from_nominal": 0.0,
+      "artifact_sha256": "486034387d3cbfb18c9e0a70dc6d60c222349ecb97cf09589437079e993d99f1",
+      "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=6.68; min_distance_m=0.0059; max_contact_normal_n=2.19 (reported, no limit claimed)"
+    },
+    {
+      "episode": "nominal_replay",
+      "status": "PASS",
+      "valid_failure": false,
+      "violations": [],
+      "robustness_m": 0.034143374958557474,
+      "distance_from_nominal": 0.0,
+      "artifact_sha256": "486034387d3cbfb18c9e0a70dc6d60c222349ecb97cf09589437079e993d99f1",
+      "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=6.68; min_distance_m=0.0059; max_contact_normal_n=2.19 (reported, no limit claimed)"
+    },
+    {
+      "episode": "heavy",
+      "status": "PASS",
+      "valid_failure": false,
+      "violations": [],
+      "robustness_m": 0.009809993064091149,
+      "distance_from_nominal": 0.888888888888889,
+      "artifact_sha256": "5d20c71671f5eec3432fc92236a0c0841d93c4d340a5c9c67b109734b6fc8893",
+      "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=6.74; min_distance_m=0.0204; max_contact_normal_n=9.44 (reported, no limit claimed)"
+    },
+    {
+      "episode": "slippery",
+      "status": "PASS",
+      "valid_failure": false,
+      "violations": [],
+      "robustness_m": 0.03255372167996598,
+      "distance_from_nominal": 0.49999999999999994,
+      "artifact_sha256": "7e6d772a1692d78c8a856223eb523810ee728b0c85cb0c9639ea99d72e9e87dd",
+      "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=6.68; min_distance_m=0.0074; max_contact_normal_n=0.93 (reported, no limit claimed)"
+    },
+    {
+      "episode": "sticky",
+      "status": "PASS",
+      "valid_failure": false,
+      "violations": [],
+      "robustness_m": 0.032661928950928794,
+      "distance_from_nominal": 0.5,
+      "artifact_sha256": "acbb424e6e135a5d2c5318c30332e9d71c6ab6f625e8dccbd639382241a02c8a",
+      "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=6.80; min_distance_m=0.0073; max_contact_normal_n=2.69 (reported, no limit claimed)"
+    },
+    {
+      "episode": "offset_pos",
+      "status": "PASS",
+      "valid_failure": false,
+      "violations": [],
+      "robustness_m": 0.03406751181490985,
+      "distance_from_nominal": 0.5,
+      "artifact_sha256": "6086b3c1b8f4b0d64d6b338be569671f3b0d7e7a6809612af6a9c48e2a63188f",
+      "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=9.20; min_distance_m=0.0059; max_contact_normal_n=2.54 (reported, no limit claimed)"
+    },
+    {
+      "episode": "offset_neg",
+      "status": "PASS",
+      "valid_failure": false,
+      "violations": [],
+      "robustness_m": 0.03341511990888626,
+      "distance_from_nominal": 0.5,
+      "artifact_sha256": "ee1ae959feaee70453e7a84db9e009998e2a93023b715091aa60cdbdeaf9d291",
+      "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=9.36; min_distance_m=0.0066; max_contact_normal_n=2.94 (reported, no limit claimed)"
+    },
+    {
+      "episode": "delay_100",
+      "status": "PASS",
+      "valid_failure": false,
+      "violations": [],
+      "robustness_m": 0.034369300653382326,
+      "distance_from_nominal": 0.5,
+      "artifact_sha256": "c6afa4789e0fc759daf2346fff79b77a730787f8d6dcdb990fff765fa979eff5",
+      "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=6.56; min_distance_m=0.0046; max_contact_normal_n=2.15 (reported, no limit claimed)"
+    },
+    {
+      "episode": "delay_200",
+      "status": "SAFETY_FAIL",
+      "valid_failure": true,
+      "violations": [
+        {
+          "kind": "safety",
+          "rule": "NEVER collision",
+          "step": 180,
+          "measured": 28.224605635132505,
+          "limit": null,
+          "detail": "finger in contact with the floor: world/floor vs left_finger/68 at t=3.620 s; 46 control steps with forbidden contact"
+        }
+      ],
+      "robustness_m": 0.023689889393691436,
+      "distance_from_nominal": 1.0,
+      "artifact_sha256": "6dc81d55162ac203386f9d0b59e8ae552d91d7f10975ebe7ca18900a600f5fbf",
+      "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=10.06; min_distance_m=0.0056; max_contact_normal_n=28.74 (reported, no limit claimed)"
+    },
+    {
+      "episode": "combo",
+      "status": "SAFETY_FAIL",
+      "valid_failure": true,
+      "violations": [
+        {
+          "kind": "safety",
+          "rule": "NEVER collision",
+          "step": 144,
+          "measured": 18.280891062783855,
+          "limit": null,
+          "detail": "finger in contact with the floor: world/floor vs left_finger/68 at t=2.900 s; 44 control steps with forbidden contact"
+        }
+      ],
+      "robustness_m": 0.023183228615334808,
+      "distance_from_nominal": 1.224744871391589,
+      "artifact_sha256": "5ecbe9baf4ca5a13150e8873f154a1fbfb35f19e2eb38a26038a92441ac19310",
+      "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=9.64; min_distance_m=0.0046; max_contact_normal_n=21.06 (reported, no limit claimed)"
+    }
+  ],
+  "fault_injection": [
+    {
+      "file": "truncated.json",
+      "status": "INVALID",
+      "expected": "INVALID",
+      "as_expected": true,
+      "detail": "corrupt artifact (not JSON): Unterminated string starting at at pos 271992"
+    },
+    {
+      "file": "missing_value.json",
+      "status": "INVALID",
+      "expected": "INVALID",
+      "as_expected": true,
+      "detail": "schema violation at steps.50.qpos.0: Input should be a valid number"
+    },
+    {
+      "file": "block_below_floor.json",
+      "status": "INVALID",
+      "expected": "INVALID",
+      "as_expected": true,
+      "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; object z=-0.5000 m at step 50 is physically impossible"
+    },
+    {
+      "file": "timebase_jump.json",
+      "status": "INVALID",
+      "expected": "INVALID",
+      "as_expected": true,
+      "detail": "schema violation at steps: Value error, sim_time_s decreases at step 101"
+    },
+    {
+      "file": "injected_verdict_field.json",
+      "status": "INVALID",
+      "expected": "INVALID",
+      "as_expected": true,
+      "detail": "schema violation at oracle_verdict: Extra inputs are not permitted"
+    },
+    {
+      "file": "truncated_run.json",
+      "status": "TIMEOUT",
+      "expected": "TIMEOUT",
+      "as_expected": true,
+      "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; min_distance_m=0.3000; max_contact_normal_n=0.26 (reported, no limit claimed); recording ends at 2.00 s, before the 15.0 s deadline, without the goal: TIMEOUT (inconclusive)"
+    },
+    {
+      "file": "<no artifact>",
+      "status": "EXEC_ERROR",
+      "expected": "EXEC_ERROR",
+      "as_expected": true,
+      "detail": "simulated: job status unknown"
+    }
+  ],
+  "status_counts": {
+    "PASS": 8,
+    "TASK_FAIL": 0,
+    "SAFETY_FAIL": 2,
+    "INVALID": 0,
+    "TIMEOUT": 0,
+    "EXEC_ERROR": 0
+  },
+  "all_faults_fail_closed": true
+}

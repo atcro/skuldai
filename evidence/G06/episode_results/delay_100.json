@@ -1,0 +1,17 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "episode_id": "traj-delay_100-s0",
+  "scenario_ref": "delay_100",
+  "policy_ref": "push-dls-ik-v1",
+  "spec_ref": "push-block-v1",
+  "status": "PASS",
+  "violations": [],
+  "robustness": 0.034369300653382326,
+  "distance_from_nominal": 0.5,
+  "wallclock_s": 50.33419336999941,
+  "artifact_uris": [
+    "evidence/G05/delay_100.trajectory.json"
+  ],
+  "correlation_id": "traj-delay_100-s0",
+  "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=6.56; min_distance_m=0.0046; max_contact_normal_n=2.15 (reported, no limit claimed)"
+}

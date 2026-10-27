@@ -1,0 +1,18 @@
+nominal        PASS         []
+nominal_replay PASS         []
+heavy          PASS         []
+slippery       PASS         []
+sticky         PASS         []
+offset_pos     PASS         []
+offset_neg     PASS         []
+delay_100      PASS         []
+delay_200      SAFETY_FAIL  ['NEVER collision']
+combo          SAFETY_FAIL  ['NEVER collision']
+fault truncated.json               -> INVALID  (expected INVALID)
+fault missing_value.json           -> INVALID  (expected INVALID)
+fault block_below_floor.json       -> INVALID  (expected INVALID)
+fault timebase_jump.json           -> INVALID  (expected INVALID)
+fault injected_verdict_field.json  -> INVALID  (expected INVALID)
+fault truncated_run.json           -> TIMEOUT  (expected TIMEOUT)
+status counts: {'PASS': 8, 'TASK_FAIL': 0, 'SAFETY_FAIL': 2, 'INVALID': 0, 'TIMEOUT': 0, 'EXEC_ERROR': 0}
+faults fail closed: True

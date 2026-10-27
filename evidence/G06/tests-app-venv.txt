@@ -1,0 +1,4 @@
+.................................................                        [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_mujoco_adapter.py:14: could not import 'mujoco': No module named 'mujoco'
+49 passed, 1 skipped in 1.27s

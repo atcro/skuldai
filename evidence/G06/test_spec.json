@@ -1,0 +1,27 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "spec_id": "push-block",
+  "version": 1,
+  "task": "Franka Panda pushes a 4 cm cube from its start pose into a circular target region on the floor using closed fingertips, without touching the floor with the hand or fingers and without any arm link touching anything.",
+  "goal": {
+    "description": "Block centre within target_radius_m of the target centre in the horizontal plane for stability_steps consecutive control steps, the window completing no later than deadline_s after episode start, and the block still inside the target at the final recorded step.",
+    "target_radius_m": 0.04,
+    "stability_steps": 25
+  },
+  "deadline_s": 15.0,
+  "safety": {
+    "collision_forbidden": true,
+    "workspace_limits_m": [
+      0.0,
+      0.9,
+      -0.6,
+      0.6,
+      -0.01,
+      0.8
+    ],
+    "force_telemetry_available": false,
+    "force_limit_n": null
+  },
+  "approved_by": null,
+  "approved_at": null
+}

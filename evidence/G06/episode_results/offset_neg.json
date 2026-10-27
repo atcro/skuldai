@@ -1,0 +1,17 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "episode_id": "traj-offset_neg-s0",
+  "scenario_ref": "offset_neg",
+  "policy_ref": "push-dls-ik-v1",
+  "spec_ref": "push-block-v1",
+  "status": "PASS",
+  "violations": [],
+  "robustness": 0.03341511990888626,
+  "distance_from_nominal": 0.5,
+  "wallclock_s": 63.90457121399959,
+  "artifact_uris": [
+    "evidence/G05/offset_neg.trajectory.json"
+  ],
+  "correlation_id": "traj-offset_neg-s0",
+  "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=9.36; min_distance_m=0.0066; max_contact_normal_n=2.94 (reported, no limit claimed)"
+}

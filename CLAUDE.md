@@ -17,10 +17,12 @@ regression test, and blocks releases that fail. Built for the Nebius x NVIDIA
 Global AI Hackathon, Physical AI track.
 
 - **Deadline:** Fri 2026-10-30 10:00 AM PDT. Internal target: submit Thu 2026-10-29.
-- **Status (2026-10-26):** G01, G02 and G05 PASS (toolchain, contracts,
-  closed-loop MuJoCo Panda push with 4 perturbations, replay, video; 44 tests).
-  G00 BLOCKED on human Devpost confirmation. G03/G04 (credits, Nemotron) not
-  started. Current gate: G06 oracle. See the newest `docs/gates/G##_report.md`.
+- **Status (2026-10-26):** G01, G02, G05 and G06 PASS (toolchain, contracts,
+  closed-loop MuJoCo Panda push with 4 perturbations, replay, video,
+  deterministic oracle with fault injection; 49 tests). The push TestSpec is
+  PROVISIONAL until a human approves it. G00 BLOCKED on human Devpost
+  confirmation. G03/G04 (credits, Nemotron) not started. Current gate: G07
+  baseline. See the newest `docs/gates/G##_report.md`.
 - **Critical path:** closed-loop MuJoCo simulator -> deterministic oracle ->
   random baseline -> active search -> minimized reproducible counterexample ->
   fail-closed release gate -> verified sponsor integrations -> demo.
@@ -142,6 +144,7 @@ anything needing root goes in a script the human runs.
 - run api (EXECUTED 2026-10-26): `uvicorn skuld.api.main:app --host 127.0.0.1 --port 8765`, then `curl http://127.0.0.1:8765/health`
 - full G01 check (EXECUTED 2026-10-26): `scripts/g01_verify.sh`, writes `evidence/G01/`
 - full G02 check (EXECUTED 2026-10-26): `scripts/g02_verify.sh`, writes `evidence/G02/` and `requirements.lock.txt`
+- full G06 check (EXECUTED 2026-10-26): `scripts/g06_run.sh [--approved-by NAME]`; app venv, no MuJoCo; runs the oracle over `evidence/G05/*.trajectory.json` plus fault injection, writes `evidence/G06/`
 - inventory: `scripts/inventory_wsl.sh`
 - smoke tests: `python scripts/smoke_tavily.py` (needs `TAVILY_API_KEY` in `.env`); Token Factory smoke arrives in G04 from the pinned npa docs
 - simulator env (EXECUTED 2026-10-26): `~/.venvs/skuld-mujoco` with `skuld[dev,sim]`, created by `scripts/g05_setup.sh` (also sparse-clones the pinned Menagerie Panda to `~/src/mujoco_menagerie` and runs the EGL smoke test)

@@ -1,0 +1,17 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "episode_id": "traj-slippery-s0",
+  "scenario_ref": "slippery",
+  "policy_ref": "push-dls-ik-v1",
+  "spec_ref": "push-block-v1",
+  "status": "PASS",
+  "violations": [],
+  "robustness": 0.03255372167996598,
+  "distance_from_nominal": 0.49999999999999994,
+  "wallclock_s": 49.11553186200035,
+  "artifact_uris": [
+    "evidence/G05/slippery.trajectory.json"
+  ],
+  "correlation_id": "traj-slippery-s0",
+  "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=6.68; min_distance_m=0.0074; max_contact_normal_n=0.93 (reported, no limit claimed)"
+}
