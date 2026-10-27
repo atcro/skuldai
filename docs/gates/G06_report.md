@@ -13,8 +13,8 @@ evidence_paths:
   - evidence/G06/g06_run.log
   - evidence/G06/g06_oracle_report.json       # verdicts, violations, artifact hashes, fault-injection outcomes
   - evidence/G06/episode_results/<episode>.json   # one validated EpisodeResult per G05 trajectory
-  - evidence/G06/test_spec.json                # PUSH_SPEC_V1 as evaluated (approved_by null)
-  - evidence/G06/test_spec_sha256.txt          # 3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85
+  - evidence/G06/test_spec.json                # PUSH_SPEC_V1 as evaluated, approved_by Adam Crozier
+  - evidence/G06/test_spec_sha256.txt          # digest of the approved spec (see file)
 provider_run_ids: []
 actual_test_results:
   - 'ruff check .: All checks passed (exit 0)'
@@ -22,9 +22,8 @@ actual_test_results:
   - 'scripts/g06_run.py: 10 trajectories evaluated (8 PASS, 2 SAFETY_FAIL, 0 INVALID); 6 injected faults + 1 simulated infra failure all fail closed; exit 0'
 spend_approved: false
 approved_by: null
-blockers:
-  - 'PUSH_SPEC_V1 (spec_id push-block, version 1) has no human approval yet. Every verdict below is labelled PROVISIONAL. A human approves by re-running `scripts/g06_run.sh --approved-by "<name>"` or by setting approved_by/approved_at in skuld/oracle/specs.py. Thresholds do not change; only the label does.'
-next_action: 'Human approves PUSH_SPEC_V1 (or edits its thresholds first). Then G07: lock domain weights and seeds, 5 nominal runs, random baseline of 25 unrendered episodes, all judged by this oracle.'
+blockers: []
+next_action: 'G07: lock domain weights and seeds, nominal runs, random baseline of 25 unrendered episodes, all judged by this oracle.'
 ```
 
 ## What the oracle is (EXECUTED 2026-10-26)
@@ -51,7 +50,7 @@ consecutive control steps, the window completing no later than `deadline_s`,
 and the block still inside at the final recorded step. Robustness, when
 reported, is the grounded margin `target_radius_m - final_distance_m`.
 
-## Verdicts on the G05 trajectories (PROVISIONAL spec, see blockers)
+## Verdicts on the G05 trajectories
 
 | Episode | Oracle status | Goal time (s) | Robustness margin (m) | Violation |
 |---|---|---|---|---|
@@ -116,5 +115,8 @@ script and gitignored; outcomes are in the report JSON.
 
 ## Cost and approval
 
-No spend. No network. Human approval of the TestSpec is outstanding (see
-blockers); it is a label on thresholds already in the repo, not a cost.
+No spend. No network. PUSH_SPEC_V1 thresholds were approved by Adam Crozier
+in the working session on 2026-10-26 after reviewing the first (provisional)
+version of this report; the approval is recorded in `skuld/oracle/specs.py`
+and the evidence was regenerated with the approved spec. Any threshold change
+is version 2 and needs a new approval.

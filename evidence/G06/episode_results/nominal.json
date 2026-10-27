@@ -13,5 +13,5 @@
     "evidence/G05/nominal.trajectory.json"
   ],
   "correlation_id": "traj-nominal-s0",
-  "detail": "PROVISIONAL: spec not human-approved; spec_sha256=3ce3a692a21f7e444eb5f99c1b0885014317faa5231e6395f1e9a5b0482bad85; goal_time_s=6.68; min_distance_m=0.0059; max_contact_normal_n=2.19 (reported, no limit claimed)"
+  "detail": "spec_sha256=0078d5522508b17c830546c7ecc136e40dcc3b4b1674987c8d81ede4239529aa; goal_time_s=6.68; min_distance_m=0.0059; max_contact_normal_n=2.19 (reported, no limit claimed)"
 }

@@ -8,16 +8,16 @@ from __future__ import annotations
 
 import json
 import math
-from datetime import UTC, datetime
 from pathlib import Path
 
 import pytest
 
 from skuld.core.schemas import Contact, EpisodeStatus, Trajectory, TrajectoryStep, ViolationKind
 from skuld.oracle import evaluate as O
-from skuld.oracle.specs import PUSH_SPEC_V1, TARGET_XY_M, approve
+from skuld.oracle.specs import PUSH_SPEC_V1, TARGET_XY_M
 
-SPEC = approve(PUSH_SPEC_V1, "test-fixture", datetime(2026, 10, 26, tzinfo=UTC))
+SPEC = PUSH_SPEC_V1  # approved by a human on 2026-10-26
+UNAPPROVED = SPEC.model_copy(update={"approved_by": None, "approved_at": None})
 DT = 1.0 / 50.0
 START = (0.45, -0.15)
 SCENE_SHA = "0" * 64
@@ -177,12 +177,12 @@ def test_thresholds_come_only_from_the_spec() -> None:
     )
     # a spec nobody approved is refused unless the run is explicitly provisional
     with pytest.raises(O.UnapprovedSpecError):
-        O.evaluate(traj, PUSH_SPEC_V1, target_xy=TARGET_XY_M, distance_from_nominal=0.0)
+        O.evaluate(traj, UNAPPROVED, target_xy=TARGET_XY_M, distance_from_nominal=0.0)
     r = O.evaluate(
-        traj, PUSH_SPEC_V1, target_xy=TARGET_XY_M, distance_from_nominal=0.0, allow_unapproved=True
+        traj, UNAPPROVED, target_xy=TARGET_XY_M, distance_from_nominal=0.0, allow_unapproved=True
     )
     assert r.status is EpisodeStatus.PASS and r.detail.startswith("PROVISIONAL")
-    assert f"spec_sha256={PUSH_SPEC_V1.digest()}" in r.detail
+    assert f"spec_sha256={UNAPPROVED.digest()}" in r.detail
 
 
 def test_force_limit_needs_telemetry_and_is_enforced() -> None:

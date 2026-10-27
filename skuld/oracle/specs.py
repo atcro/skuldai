@@ -2,7 +2,8 @@
 
 A TestSpec is the only source of thresholds (spec 7.3). It is PROPOSED until a
 human sets `approved_by` / `approved_at`; the oracle refuses unapproved specs
-unless explicitly told the run is provisional.
+unless explicitly told the run is provisional. PUSH_SPEC_V1 was approved on
+2026-10-26; a changed threshold is a new version needing a new approval.
 """
 
 from __future__ import annotations
@@ -44,6 +45,11 @@ PUSH_SPEC_V1 = TestSpec(
         force_telemetry_available=False,
         force_limit_n=None,
     ),
+    # Approved by Adam Crozier in the working session on the evening of 2026-10-26 (local),
+    # after reviewing the G06 report. Changing any threshold above requires version=2
+    # and a fresh approval.
+    approved_by="Adam Crozier",
+    approved_at=datetime(2026, 10, 27, 2, 40, tzinfo=UTC),
 )
 
 
