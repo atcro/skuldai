@@ -3,7 +3,7 @@
 ```yaml
 schema_version: skuld.gate-report.v1
 gate: G12
-status: BLOCKED        # PASS | FAIL | BLOCKED | NOT_STARTED  -- engineering side complete; blocked on human-only items listed below
+status: BLOCKED        # PASS | FAIL | BLOCKED | NOT_STARTED  -- engineering side complete incl. G04 (2026-10-29); blocked only on human-only items: video, rules confirmation, public flip, submission
 source_revision: '<commit that carries this report; see git log>'
 environment: 'WSL2 Ubuntu 24.04.5, sim venv ~/.venvs/skuld-mujoco (mujoco 3.17.0; full freeze in evidence/G12/requirements.sim.freeze.txt); frozen code commit 1d11d51958dc, clean tree (evidence/G12/frozen_commit.txt)'
 commands:
@@ -23,18 +23,17 @@ evidence_paths:
 provider_run_ids: []
 actual_test_results:
   - 'ruff check .: All checks passed (exit 0)'
-  - 'python -m pytest -q -ra (sim venv, MuJoCo tests included): 80 passed, exit 0'
+  - 'python -m pytest -q -ra (sim venv, MuJoCo tests included): 80 passed, exit 0 (at the frozen commit; 82 after the G04 tests were added, scripts/g10_check.sh 2026-10-29)'
   - 'scripts/g12_run.py: 106 episodes; v1 random 25/25 and active 25/25 byte-identical to the G07/G10 archives; nominal byte-identical for both policies; exit 0'
   - 'secret scan: working tree and full git history grep for key patterns (tvly-, sk-, AKIA, ghp_, private keys): 0 hits; no tracked .env, .pem or credential files'
 spend_approved: false
 approved_by: null
 blockers:
-  - 'R3/R4 eligibility: no runtime call to Nebius Token Factory / an NVIDIA model exists in this repository (G04 NOT_STARTED, needs a key and credits). Human decision: obtain the key and run G04, or submit with the gap stated.'
-  - 'G00: hackathon rules not yet confirmed by a human on Devpost (docs/rules.md boxes unticked)'
+  - 'G00: hackathon rules not yet confirmed by a human on Devpost (docs/rules.md boxes unticked). R3/R4 now have a runtime artifact (G04 PASS, docs/gates/G04_report.md, commit 2e5e024); the human ticks the boxes with that evidence in hand. G03 credit balance still unchecked.'
   - 'Video not recorded (script: docs/video_script.md); dashboard screen recording not made'
   - 'Repository still private; flip to public after a human reviews the secret scan above'
   - 'Devpost project page and YouTube upload (submission owner)'
-next_action: 'Human: decide on G04, record the video from docs/video_script.md, flip the repo public, submit on Devpost, verify incognito. Claude: run the adversarial review again on the final commit and update this report to PASS once the human items are done.'
+next_action: 'Human: confirm rules on Devpost, record the video from docs/video_script.md (Nemotron step included), flip the repo public after the secret scan, submit on Devpost, verify incognito. Claude: run the adversarial review again on the final commit and update this report to PASS once the human items are done.'
 ```
 
 ## Frozen rerun (EXECUTED 2026-10-29 UTC, commit 1d11d51, clean tree)
@@ -92,28 +91,26 @@ store. The nearest v2 failure is farther from nominal than v1's (1.013 vs
 | 4 | Is the random baseline fairly budgeted? | Yes. Same domain, 25 episodes, fixed sampler seed, archived before active search existed; the G10 and G12 runners refuse to start if protocol, policy or scene hashes differ. Caveat stated everywhere: one run per strategy. | no |
 | 5 | Can the minimized failure be replayed within stated tolerance? | Yes. 3/3 replays SAFETY_FAIL with identical step hashes; the tolerance is zero because the simulator is deterministic, and the record says the seed does nothing. | no |
 | 6 | Are held-out tests uncontaminated by search or repair? | Yes. The 5 held-out configurations were sampled and stored in G07 before any search; no search or minimization run touched them; v2 was designed from the G10 counterexample, not from held-out results. | no |
-| 7 | Are Nemotron / Nebius / Tavily claims proven by runtime artifacts? | Tavily: yes (`evidence/G08/tavily_search.json`, request id). **Nemotron / Nebius Token Factory: no runtime artifact exists.** README and video script say so. Rules R3/R4 require it. | **yes, for eligibility** |
+| 7 | Are Nemotron / Nebius / Tavily claims proven by runtime artifacts? | Tavily: yes (`evidence/G08/tavily_search.json`, request id). Nemotron / Nebius Token Factory: **yes as of 2026-10-29** (`evidence/G04/generations.jsonl` and `generate_call.json`: two `npa workbench token-factory generate` calls to `nvidia/Nemotron-3_5-Lightning`, nonempty completions, sha256 recorded; `models_list.json` carries the catalog request id). Caveat stated in the G04 report: npa exposes no provider request id or token usage for `generate`. README and video script updated to match. | no (was yes before G04) |
 | 8 | Are failed or unknown cloud jobs fail-closed? | No cloud jobs exist. The gate's `failed_job` fault (EXEC_ERROR, "job status unknown") yields ERROR; unit-tested and in `evidence/G11/fault_injection.json`. | no |
 | 9 | Are keys, licenses and public assets safe? | Secret scan of tree and history clean; `.env` git-ignored; Tavily key never in evidence (G08 scrub documented). Licenses recorded. Repo is still private, which is correct until a human flips it. | no |
 | 10 | Does the video honestly show functioning modules for >= 60 s, under 3:00? | **Not recorded.** The script totals 2:42 with about 52 s of simulator footage plus dashboard recordings; every clip is an archived artifact. | **yes, until recorded** |
 
-**Update 2026-10-29:** finding 7 is resolved on the engineering side. G04 ran
-(`docs/gates/G04_report.md`, `evidence/G04/`): two `generate` calls to
-`nvidia/Nemotron-3_5-Lightning`, validated outputs, human approval, executed
-scenario. Finding 10 (video) remains open. The text below is kept as written.
-
-Remediation for the two blocking findings: (7) obtain a Token Factory key and
-run G04 as specified (pinned npa docs, nonempty completion to JSONL with model
-id), then re-run the G08 phase 2 with Nemotron as extractor and author; if that
-cannot happen before the deadline, the Devpost text must state that the
-NVIDIA-model requirement is not met by a runtime artifact. (10) record the
-video from `docs/video_script.md` with the dashboard served from this commit.
+Finding 7 was blocking when this review was first run (2026-10-29 morning:
+no Token Factory artifact existed). It was closed the same day by G04
+(`docs/gates/G04_report.md`, commit 2e5e024): pinned npa, catalog, two
+`generate` calls with validated outputs (one rejected and kept), human
+approval, executed scenario judged SAFETY_FAIL by the oracle. One blocking
+finding remains: (10) record the video from `docs/video_script.md` with the
+dashboard served from the final commit.
 
 ## Honest limits carried into the submission
 
 Simulation only, one scene, one classical controller, budgets of 25, one run
-per strategy, one failure mechanism observed, minimization local, Nemotron not
-called. All of these are in the README's Limitations section in the same words.
+per strategy, one failure mechanism observed, minimization local, Nemotron
+proposes only (validated, human-approved, never deciding) and its temperature-0
+output did not repeat across two calls. All of these are in the README's
+Limitations section in the same words.
 
 ## Cost and approval
 
