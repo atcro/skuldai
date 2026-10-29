@@ -12,14 +12,13 @@ from skuld.core.schemas import ArtifactEntry, ArtifactKind, ArtifactManifest
 EMPTY_SHA = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 
-def test_sha256_of_empty_input_is_the_known_digest(tmp_path: Path) -> None:
-    assert sha256_bytes(b"") == EMPTY_SHA
-    f = tmp_path / "empty.bin"
-    f.write_bytes(b"")
-    assert sha256_file(f) == EMPTY_SHA
+def test_hashing_round_trips_detects_tampering_and_manifest_refuses_bad_entries(
+    tmp_path: Path,
+) -> None:
+    empty = tmp_path / "empty.bin"
+    empty.write_bytes(b"")
+    assert sha256_bytes(b"") == EMPTY_SHA == sha256_file(empty)
 
-
-def test_entry_round_trips_and_detects_tampering(tmp_path: Path) -> None:
     f = tmp_path / "runs" / "traj.json"
     f.parent.mkdir()
     f.write_text('{"hello": "world"}')
@@ -31,8 +30,6 @@ def test_entry_round_trips_and_detects_tampering(tmp_path: Path) -> None:
     f.unlink()
     assert not verify_entry(entry, root=tmp_path)
 
-
-def test_manifest_rejects_bad_digest_and_duplicate_paths() -> None:
     with pytest.raises(ValidationError, match="pattern"):
         ArtifactEntry(path="a", sha256="not-a-digest", size_bytes=1, producer="t", kind="raw")
     good = ArtifactEntry(path="a", sha256=EMPTY_SHA, size_bytes=0, producer="t", kind="raw")

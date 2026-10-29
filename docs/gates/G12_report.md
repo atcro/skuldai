@@ -23,7 +23,7 @@ evidence_paths:
 provider_run_ids: []
 actual_test_results:
   - 'ruff check .: All checks passed (exit 0)'
-  - 'python -m pytest -q -ra (sim venv, MuJoCo tests included): 80 passed, exit 0 (at the frozen commit; 82 after the G04 tests were added, scripts/g10_check.sh 2026-10-29)'
+  - 'python -m pytest -q -ra (sim venv, MuJoCo tests included): 80 passed, exit 0 (at the frozen commit; 82 after the G04 tests were added, 69 after the 2026-10-29 consolidation that removed duplicated checks, scripts/g10_check.sh)'
   - 'scripts/g12_run.py: 106 episodes; v1 random 25/25 and active 25/25 byte-identical to the G07/G10 archives; nominal byte-identical for both policies; exit 0'
   - 'secret scan: working tree and full git history grep for key patterns (tvly-, sk-, AKIA, ghp_, private keys): 0 hits; no tracked .env, .pem or credential files'
 spend_approved: false

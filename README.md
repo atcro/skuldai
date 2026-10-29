@@ -93,7 +93,7 @@ bash scripts/g12_run.sh              # frozen rerun of nominal / random / active
 Environment variables (see `.env.example`; real values live only in a git-ignored `.env`):
 `TAVILY_API_KEY` (G08 only), `NEBIUS_TOKEN_FACTORY_API_KEY` (G04; the model id is passed explicitly to `scripts/g04_run.sh propose`), `SKULD_MENAGERIE_DIR`, `MUJOCO_GL`, `SKULD_EVIDENCE_DIR` (dashboard root, defaults to `evidence/`).
 
-Smoke tests: `curl http://127.0.0.1:8765/health`; `bash scripts/dashboard_smoke.sh`; `python -m pytest -q` (82 tests in the simulator venv, including 13 release-gate fault cases and a render of all four surfaces over the archived evidence).
+Smoke tests: `curl http://127.0.0.1:8765/health`; `bash scripts/dashboard_smoke.sh`; `python -m pytest -q` (69 tests in the simulator venv, 61 without MuJoCo; one table of 19 schema refusals, 13 release-gate fault cases and a render of all four surfaces over the archived evidence).
 
 ## Limitations
 

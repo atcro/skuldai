@@ -1,4 +1,5 @@
-"""The adapter boundary must refuse perturbations it cannot apply."""
+"""The adapter boundary must refuse perturbations it cannot apply. The MuJoCo adapter
+calls the same base-class check, so this is the only place it is tested."""
 
 from __future__ import annotations
 
@@ -14,6 +15,14 @@ from skuld.core.schemas import (
     VariableSpec,
 )
 from skuld.sim.adapter import SimulatorAdapter, UnsupportedPerturbationError
+
+DOMAIN = PerturbationDomain(
+    domain_id="push-v1",
+    variables=[
+        VariableSpec(name="object_mass_kg", unit="kg", nominal=0.1, min=0.05, max=0.5),
+        VariableSpec(name="friction_coefficient", unit="1", nominal=0.6, min=0.2, max=1.0),
+    ],
+)
 
 
 class MassOnlyAdapter(SimulatorAdapter):
@@ -46,39 +55,19 @@ class MassOnlyAdapter(SimulatorAdapter):
         raise NotImplementedError
 
 
-@pytest.fixture
-def domain() -> PerturbationDomain:
-    return PerturbationDomain(
-        domain_id="push-v1",
-        variables=[
-            VariableSpec(name="object_mass_kg", unit="kg", nominal=0.1, min=0.05, max=0.5),
-            VariableSpec(name="friction_coefficient", unit="1", nominal=0.6, min=0.2, max=1.0),
-        ],
-    )
-
-
-def test_adapter_refuses_unsupported_variable(domain: PerturbationDomain) -> None:
-    scenario = Scenario(
-        scenario_id="low-friction",
-        domain_ref=domain.domain_id,
+def test_adapter_boundary_refuses_wrong_domain_and_unsupported_variables() -> None:
+    with pytest.raises(TypeError):
+        SimulatorAdapter()  # type: ignore[abstract]
+    adapter = MassOnlyAdapter()
+    nominal = DOMAIN.nominal_values()
+    wrong_domain = Scenario(scenario_id="wd", domain_ref="other-domain", values=nominal, seed=3)
+    with pytest.raises(ValueError, match="references domain"):
+        adapter.reset(wrong_domain, DOMAIN)
+    low_friction = Scenario(
+        scenario_id="lf",
+        domain_ref="push-v1",
         values={"object_mass_kg": 0.1, "friction_coefficient": 0.3},
         seed=3,
     )
     with pytest.raises(UnsupportedPerturbationError, match="friction_coefficient"):
-        MassOnlyAdapter().reset(scenario, domain)
-
-
-def test_adapter_checks_domain_before_support(domain: PerturbationDomain) -> None:
-    scenario = Scenario(
-        scenario_id="wrong-domain",
-        domain_ref="other-domain",
-        values={"object_mass_kg": 0.1, "friction_coefficient": 0.6},
-        seed=3,
-    )
-    with pytest.raises(ValueError, match="references domain"):
-        MassOnlyAdapter().reset(scenario, domain)
-
-
-def test_abstract_adapter_cannot_be_instantiated() -> None:
-    with pytest.raises(TypeError):
-        SimulatorAdapter()  # type: ignore[abstract]
+        adapter.reset(low_friction, DOMAIN)

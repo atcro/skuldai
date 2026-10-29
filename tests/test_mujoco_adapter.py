@@ -21,7 +21,6 @@ from skuld.core import observation_layout as L  # noqa: E402
 from skuld.core.domains import PUSH_V1  # noqa: E402
 from skuld.core.schemas import Action, Scenario  # noqa: E402
 from skuld.sim import scene as S  # noqa: E402
-from skuld.sim.adapter import UnsupportedPerturbationError  # noqa: E402
 from skuld.sim.mujoco_adapter import MuJoCoPushAdapter  # noqa: E402
 
 
@@ -98,18 +97,6 @@ def test_action_actually_moves_the_arm(adapter: MuJoCoPushAdapter) -> None:
         adapter.step()
     q1 = np.array(adapter.observe().values[L.ARM_QPOS])
     assert abs(q1[0] - q0[0]) > 0.3
-
-
-def test_unsupported_variable_is_refused(adapter: MuJoCoPushAdapter) -> None:
-    from skuld.core.schemas import PerturbationDomain, VariableSpec
-
-    other = PerturbationDomain(
-        domain_id="cam",
-        variables=[VariableSpec(name="camera_yaw_deg", unit="deg", nominal=0, min=-10, max=10)],
-    )
-    sc = Scenario(scenario_id="c", domain_ref="cam", values={"camera_yaw_deg": 3.0}, seed=0)
-    with pytest.raises(UnsupportedPerturbationError, match="camera_yaw_deg"):
-        adapter.reset(sc, other)
 
 
 def test_replay_is_bit_identical_for_fifty_steps(adapter: MuJoCoPushAdapter) -> None:

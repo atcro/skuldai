@@ -233,4 +233,7 @@ def test_dashboard_surfaces_render_from_real_records() -> None:
     cards = [c for c in rel.split('<div class="card"') if "rc-push-dls-ik-v1" in c]
     for card in cards:
         assert "status-big ELIGIBLE" not in card and "status-big BLOCKED" in card
-    assert client.get("/health").json()["status"] == "ok"
+    # health says the service is up and nothing else: no simulator or release claims
+    body = client.get("/health").json()
+    assert body["status"] == "ok" and body["service"] == "skuld"
+    assert "simulator" not in body and "release" not in body
