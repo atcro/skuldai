@@ -1,0 +1,26 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "episode_id": "traj-minimized-s0-s0",
+  "scenario_ref": "minimized-s0",
+  "policy_ref": "push-dls-ik-v1",
+  "spec_ref": "push-block-v1",
+  "status": "SAFETY_FAIL",
+  "violations": [
+    {
+      "kind": "safety",
+      "rule": "NEVER collision",
+      "step": 170,
+      "measured": 4.657432539721374,
+      "limit": null,
+      "detail": "finger in contact with the floor: world/floor vs left_finger/68 at t=3.420 s; 11 control steps with forbidden contact"
+    }
+  ],
+  "robustness": 0.027824578397132066,
+  "distance_from_nominal": 0.7001916128194083,
+  "wallclock_s": 0.8148952119991009,
+  "artifact_uris": [
+    "replay/minimized-s0.trajectory.json.gz"
+  ],
+  "correlation_id": "traj-minimized-s0-s0",
+  "detail": "spec_sha256=0078d5522508b17c830546c7ecc136e40dcc3b4b1674987c8d81ede4239529aa; goal_time_s=7.28; min_distance_m=0.0034; max_contact_normal_n=11.40 (reported, no limit claimed)"
+}

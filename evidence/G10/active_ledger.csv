@@ -1,0 +1,26 @@
+index,scenario_id,phase,move,parent,seed,object_offset_m,object_mass_kg,friction_coefficient,observation_delay_ms,status,valid_failure,accepted,counts_against_budget,distance_from_nominal,robustness_m,wallclock_s,note
+0,act-000,explore,uniform,,0,0.097419,0.483016,0.227094,88.626744,PASS,False,False,True,1.172757,0.03431,0.413,
+1,act-001,explore,uniform,,1,-0.023343,0.113849,0.382094,70.914088,PASS,False,False,True,0.463121,0.03896,0.436,
+2,act-002,explore,uniform,,2,-0.043967,0.141534,0.594628,49.663489,PASS,False,False,True,0.344314,0.02914,0.378,
+3,act-003,explore,uniform,,3,-0.068734,0.42648,0.896301,163.3328,PASS,False,False,True,1.203576,0.02788,0.397,
+4,act-004,explore,uniform,,4,-0.073895,0.06079,0.785764,115.434282,PASS,False,False,True,0.728801,0.03074,0.403,
+5,act-005,explore,uniform,,5,-0.035001,0.214292,0.311762,189.842607,SAFETY_FAIL,True,True,True,1.06111,0.02136,0.463,
+6,act-006,contract,contract,act-005,6,-0.0175,0.157146,0.455881,94.921303,PASS,False,False,True,0.530555,0.02746,0.369,a=0.5000 a_lo=0.0000
+7,act-007,contract,contract,act-005,7,-0.026251,0.185719,0.383821,142.381955,SAFETY_FAIL,True,True,True,0.795832,0.02689,0.425,a=0.7500 a_lo=0.5000
+8,act-008,contract,jitter,act-007,8,-0.1,0.090121,0.275514,135.185262,PASS,False,False,True,0.933743,0.02714,0.374,sigma=0.2500
+9,act-009,contract,contract,act-007,9,-0.021876,0.171433,0.419851,118.651629,PASS,False,False,True,0.663193,0.02324,0.367,a=0.8333 a_lo=0.6667
+10,act-010,contract,contract,act-007,10,-0.024063,0.178576,0.401836,130.516792,PASS,False,False,True,0.729513,0.02966,0.444,a=0.9167 a_lo=0.8333
+11,act-011,contract,jitter,act-007,11,-0.036496,0.193604,0.501333,127.068648,PASS,False,False,True,0.703874,0.02936,0.415,sigma=0.1750
+12,act-012,contract,contract,act-007,12,-0.025157,0.182148,0.392829,136.449374,PASS,False,False,True,0.762673,0.03162,0.422,a=0.9583 a_lo=0.9167
+13,act-013,contract,jitter,act-007,13,-0.085794,0.187479,0.477768,111.844231,PASS,False,False,True,0.746912,0.03372,0.377,sigma=0.1225
+14,act-014,contract,jitter,act-007,14,-0.046494,0.221932,0.312119,147.013005,SAFETY_FAIL,True,False,True,0.892903,0.03024,0.442,sigma=0.0857
+15,act-015,contract,jitter,act-007,15,-0.023865,0.183981,0.369531,138.036895,PASS,False,False,True,0.78001,0.02547,0.37,sigma=0.0600
+16,act-016,contract,jitter,act-007,16,-0.034176,0.188147,0.332393,142.610382,SAFETY_FAIL,True,False,True,0.829403,0.01398,0.402,sigma=0.0420
+17,act-017,contract,jitter,act-007,17,-0.032547,0.177287,0.402031,141.647285,SAFETY_FAIL,True,True,True,0.786648,0.0257,0.367,sigma=0.0294
+18,act-018,contract,contract,act-017,18,-0.016273,0.138643,0.501015,70.823642,PASS,False,False,True,0.393324,0.03454,0.379,a=0.5000 a_lo=0.0000
+19,act-019,contract,contract,act-017,19,-0.02441,0.157965,0.451523,106.235464,PASS,False,False,True,0.589986,0.03522,0.368,a=0.7500 a_lo=0.5000
+20,act-020,contract,jitter,act-017,20,-0.014819,0.169999,0.359276,140.038323,SAFETY_FAIL,True,True,True,0.781344,0.02818,0.388,sigma=0.0441
+21,act-021,contract,contract,act-020,21,-0.007409,0.134999,0.479638,70.019161,PASS,False,False,True,0.390672,0.02533,0.378,a=0.5000 a_lo=0.0000
+22,act-022,contract,contract,act-020,22,-0.011114,0.152499,0.419457,105.028742,PASS,False,False,True,0.586008,0.02502,0.405,a=0.7500 a_lo=0.5000
+23,act-023,contract,jitter,act-020,23,-0.004447,0.096987,0.364459,120.698782,PASS,False,False,True,0.671886,0.02778,0.39,sigma=0.0662
+24,act-024,contract,contract,act-020,24,-0.012966,0.161249,0.389366,122.533532,PASS,False,False,True,0.683676,0.03381,0.384,a=0.8750 a_lo=0.7500

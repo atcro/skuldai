@@ -1,0 +1,11 @@
+index,scenario_id,phase,move,parent,seed,object_offset_m,object_mass_kg,friction_coefficient,observation_delay_ms,status,valid_failure,accepted,counts_against_budget,distance_from_nominal,robustness_m,wallclock_s,note
+0,min-000,confirm,replay,,0,-0.014819,0.169999,0.359276,140.038323,SAFETY_FAIL,True,True,True,0.781344,0.02818,0.458,
+1,min-001,revert,revert:object_offset_m,min-000,0,0.0,0.169999,0.359276,140.038323,SAFETY_FAIL,True,True,True,0.777823,0.02751,0.517,
+2,min-002,revert,revert:object_mass_kg,min-001,0,0.0,0.1,0.359276,140.038323,SAFETY_FAIL,True,True,True,0.76211,0.02658,0.462,
+3,min-003,revert,revert:friction_coefficient,min-002,0,0.0,0.1,0.6,140.038323,SAFETY_FAIL,True,True,True,0.700192,0.02782,0.46,
+4,min-004,revert,revert:observation_delay_ms,min-003,0,0.0,0.1,0.6,0.0,PASS,False,False,True,0.0,0.0342,0.401,
+5,min-005,refine,bisect:observation_delay_ms,min-003,0,0.0,0.1,0.6,70.019161,PASS,False,False,True,0.350096,0.033,0.394,lo=0 hi=140.038
+6,min-006,refine,bisect:observation_delay_ms,min-003,0,0.0,0.1,0.6,105.028742,PASS,False,False,True,0.525144,0.03254,0.409,lo=70.0192 hi=140.038
+7,min-007,refine,bisect:observation_delay_ms,min-003,0,0.0,0.1,0.6,122.533532,PASS,False,False,True,0.612668,0.02406,0.389,lo=105.029 hi=140.038
+8,min-008,refine,bisect:observation_delay_ms,min-003,0,0.0,0.1,0.6,131.285927,PASS,False,False,True,0.65643,0.02406,0.398,lo=122.534 hi=140.038
+9,min-009,probe,probe:observation_delay_ms,min-003,0,0.0,0.1,0.6,65.642964,PASS,False,False,True,0.328215,0.033,0.473,pass_bound=131.286

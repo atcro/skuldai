@@ -1,0 +1,44 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "counterexample_id": "ce-act-020",
+  "original": {
+    "schema_version": "skuld.schemas.v1",
+    "scenario_id": "act-020",
+    "domain_ref": "push-v1",
+    "values": {
+      "friction_coefficient": 0.3592758393693032,
+      "object_mass_kg": 0.16999877121629636,
+      "object_offset_m": -0.014818503907910504,
+      "observation_delay_ms": 140.03832256388168
+    },
+    "seed": 0
+  },
+  "minimized": {
+    "schema_version": "skuld.schemas.v1",
+    "scenario_id": "minimized",
+    "domain_ref": "push-v1",
+    "values": {
+      "friction_coefficient": 0.6,
+      "object_mass_kg": 0.1,
+      "object_offset_m": 0.0,
+      "observation_delay_ms": 140.03832256388168
+    },
+    "seed": 0
+  },
+  "removed_variables": [
+    "object_offset_m",
+    "object_mass_kg",
+    "friction_coefficient"
+  ],
+  "kept_variables": [
+    "observation_delay_ms"
+  ],
+  "replay_seeds": [
+    0,
+    1,
+    2
+  ],
+  "replay_runs": 3,
+  "replay_failures": 3,
+  "replay_video_uri": "minimized_failure.mp4"
+}

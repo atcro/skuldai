@@ -1,0 +1,10 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "policy_id": "push-dls-ik-v1",
+  "kind": "classical",
+  "description": "Damped-least-squares differential IK push controller with a four-phase approach/descend/push/hold machine; nominal kinematics, no learning.",
+  "control_hz": 50.0,
+  "source_sha256": "528a4cf61bd74775d8d896b1bf2aa0181b2dc2572f4776e23dd2a415c4baea9f",
+  "checkpoint_sha256": null,
+  "created_at": "2026-10-29T01:04:12.301532Z"
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "episode_id": "traj-acth-002-s2",
+  "scenario_ref": "acth-002",
+  "policy_ref": "push-dls-ik-v1",
+  "spec_ref": "push-block-v1",
+  "status": "PASS",
+  "violations": [],
+  "robustness": 0.03445031843540777,
+  "distance_from_nominal": 0.9595222839787348,
+  "wallclock_s": 0.40424113500193926,
+  "artifact_uris": [
+    "active_hyp/acth-002.trajectory.json.gz"
+  ],
+  "correlation_id": "traj-acth-002-s2",
+  "detail": "spec_sha256=0078d5522508b17c830546c7ecc136e40dcc3b4b1674987c8d81ede4239529aa; goal_time_s=6.54; min_distance_m=0.0008; max_contact_normal_n=3.79 (reported, no limit claimed)"
+}

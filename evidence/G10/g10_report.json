@@ -1,0 +1,166 @@
+{
+  "gate": "G10",
+  "protocol_sha256": "6c2b89e735255c64cb358e716aed453debff5d3be30759e5620a73872486c909",
+  "spec_sha256": "0078d5522508b17c830546c7ecc136e40dcc3b4b1674987c8d81ede4239529aa",
+  "policy_id": "push-dls-ik-v1",
+  "policy_source_sha256": "528a4cf61bd74775d8d896b1bf2aa0181b2dc2572f4776e23dd2a415c4baea9f",
+  "scene_sha256": "66b5b39e65dbe6366486019e744c4c45c12b296de92eff40e495f9b7fb463f35",
+  "sim": "mujoco 3.17.0",
+  "search_method": "explore-then-contract-v1",
+  "search_config": {
+    "method": "explore-then-contract-v1",
+    "budget": 25,
+    "sampler_seed": 20261027,
+    "explore_box": null,
+    "sigma0": 0.25,
+    "sigma_min": 0.02,
+    "sigma_max": 0.5,
+    "sigma_up": 1.5,
+    "sigma_down": 0.7,
+    "ray_tol": 0.05,
+    "jitter_every": 3,
+    "max_exec_errors": 5
+  },
+  "comparison": {
+    "protocol_sha256": "6c2b89e735255c64cb358e716aed453debff5d3be30759e5620a73872486c909",
+    "budget_per_strategy": 25,
+    "random_baseline_G07": {
+      "episodes_to_first_valid_failure": 16,
+      "valid_failures_within_budget": 3,
+      "min_distance_from_nominal_among_valid_failures": 0.8846445254130554,
+      "wallclock_s_to_first_valid_failure": 8.81,
+      "budget_n_random": 25,
+      "status_counts": {
+        "PASS": 22,
+        "SAFETY_FAIL": 3
+      },
+      "total_wallclock_s": 14.1,
+      "mean_wallclock_s_per_episode": 0.56
+    },
+    "active": {
+      "episodes_to_first_valid_failure": 6,
+      "valid_failures_within_budget": 6,
+      "min_distance_from_nominal_among_valid_failures": 0.7813441094153285,
+      "wallclock_s_to_first_valid_failure": 2.49,
+      "budget": 25,
+      "episodes_used": 25,
+      "exec_errors_not_counted": 0,
+      "status_counts": {
+        "PASS": 19,
+        "SAFETY_FAIL": 6
+      },
+      "total_wallclock_s": 10.0
+    },
+    "active_with_hypothesis_box": {
+      "episodes_to_first_valid_failure": 1,
+      "valid_failures_within_budget": 12,
+      "min_distance_from_nominal_among_valid_failures": 0.7853534427631369,
+      "wallclock_s_to_first_valid_failure": 0.45,
+      "budget": 25,
+      "episodes_used": 25,
+      "exec_errors_not_counted": 0,
+      "status_counts": {
+        "PASS": 13,
+        "SAFETY_FAIL": 12
+      },
+      "total_wallclock_s": 10.9
+    },
+    "active_beats_random_on_first_failure": true,
+    "active_beats_random_on_min_distance": true,
+    "note": "one run per strategy at a budget of 25; a difference of a few episodes is not statistically meaningful and is reported as observed, not as a trend"
+  },
+  "active_incumbents": [
+    "act-005",
+    "act-007",
+    "act-017",
+    "act-020"
+  ],
+  "active_explore_episodes": 6,
+  "active_contract_episodes": 19,
+  "minimization_source": "active",
+  "minimization": {
+    "status": "minimized",
+    "initial": {
+      "friction_coefficient": 0.3592758393693032,
+      "object_mass_kg": 0.16999877121629636,
+      "object_offset_m": -0.014818503907910504,
+      "observation_delay_ms": 140.03832256388168
+    },
+    "minimized": {
+      "friction_coefficient": 0.6,
+      "object_mass_kg": 0.1,
+      "object_offset_m": 0.0,
+      "observation_delay_ms": 140.03832256388168
+    },
+    "initial_distance": 0.7813441094153285,
+    "minimized_distance": 0.7001916128194083,
+    "removed_variables": [
+      "object_offset_m",
+      "object_mass_kg",
+      "friction_coefficient"
+    ],
+    "kept_variables": [
+      "observation_delay_ms"
+    ],
+    "non_monotone_variables": [],
+    "refined": {
+      "observation_delay_ms": {
+        "from": 140.03832256388168,
+        "to": 140.03832256388168,
+        "pass_bound": 131.28592740363908,
+        "bisections": 4,
+        "probe_value": 65.64296370181954,
+        "probe_failed": false
+      }
+    },
+    "episodes_used": 10,
+    "exec_errors": 0
+  },
+  "replay": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "runs": [
+      {
+        "seed": 0,
+        "status": "SAFETY_FAIL",
+        "steps_sha256": "2358610f8f998c4ac58e09cae787aa3af15f7efc0030f6d8413fc6ccd65093b7",
+        "wallclock_s": 0.815
+      },
+      {
+        "seed": 1,
+        "status": "SAFETY_FAIL",
+        "steps_sha256": "2358610f8f998c4ac58e09cae787aa3af15f7efc0030f6d8413fc6ccd65093b7",
+        "wallclock_s": 0.559
+      },
+      {
+        "seed": 2,
+        "status": "SAFETY_FAIL",
+        "steps_sha256": "2358610f8f998c4ac58e09cae787aa3af15f7efc0030f6d8413fc6ccd65093b7",
+        "wallclock_s": 0.529
+      }
+    ],
+    "failures": 3,
+    "bit_identical_steps": true,
+    "note": "the simulator ignores the seed (deterministic); this is a reproducibility check, not a probability estimate"
+  },
+  "videos": {
+    "original": {
+      "path": "original_failure.mp4",
+      "status": "SAFETY_FAIL",
+      "frames": 376,
+      "wallclock_s": 89.3
+    },
+    "minimized": {
+      "path": "minimized_failure.mp4",
+      "status": "SAFETY_FAIL",
+      "frames": 376,
+      "wallclock_s": 105.1
+    }
+  },
+  "artifact_count": 146,
+  "reproduced": true,
+  "written_utc": "2026-10-29T01:08:02.057806+00:00"
+}

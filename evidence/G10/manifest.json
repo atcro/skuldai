@@ -1,0 +1,1030 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "manifest_id": "g10-evidence",
+  "correlation_id": "g10-6c2b89e73525",
+  "created_at": "2026-10-29T01:08:02.053776Z",
+  "entries": [
+    {
+      "path": "active/act-000.result.json",
+      "sha256": "ca429cb6fe2835753719862961d2dd8e3970f93e37f7749486a786da7c916833",
+      "size_bytes": 627,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-000.trajectory.json.gz",
+      "sha256": "71649b1341962745ca18d7bbe1547717f41a42afc29d097c9714bb3577a354d5",
+      "size_bytes": 327444,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-001.result.json",
+      "sha256": "53dc723a1fab37f511fe9fbb5f6b69fafca2cab5a311932194ac17b9738495f4",
+      "size_bytes": 628,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-001.trajectory.json.gz",
+      "sha256": "63a0809c1e629d417421e832a0cf17aa3cdc3ddaecc8304a09d743660304ca8f",
+      "size_bytes": 297009,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-002.result.json",
+      "sha256": "2581b91418dfb40daf7da383120685b6c104fee0423bfcad5cfb77e4e6c61bdc",
+      "size_bytes": 624,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-002.trajectory.json.gz",
+      "sha256": "1fb8e66f253903729cc733c46c8658270383482b78e205fb8fce552f56762c6d",
+      "size_bytes": 298609,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-003.result.json",
+      "sha256": "ae4c0ea2d6717a5531d61588e20f7d03c43fb61a12369679d8db153c25586d9d",
+      "size_bytes": 627,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-003.trajectory.json.gz",
+      "sha256": "54af9ddfd5b7d7f21daf49a680697e1e835d85da1ff4d282c9615fdb834f736a",
+      "size_bytes": 321554,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-004.result.json",
+      "sha256": "4f8c71695db158197c1cb68169304a4d929e470d096a4694010d4b3604395832",
+      "size_bytes": 628,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-004.trajectory.json.gz",
+      "sha256": "74b83d5393beaac5ca954f659096ba7eac68598f25e48d458d5d4999889648d8",
+      "size_bytes": 297432,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-005.result.json",
+      "sha256": "a71da85f9a7dc8bb00808893e3deba174c4c9c89687f5876b4cb001663f6e7f4",
+      "size_bytes": 921,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-005.trajectory.json.gz",
+      "sha256": "e29824b08a861f7095ecfe40536d801dff2a9ac70f146a15c05bf8c76edb4477",
+      "size_bytes": 354257,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-006.result.json",
+      "sha256": "a3037f67ed0683ae132a5da0dea27a9a81b023149da3fc9c9ddeb25b78f576a1",
+      "size_bytes": 625,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-006.trajectory.json.gz",
+      "sha256": "fe97230fe50bc25597b43b9087c1fcceaad55bbe2f7ece58414888f8fd76907b",
+      "size_bytes": 298600,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-007.result.json",
+      "sha256": "2ba1790a4c4bd05bbecce71c523306dbc01288621873e39a4b530a1fecd07f55",
+      "size_bytes": 921,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-007.trajectory.json.gz",
+      "sha256": "1e412167fc9186115dafe7656a9b3e9a4f1dceb240caaf1582ac0fd9f6b1a352",
+      "size_bytes": 339825,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-008.result.json",
+      "sha256": "91f7d2efa18b2929c9850d4b8f1f2cee508bbb1b7ec8eeeed430f05c7bd16566",
+      "size_bytes": 627,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-008.trajectory.json.gz",
+      "sha256": "fe546d57524b0a5dc3d3e9711b3c34565cc8ae9228b4ce133a88129fabb83e2a",
+      "size_bytes": 305984,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-009.result.json",
+      "sha256": "075a4bace95afc771c26213bccad8279c9950592466a7a0ea0446b761ce52982",
+      "size_bytes": 627,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-009.trajectory.json.gz",
+      "sha256": "006305b257093ec85c1f7b79933eca9a5a16af7c07547760f41c90613c5a6a55",
+      "size_bytes": 298998,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-010.result.json",
+      "sha256": "d74dd434af4c640626340c48d61232baaae219ec42c5e4fe9429f5a783203ae6",
+      "size_bytes": 628,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-010.trajectory.json.gz",
+      "sha256": "cf6ee4d168207a5254cf45faff1d8bc58265e03e97975ee62e11a41597f31f55",
+      "size_bytes": 339732,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-011.result.json",
+      "sha256": "98e07cc0ab97c433635892f76421a803f0f5caafc6047176f8fe1e5417d0dfc4",
+      "size_bytes": 630,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-011.trajectory.json.gz",
+      "sha256": "db9b823212f4112d121995a0f6e274d454581e1a7f0d3d3dcf7110aa476836ea",
+      "size_bytes": 341984,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-012.result.json",
+      "sha256": "6da9040f994f9327af9774a29550bd1a8a3cd12c0cd231672ddfddc1110615e7",
+      "size_bytes": 628,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-012.trajectory.json.gz",
+      "sha256": "b190870a4c65169197a3dda418bb442ce526b244c7dcac2be5d3d87573cb0a33",
+      "size_bytes": 338206,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-013.result.json",
+      "sha256": "80fb7404359225f2ad146174a52a74d8ed45b04725f0df99bb172183338152c5",
+      "size_bytes": 628,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-013.trajectory.json.gz",
+      "sha256": "46a41eeffe341740df3594a175cfc4ba41bd87b0c52b59b29670f56883e71a57",
+      "size_bytes": 306478,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-014.result.json",
+      "sha256": "425c64902388fb79f559d5054c46fdaf882ba39667b681bf5cf55112845fcc65",
+      "size_bytes": 922,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-014.trajectory.json.gz",
+      "sha256": "b64bf741ffcf8697aa35b61274b4fe6c5c1e348315c15e93f699f491178faf26",
+      "size_bytes": 346227,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-015.result.json",
+      "sha256": "2d772b37bcb86786bc56712a1d324e98777bd66c8659b1b86633bb8f3c8050e1",
+      "size_bytes": 626,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-015.trajectory.json.gz",
+      "sha256": "2ba14ca2178011302816335e6a8a4bfb53f184d8bbf319d139d0b20eb1da8dff",
+      "size_bytes": 297102,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-016.result.json",
+      "sha256": "835dfce3c35e56a0b4a2ced5c5f968139802cc49b7bf16abccff938b5e58c756",
+      "size_bytes": 920,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-016.trajectory.json.gz",
+      "sha256": "91d8ee484e88aabd29702a5dc6e74528d53e7779292e4cb06af28c7e4496ae97",
+      "size_bytes": 305493,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-017.result.json",
+      "sha256": "8f409bb809b16557fcdf34f6e4621921351878e0db681bf03e2061e1cd26c0eb",
+      "size_bytes": 920,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-017.trajectory.json.gz",
+      "sha256": "1c68df429a76c4858e0f422305061037b1fa794231eba084d4b6724d1cce8a37",
+      "size_bytes": 302903,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-018.result.json",
+      "sha256": "64dfce610bb4b56c9d9b021eeacc6475a7e926a41efc3126c894e1de326f83e0",
+      "size_bytes": 629,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-018.trajectory.json.gz",
+      "sha256": "d4bed9cc45570c55ec6194978f84911534068adaa6895cfa2adf2447d3214cf0",
+      "size_bytes": 301245,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-019.result.json",
+      "sha256": "6fb3cfe1047c321ae6cb634c97aa8443a982fcc912c5bab726d17ac072b8b683",
+      "size_bytes": 628,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-019.trajectory.json.gz",
+      "sha256": "a2d0642eba835f87081cf70cba77e54e0ebabacbb1a2f08289357c809a5bb455",
+      "size_bytes": 299035,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-020.result.json",
+      "sha256": "ba224cc0710681a495c706a77a23f0bd857d0b6de30a643f09bfc8769ad276b6",
+      "size_bytes": 918,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-020.trajectory.json.gz",
+      "sha256": "77ae1d3f413414bd6ac38c62ea80f65bdd609bb214ba5ed3b20292cf9f6951e0",
+      "size_bytes": 311384,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-021.result.json",
+      "sha256": "32f2e6bee7dabf9efa9fd9a4e983318e4134219df09a04a878c7843886e200ef",
+      "size_bytes": 631,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-021.trajectory.json.gz",
+      "sha256": "a6d6cf2552ae1e502a5d71276a70f59e4394ae918927a1e4b7faaffe1044de79",
+      "size_bytes": 297805,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-022.result.json",
+      "sha256": "fa306b0ea51080c933f803dc827e319617fd0164c8d71089f7597df3034639b8",
+      "size_bytes": 629,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-022.trajectory.json.gz",
+      "sha256": "80f2c4a78ccf5ff1392cdb6c28a3c94daf9684df6c9df12fa5b8e2c9dee187c4",
+      "size_bytes": 302264,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-023.result.json",
+      "sha256": "f5f9d0f5b8032c9088ae2d28a2bc36480940425e3b590d9a7b3fb0885a9f67ad",
+      "size_bytes": 629,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-023.trajectory.json.gz",
+      "sha256": "d9c65062271008db51a8607e744aae1f256e02459c65f743ca53d5bc7318fb86",
+      "size_bytes": 302459,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active/act-024.result.json",
+      "sha256": "79a7cac0e01bd588c77b2475e6bbb955a6870539947363401a14a6340a13e942",
+      "size_bytes": 629,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active/act-024.trajectory.json.gz",
+      "sha256": "f29a440f69f816de61def00894386daa40263feffffd65c8392e6a4a6a55a676",
+      "size_bytes": 298047,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_curve.csv",
+      "sha256": "207178d68c03da643e98846e909db8c2adaf44f4ce5ee5d1c93079f6f14b89a1",
+      "size_bytes": 732,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-000.result.json",
+      "sha256": "1890e67643987843931cf1858169d3c19d49599710cbd0b051d8e3d3bc4183a0",
+      "size_bytes": 929,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-000.trajectory.json.gz",
+      "sha256": "f77462a8ad20266ffe472b6de824396395a13e06a8d39d4affd35f24e59b5fc1",
+      "size_bytes": 354007,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-001.result.json",
+      "sha256": "04a9f99f56ba54580f11aad66f32cb1cdbb84d09f7a85b0e17f24317aaed5f91",
+      "size_bytes": 635,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-001.trajectory.json.gz",
+      "sha256": "97c0e23ad27ab2ae310b5a7df327f7c87c934c9577a37b74158d98eb607dbdd5",
+      "size_bytes": 327242,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-002.result.json",
+      "sha256": "d88c61b0a82ff6a3442a1b74f2c8fd9a3c9600e04f360a7b68e44cf70198d37a",
+      "size_bytes": 635,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-002.trajectory.json.gz",
+      "sha256": "ffe3c8db42c2e24ded3c4a1dda8d57561bcca39a47e2fe06f1a8c63f1b0fb0fe",
+      "size_bytes": 307973,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-003.result.json",
+      "sha256": "6b9465f083d630d570e15f682fc9d6cc143fb576158f74721a1878e7187f87d4",
+      "size_bytes": 930,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-003.trajectory.json.gz",
+      "sha256": "66c112624b49018026d3fa1ccd30ce1e3d93734af7ebd1bdaa3259e5b1570d77",
+      "size_bytes": 349307,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-004.result.json",
+      "sha256": "eb0ef31ad8d1f05b8229bbf6cdf0864dbbc2717c97fce51682e1d4470aa6c922",
+      "size_bytes": 635,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-004.trajectory.json.gz",
+      "sha256": "a7e506900df210420d8238e0837322abc41ca3c57a0ff2586c50078c0b895d22",
+      "size_bytes": 337788,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-005.result.json",
+      "sha256": "5d3f7efaa091e7b31159358677e1d867a830d892b332d072ecc2f82fc37f8106",
+      "size_bytes": 926,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-005.trajectory.json.gz",
+      "sha256": "ba0336ff0774b25e23a785fd98bb94ad5c8b930e3c3d2c589023f7a1d62fff32",
+      "size_bytes": 339757,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-006.result.json",
+      "sha256": "c59c55bea87faaf0cee6ead31f0b75a5ddf484a2b7c95d616e1d9990d6715c79",
+      "size_bytes": 930,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-006.trajectory.json.gz",
+      "sha256": "3a2f42e002b862dbab03bc7e47bd5154b346e11dfbb680c1abdb2f2b6a0192bf",
+      "size_bytes": 336111,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-007.result.json",
+      "sha256": "802da3ad1e2b1c4404b9de2dbf353d39f4ee0d762ef427a3ccffceeb78b2957f",
+      "size_bytes": 635,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-007.trajectory.json.gz",
+      "sha256": "15f294e64f73659e28da20712242557e6c664b56bca289b6c7891afd6d551c73",
+      "size_bytes": 341331,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-008.result.json",
+      "sha256": "74af940a72fd3a7c0e6409ce0c1b59fa07e15bcd6d7dcae617355362a7a3abad",
+      "size_bytes": 635,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-008.trajectory.json.gz",
+      "sha256": "81352dcd15d3e0501edaabf572d9a63b1885bf12d76cbeb402699cd95308ce81",
+      "size_bytes": 340034,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-009.result.json",
+      "sha256": "7501403f51731b0eb8d48d1be0ec206b9bc45cf120cd5f1c7f574af3201f926a",
+      "size_bytes": 930,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-009.trajectory.json.gz",
+      "sha256": "64fc4a99e96ba839037b69405a745257e0951e66765c132c70ecc5ad65694047",
+      "size_bytes": 347994,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-010.result.json",
+      "sha256": "580872f5e14e0ba5ca97f0404b00abd48ea26359cae68de0d82d05418f49ec31",
+      "size_bytes": 931,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-010.trajectory.json.gz",
+      "sha256": "4316a0da0c1d41c472a7ea419957abac33bac1ef70819b6aced92574f7c4d5fa",
+      "size_bytes": 339729,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-011.result.json",
+      "sha256": "1f75a1dbc141de3795482ff8ce47caceb6480e2bbdd0f0c15c4ab80a39cec220",
+      "size_bytes": 636,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-011.trajectory.json.gz",
+      "sha256": "015cbee2ffb9695df9321c7686bb7499a87b33fd057422ebe4941a2d75c8145a",
+      "size_bytes": 328073,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-012.result.json",
+      "sha256": "a53658dc8d917f1a9e5ea377e5f5719044a62860f64c96d1c1f672d1a7295c64",
+      "size_bytes": 637,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-012.trajectory.json.gz",
+      "sha256": "4cdb253857d565b48a5a74eacc23f64bb51c5796a7943e997dbaf6485bef14d1",
+      "size_bytes": 298485,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-013.result.json",
+      "sha256": "643a4ab27a383a620c69e0bd9fdc5d8b8e2792c2d3126fa934e96b721f3f2b69",
+      "size_bytes": 929,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-013.trajectory.json.gz",
+      "sha256": "b780ab3bcd23fda9143af2af5d570e6347fbf4f0a792aa0026eee615aa1df75c",
+      "size_bytes": 338861,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-014.result.json",
+      "sha256": "362be3e4a6ac98be2dad9e5a0a9d2fcc30ea7c0f7d6017b31bb57189d3e81585",
+      "size_bytes": 927,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-014.trajectory.json.gz",
+      "sha256": "dc9b30b7a3c2fef733ae662da6cddf57ebea0daf65674b37e6ec620f0fc83070",
+      "size_bytes": 304469,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-015.result.json",
+      "sha256": "2a00572b4b7b5c6ed69b998d62292a3e0bf33c401b42b18997d3f24769f51edb",
+      "size_bytes": 928,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-015.trajectory.json.gz",
+      "sha256": "6ac35e27c7aeebcd1aca5133db25883771a3f913826d62c8cf4722b058b4a2ed",
+      "size_bytes": 328938,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-016.result.json",
+      "sha256": "e467883f705fca827f09f7fbe4dd054d1ff4d8721a4be95de00f87cd95d30c03",
+      "size_bytes": 927,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-016.trajectory.json.gz",
+      "sha256": "e325ec78a817aee8e24e46ec858e5bda900625d9359069277868df40243d058e",
+      "size_bytes": 340002,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-017.result.json",
+      "sha256": "3325de5b742782ff2c4db58a897f0a932910d19feeaa18eb7c214122e222230a",
+      "size_bytes": 637,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-017.trajectory.json.gz",
+      "sha256": "f81fda2e4cca88d76308200a8141b531a04ba26f07b405de699f40932ce1cd84",
+      "size_bytes": 294259,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-018.result.json",
+      "sha256": "2f3efb35ae6c91a73262548fc4cdb9e7e46faa24c3b733c0cc250f26311e707a",
+      "size_bytes": 927,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-018.trajectory.json.gz",
+      "sha256": "cb3366c58fce87b2a9ad51d94a0c9cbfddf325fb9b5466362116bf37c08ffaf3",
+      "size_bytes": 342840,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-019.result.json",
+      "sha256": "f4b5f83a272741c9a98f3707883fcc20313843aee5659d161f0b135f10e209f2",
+      "size_bytes": 635,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-019.trajectory.json.gz",
+      "sha256": "d645ee6e130a21ba5e0a52ec2bfc09ec301b70da34f51ca9da7abe42a9fd1aa4",
+      "size_bytes": 333780,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-020.result.json",
+      "sha256": "72c364cdb8ca2d26b799d93eeed4b75302899496d67b0e6c29093434f1ec9d3b",
+      "size_bytes": 638,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-020.trajectory.json.gz",
+      "sha256": "26a9d9947ba275fd5d9546f4ed250d04dd80a36a2593424e661d21fe44f70c29",
+      "size_bytes": 301830,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-021.result.json",
+      "sha256": "50bebe0e030bca1817420651616b8d4a1154c75dc3313fcaa4a8b2bed6518d3b",
+      "size_bytes": 636,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-021.trajectory.json.gz",
+      "sha256": "0abdccfaa40468afb91f95b75a10d81f15854622c20de5d2c6b8b5788c2a37e0",
+      "size_bytes": 306019,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-022.result.json",
+      "sha256": "e8f34e2da1d7457655226af1903e55e1bdf8993b9ba75dae76769098ea27bb9e",
+      "size_bytes": 635,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-022.trajectory.json.gz",
+      "sha256": "6b7bc61047bcf0bb8095d1f174e3c438e8dc7e6df2747bb69717117cbfe63ef2",
+      "size_bytes": 341755,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-023.result.json",
+      "sha256": "a9cfaf39b61b37d0c7b09d98a92b35f1d4924f2eab5d8c71fd48e6e0b284c5e2",
+      "size_bytes": 635,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-023.trajectory.json.gz",
+      "sha256": "2c39072b266c57ebaaf7a7d1d070caa52759601e7109ec12ec57a9ce5a929c2c",
+      "size_bytes": 342366,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp/acth-024.result.json",
+      "sha256": "17f5ab17d2c69307fcb411329579de4dc1b4a1d39f07f8d6afb48f65794b7626",
+      "size_bytes": 927,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp/acth-024.trajectory.json.gz",
+      "sha256": "75f340ef166c1d00df2ce3ff95b618877d2940a600d69ad71500698a7b9c8737",
+      "size_bytes": 345560,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "active_hyp_curve.csv",
+      "sha256": "cb7ea95b84cb7b458348c3010e1e61a21c095596c8ab37149524a6f31263f084",
+      "size_bytes": 826,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp_ledger.csv",
+      "sha256": "ef12c5d50d4da4b575ed83d98e4420af5054511b445e4f690baa667e47561b34",
+      "size_bytes": 3706,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_hyp_search.json",
+      "sha256": "2acda2f7bd56aec0c2de7fae1fb127e309589adafc45a2377afc26a01eb2965a",
+      "size_bytes": 22581,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_ledger.csv",
+      "sha256": "e419bd77843cf32b9cc68ceca651090ea0987ec5b4e8e00da311eb69e8b1f1c9",
+      "size_bytes": 3567,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "active_search.json",
+      "sha256": "3b8dbf1909974009228e5a78261446a4184f56813b73339fcb69e3a90f6c625c",
+      "size_bytes": 22273,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "comparison.json",
+      "sha256": "6bdc904beaa471ecc202b700c284039be4ec91b1cc8f7146c3df78847b188bae",
+      "size_bytes": 1603,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "comparison.svg",
+      "sha256": "d26dd53ae380cedce0bb7b23a74ae2f9830d3889203c943831dca4e7240a2a14",
+      "size_bytes": 4373,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "counterexample.json",
+      "sha256": "4c2e5a28bff09b39a335db43f22d6fb43fdfb4ccae4235163a40aa50abf555df",
+      "size_bytes": 1027,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "minimization.json",
+      "sha256": "dcf78553fc6651d369a1639e21c38d0014122573179e02651ddc909189096b3b",
+      "size_bytes": 7502,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "minimize/min-000.result.json",
+      "sha256": "215e068c7c37f4c0c8bfdd56e523a1cf1481b15f405162bb2fa8beb248d31682",
+      "size_bytes": 919,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "minimize/min-000.trajectory.json.gz",
+      "sha256": "09b398470c22fe52100cec60f9e719f9bd74f87e020672c994ed21921e925051",
+      "size_bytes": 311383,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "minimize/min-001.result.json",
+      "sha256": "5e04e16bb1575e7cd8d3c4e71a7ff99ac8b3ee71e2ae1ac4bb81295d49c3ad97",
+      "size_bytes": 921,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "minimize/min-001.trajectory.json.gz",
+      "sha256": "17e37b7577edb501a45a13cdadbc524a37af82854334010c981dfb21beac0708",
+      "size_bytes": 343494,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "minimize/min-002.result.json",
+      "sha256": "d86db6e438fe9fbf94b5098b02e314b16dcbb1170a6bc0a1f87bbd520c934360",
+      "size_bytes": 922,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "minimize/min-002.trajectory.json.gz",
+      "sha256": "97133d92f43f45775da9d4d4715398559859fc10b1ebdd737020d5b550f03ff8",
+      "size_bytes": 336861,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "minimize/min-003.result.json",
+      "sha256": "8be7723e1c3e43402b55a784743a8e6b1b157986ffa4b4388b852931a78c3477",
+      "size_bytes": 923,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "minimize/min-003.trajectory.json.gz",
+      "sha256": "89dc8564b131fe29ef48f6ef443f771b8cd9afed5679fb42f6aa4457f8d482b5",
+      "size_bytes": 339990,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "minimize/min-004.result.json",
+      "sha256": "0c4ae584ca5d76b5f3b25ceb88c1c7d3819091d773d80d06ee0f59248fc2913a",
+      "size_bytes": 614,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "minimize/min-004.trajectory.json.gz",
+      "sha256": "b4bd51e9d3e018f27a218c2df2a403811cb2021e163e360ba98da83bee5a9030",
+      "size_bytes": 293594,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "minimize/min-005.result.json",
+      "sha256": "21247927b686838f933036a9c9fd5aa0391816ae972ffbd2494e0f07d52f0afb",
+      "size_bytes": 631,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "minimize/min-005.trajectory.json.gz",
+      "sha256": "2afb3aa475effc269aaad92b4c51143224978c0c9f2cddce745293d6b9da5390",
+      "size_bytes": 302631,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "minimize/min-006.result.json",
+      "sha256": "935d3d06645efdb3d79843d3be41999a10456c83c958b1cbc8e7ba20fa191c9e",
+      "size_bytes": 628,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "minimize/min-006.trajectory.json.gz",
+      "sha256": "2ea167f152ef591c23a720d53ccc0ec3dab462173217b552b63eb0385e8e8e8a",
+      "size_bytes": 299525,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "minimize/min-007.result.json",
+      "sha256": "7575d3ff01cc657981ac3c0bb49f462a9626c6b43d2928cd9fa45770f14613d9",
+      "size_bytes": 630,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "minimize/min-007.trajectory.json.gz",
+      "sha256": "23b31b8cc6033562fb088544dbc89448ad0bedb53ace4ec31d37af678876c1db",
+      "size_bytes": 294482,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "minimize/min-008.result.json",
+      "sha256": "05cce2afb154f173f5414efbfbac36baa9f9e793097376e81aa720e70f3343e0",
+      "size_bytes": 630,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "minimize/min-008.trajectory.json.gz",
+      "sha256": "ae43432da6413c4c61b5e36584cf6b9ab114a2dc6b8099d034fcbe64b5851669",
+      "size_bytes": 294502,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "minimize/min-009.result.json",
+      "sha256": "a4950b0492388d5529987625fda00890ac00b4b435ff0e48b0dac117317a3bef",
+      "size_bytes": 631,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "minimize/min-009.trajectory.json.gz",
+      "sha256": "805c5beeee5c03d4a5835d098e521ba1adff2c09d3fb8f167e04b8ceee8cad45",
+      "size_bytes": 302625,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "minimize_ledger.csv",
+      "sha256": "5d449873e45316e7b1aa4f31bebf9d5878dce82c4b392c28e74804e88c293d39",
+      "size_bytes": 1543,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "minimized_failure.mp4",
+      "sha256": "f2d60cf1b86fff5b5a7e766fc513dfc0bc0016ff51f085a271044dc048734c57",
+      "size_bytes": 489981,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "original_failure.mp4",
+      "sha256": "3a2a8070a8291bccb6b59c83ed7515808043242db21505acf4a3dee2196f8050",
+      "size_bytes": 387856,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "policy_manifest.json",
+      "sha256": "41c514ac4e78e00a9562e7d74fb2ea15635acf4d87267c33481026ccdf4f4a24",
+      "size_bytes": 443,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "protocol_sha256.txt",
+      "sha256": "38cba981543c7f55d8c6b83c232e31dd03e62ded94f09ecd70c8ceaec7535cd2",
+      "size_bytes": 65,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "replay/minimized-s0.result.json",
+      "sha256": "ec1bfe76b090bef75d18af2a6cc3645586e2d45feaf456527c62e7e19ffa388d",
+      "size_bytes": 940,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "replay/minimized-s0.trajectory.json.gz",
+      "sha256": "5d24056858fa38bd9ab9ed48db81b7f21dc6b7327ea4488412d4acecb3ff2e44",
+      "size_bytes": 340005,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "replay/minimized-s1.result.json",
+      "sha256": "4440eaec7ec4b330449b778703403ef861552a3fce3af1335cc666e7fae48475",
+      "size_bytes": 940,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "replay/minimized-s1.trajectory.json.gz",
+      "sha256": "38d177d645f44b6eb311bdd6726b38d570111e085ff02c16023d356056a01341",
+      "size_bytes": 340006,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "replay/minimized-s2.result.json",
+      "sha256": "ed18c3ba293f977ee42901d1c02fcbeb46054de402c27bb27b31293f7430f70d",
+      "size_bytes": 940,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "replay/minimized-s2.trajectory.json.gz",
+      "sha256": "798f17e85d970cc367b74baf2f5804b4f4f475313c2f3d4f2b8f863ceecd1453",
+      "size_bytes": 340006,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "replay/minimized-video.result.json",
+      "sha256": "52522368596df4106b5ff9d3deb7c998c665978ab3b0629e847867c6a909493f",
+      "size_bytes": 951,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "replay/minimized-video.trajectory.json.gz",
+      "sha256": "056ff60f7204b3607315ab9360aabbafcd22eb409c300f46c7c7ae694d0bff52",
+      "size_bytes": 340015,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "replay/original-video.result.json",
+      "sha256": "fb8aaa3f501fdf692b566f49219764648ca946c49e4f9b511d14049aa0c85c96",
+      "size_bytes": 943,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "replay/original-video.trajectory.json.gz",
+      "sha256": "44e92a42a885ae3bfe3dd306ac85e6ce624cd32e911d1cad9dfbe80a6448346e",
+      "size_bytes": 311406,
+      "producer": "scripts/g10_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "tests-sim-venv.txt",
+      "sha256": "2bd32d33db43f8c6c612ed6b28cbaa8e61bd4d12eeea0ab67929f501ef7592f2",
+      "size_bytes": 99,
+      "producer": "scripts/g10_run.py",
+      "kind": "derived"
+    }
+  ]
+}

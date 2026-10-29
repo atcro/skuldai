@@ -1,0 +1,48 @@
+{
+  "protocol_sha256": "6c2b89e735255c64cb358e716aed453debff5d3be30759e5620a73872486c909",
+  "budget_per_strategy": 25,
+  "random_baseline_G07": {
+    "episodes_to_first_valid_failure": 16,
+    "valid_failures_within_budget": 3,
+    "min_distance_from_nominal_among_valid_failures": 0.8846445254130554,
+    "wallclock_s_to_first_valid_failure": 8.81,
+    "budget_n_random": 25,
+    "status_counts": {
+      "PASS": 22,
+      "SAFETY_FAIL": 3
+    },
+    "total_wallclock_s": 14.1,
+    "mean_wallclock_s_per_episode": 0.56
+  },
+  "active": {
+    "episodes_to_first_valid_failure": 6,
+    "valid_failures_within_budget": 6,
+    "min_distance_from_nominal_among_valid_failures": 0.7813441094153285,
+    "wallclock_s_to_first_valid_failure": 2.49,
+    "budget": 25,
+    "episodes_used": 25,
+    "exec_errors_not_counted": 0,
+    "status_counts": {
+      "PASS": 19,
+      "SAFETY_FAIL": 6
+    },
+    "total_wallclock_s": 10.0
+  },
+  "active_with_hypothesis_box": {
+    "episodes_to_first_valid_failure": 1,
+    "valid_failures_within_budget": 12,
+    "min_distance_from_nominal_among_valid_failures": 0.7853534427631369,
+    "wallclock_s_to_first_valid_failure": 0.45,
+    "budget": 25,
+    "episodes_used": 25,
+    "exec_errors_not_counted": 0,
+    "status_counts": {
+      "PASS": 13,
+      "SAFETY_FAIL": 12
+    },
+    "total_wallclock_s": 10.9
+  },
+  "active_beats_random_on_first_failure": true,
+  "active_beats_random_on_min_distance": true,
+  "note": "one run per strategy at a budget of 25; a difference of a few episodes is not statistically meaningful and is reported as observed, not as a trend"
+}
