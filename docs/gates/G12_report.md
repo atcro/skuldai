@@ -83,26 +83,34 @@ store. The nearest v2 failure is farther from nominal than v1's (1.013 vs
 
 ## Adversarial review (CLAUDE.md pre-submission checklist, run as the skeptical validation engineer)
 
-| # | Question | Finding | Blocking? |
-|---|---|---|---|
-| 1 | Does the policy action truly control physics each timestep? | Yes. `run_episode` calls `policy.act(obs)` then `adapter.act`, `adapter.step` every control step at 50 Hz; the controller recomputes from the observation (G05 tests assert the action changes with the observation). Nothing is replayed as a policy. | no |
-| 2 | Do perturbations actually affect observations or dynamics? | Yes. Mass and friction are written into the compiled MuJoCo model, offset into `qpos`, delay into the observation buffer (adapter tests per variable, G05). The atlas shows delay is the dominant axis; the other three change outcomes at the margin (G07/G10 ledgers). | no |
-| 3 | Are all pass/fail outcomes simulator-derived? | Yes. The oracle is a pure function of the recorded trajectory and the approved spec; the search and gate read only `EpisodeStatus`. No model output anywhere in the pass/fail path. | no |
-| 4 | Is the random baseline fairly budgeted? | Yes. Same domain, 25 episodes, fixed sampler seed, archived before active search existed; the G10 and G12 runners refuse to start if protocol, policy or scene hashes differ. Caveat stated everywhere: one run per strategy. | no |
-| 5 | Can the minimized failure be replayed within stated tolerance? | Yes. 3/3 replays SAFETY_FAIL with identical step hashes; the tolerance is zero because the simulator is deterministic, and the record says the seed does nothing. | no |
-| 6 | Are held-out tests uncontaminated by search or repair? | Yes. The 5 held-out configurations were sampled and stored in G07 before any search; no search or minimization run touched them; v2 was designed from the G10 counterexample, not from held-out results. | no |
-| 7 | Are Nemotron / Nebius / Tavily claims proven by runtime artifacts? | Tavily: yes (`evidence/G08/tavily_search.json`, request id). Nemotron / Nebius Token Factory: **yes as of 2026-10-29** (`evidence/G04/generations.jsonl` and `generate_call.json`: two `npa workbench token-factory generate` calls to `nvidia/Nemotron-3_5-Lightning`, nonempty completions, sha256 recorded; `models_list.json` carries the catalog request id). Caveat stated in the G04 report: npa exposes no provider request id or token usage for `generate`. README and video script updated to match. | no (was yes before G04) |
-| 8 | Are failed or unknown cloud jobs fail-closed? | No cloud jobs exist. The gate's `failed_job` fault (EXEC_ERROR, "job status unknown") yields ERROR; unit-tested and in `evidence/G11/fault_injection.json`. | no |
-| 9 | Are keys, licenses and public assets safe? | Secret scan of tree and history clean; `.env` git-ignored; Tavily key never in evidence (G08 scrub documented). Licenses recorded. Repo is still private, which is correct until a human flips it. | no |
-| 10 | Does the video honestly show functioning modules for >= 60 s, under 3:00? | **Not recorded.** The script totals 2:42 with about 52 s of simulator footage plus dashboard recordings; every clip is an archived artifact. | **yes, until recorded** |
+Second pass, 2026-10-29 evening local, on commit `f58fa64` (G04 merged, tests
+consolidated to 69). Each row names what was re-checked on that commit, not
+copied from the first pass.
 
-Finding 7 was blocking when this review was first run (2026-10-29 morning:
-no Token Factory artifact existed). It was closed the same day by G04
-(`docs/gates/G04_report.md`, commit 2e5e024): pinned npa, catalog, two
-`generate` calls with validated outputs (one rejected and kept), human
-approval, executed scenario judged SAFETY_FAIL by the oracle. One blocking
-finding remains: (10) record the video from `docs/video_script.md` with the
-dashboard served from the final commit.
+| # | Question | Finding (re-verified on f58fa64) | Blocking? |
+|---|---|---|---|
+| 1 | Does the policy action truly control physics each timestep? | Yes. `skuld/sim/episode.py` `run_episode` calls `policy.act(obs)`, `adapter.act(action)`, `adapter.step()` in that order every control step; `test_action_actually_moves_the_arm` and `test_replay_is_bit_identical_for_fifty_steps` ran green in the sim venv on this commit. No recording is ever presented as a policy. | no |
+| 2 | Do perturbations actually affect observations or dynamics? | Yes. The four MuJoCo adapter tests (mass into the compiled model, friction on both geoms, offset into `qpos`, delay into the observation buffer) passed on this commit. The archived ledgers show delay as the dominant axis; the other three change outcomes at the margin. | no |
+| 3 | Are all pass/fail outcomes simulator-derived? | Yes. `skuld/oracle`, `skuld/release` and `skuld/search` import nothing from `skuld/integrations`; the oracle is a function of the recorded trajectory and the approved spec. The G04 Nemotron output reaches the simulator only as a scenario inside the locked domain, never as a verdict. | no |
+| 4 | Is the random baseline fairly budgeted? | Yes. Same domain, 25 episodes each, random archived (G07) before active search existed; `scripts/g10_run.py` and `g12_run.py` refuse to start on a protocol, policy or scene hash mismatch. Caveat stated in README: one run per strategy. | no |
+| 5 | Can the minimized failure be replayed within stated tolerance? | Yes. `evidence/G10/g10_report.json` replay block: 3/3 SAFETY_FAIL with one identical `steps_sha256`; tolerance zero because the simulator is deterministic and the seed is inert (stated in the record). | no |
+| 6 | Are held-out tests uncontaminated by search or repair? | Yes. The five held-out scenarios come from `skuld/core/protocol.py` seeds 1000 to 1004, fixed in G07 before any search; no search, minimization or repair step read them; v2 was designed from the G10 counterexample. | no |
+| 7 | Are Nemotron / Nebius / Tavily claims proven by runtime artifacts? | Yes. Tavily: `evidence/G08/tavily_search.json` with request id. Nemotron / Token Factory: `evidence/G04/generations.jsonl` and `generate_call.json` (two `npa workbench token-factory generate` calls to `nvidia/Nemotron-3_5-Lightning`, nonempty completions, sha256 recorded; catalog request id in `models_list.json`). Stated limits: npa gives no provider request id or usage for `generate`; temperature 0 did not repeat across the two calls; one call was rejected by the validator and kept. README, video script and this report say exactly this. | no |
+| 8 | Are failed or unknown cloud jobs fail-closed? | No cloud jobs exist. `evidence/G11/fault_injection.json` `failed_job` (EXEC_ERROR, job status unknown) yields ERROR; `missing_case` INCOMPLETE; `corrupt_artifact`, `stale_policy_hash`, `spec_mismatch` ERROR; `injected_pass_verdict` refused by the schema. 9/9 as expected; 13 parametrised gate faults in `tests/test_release.py`. | no |
+| 9 | Are keys, licenses and public assets safe? | Yes on the repository side. Full-history `git grep` across all revisions for both key prefixes, bearer tokens, `tvly-`, `sk-`, `AKIA`, `ghp_` and private-key headers: 0 hits outside the redaction code and its tests. `.env` and `.env.*` git-ignored, no tracked credential files, LICENSE Apache-2.0, Menagerie Panda licence copied in `evidence/G05`. Repo is still private, which is correct until a human flips it. **CI status for f58fa64 is UNKNOWN from this machine** (`gh` not installed): the human checks the Actions tab before flipping public. | no (CI check is a human step) |
+| 10 | Does the video honestly show functioning modules for >= 60 s, under 3:00? | **Not recorded.** `docs/video_script.md` is at 2:50 with a G04 segment at 1:43-2:00; the simulator clips alone give 52 s and the ledger and gate recordings cover the rest; every clip is an archived artifact and no clip exists for the G04 episode (the script forbids borrowing one). | **yes, until recorded** |
+
+Cross-checks made on this pass: every number in the README results tables
+matches `evidence/G12/g12_report.json` (3/25/25 episodes; failures 0/3/6 for v1
+and 0/1/7 for v2; first failure 16 vs 6 and 17 vs 6; nearest 0.885 vs 0.781 and
+1.262 vs 1.013; reproduction 25/25 and 25/25). No banned wording in README, the
+video script or the G04 report ("global minimum" and "causal" appear only as
+negations). `docs/rules.md` R3 and R4 boxes are still unticked: that is the
+human's confirmation on Devpost, now with an artifact to point at.
+
+One blocking finding remains: (10) record the video from
+`docs/video_script.md` with the dashboard served from this commit. Before the
+public flip, the human also reads the CI result for `f58fa64` on GitHub.
 
 ## Honest limits carried into the submission
 
