@@ -142,3 +142,5 @@ on the `/mnt/c` filesystem). The unrendered replay ran at 10.9x real time
 
 No spend. No provisioning. Network: PyPI and one sparse `git clone` of the
 Menagerie repository.
+
+_Edit 2026-10-29, before the public flip: the WSL home directory in `evidence/G05/menagerie-pin.txt` and `mujoco-smoke-egl.json` was replaced by `~`; no other byte changed and no manifest hashes these files._

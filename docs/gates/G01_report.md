@@ -73,3 +73,5 @@ next_action: 'G02: schemas, adapter interface, artifact manifest, tests, pinned 
 ## Cost and approval
 
 No spend. No provisioning. apt packages only.
+
+_Edit 2026-10-29, before the public flip: the WSL home directory in `evidence/G01/tests.txt` was replaced by `~`; no other byte changed and no manifest hashes these files._

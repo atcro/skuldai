@@ -123,3 +123,5 @@ Two Token Factory inference calls, estimated under USD 0.01 total, approved by
 Adam Crozier in chat with the instruction to keep spend minimal. No cloud
 compute, no provisioning, no account changes. About one minute of laptop time
 for the executed scenario.
+
+_Edit 2026-10-29, before the public flip: the WSL home directory in `evidence/G04/npa-pin.txt` and both `generate_call.json` files was replaced by `~`; no other byte changed and no manifest hashes these files._
