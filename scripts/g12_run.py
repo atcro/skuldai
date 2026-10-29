@@ -50,7 +50,10 @@ def main() -> int:
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     sha = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
-    dirty = subprocess.check_output(["git", "status", "--porcelain"], text=True).strip()
+    # the evidence folder this run writes is the only thing allowed to be untracked
+    dirty = subprocess.check_output(
+        ["git", "status", "--porcelain", "--", ".", f":!{out.as_posix()}"], text=True
+    ).strip()
     (out / "frozen_commit.txt").write_text(f"{sha}\ndirty_tree: {bool(dirty)}\n")
 
     adapter = MuJoCoPushAdapter(args.menagerie, render=False)
