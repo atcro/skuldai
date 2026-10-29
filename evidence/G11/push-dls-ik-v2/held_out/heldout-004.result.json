@@ -1,0 +1,17 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "episode_id": "traj-heldout-004-s1004",
+  "scenario_ref": "heldout-004",
+  "policy_ref": "push-dls-ik-v2",
+  "spec_ref": "push-block-v1",
+  "status": "PASS",
+  "violations": [],
+  "robustness": 0.026187568672368024,
+  "distance_from_nominal": 1.0876390487523218,
+  "wallclock_s": 0.48364386999674025,
+  "artifact_uris": [
+    "push-dls-ik-v2/held_out/heldout-004.trajectory.json.gz"
+  ],
+  "correlation_id": "traj-heldout-004-s1004",
+  "detail": "spec_sha256=0078d5522508b17c830546c7ecc136e40dcc3b4b1674987c8d81ede4239529aa; goal_time_s=7.74; min_distance_m=0.0051; max_contact_normal_n=6.08 (reported, no limit claimed)"
+}

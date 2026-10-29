@@ -1,0 +1,365 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "manifest_id": "g11-evidence",
+  "correlation_id": "g11-ada1953a85ea",
+  "created_at": "2026-10-29T01:36:52.775552Z",
+  "entries": [
+    {
+      "path": "candidate_push-dls-ik-v1.json",
+      "sha256": "8f1fba1e6b1e8b8d34c476333913264ee3ad20839bca17dae1ae1d6f76d3d2f2",
+      "size_bytes": 487,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "candidate_push-dls-ik-v2.json",
+      "sha256": "bcb63ab1c528264b51c1c0fa8479bbd8bdda3161506726384aa52aef8fe1b2b1",
+      "size_bytes": 487,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "fault_injection.json",
+      "sha256": "1a2ba6ae64a537879a607125ef7fadc56d524203355b0104ae313ac1a8fa9ead",
+      "size_bytes": 3229,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "policy_registry.json",
+      "sha256": "de865fae970796cc8e0ff2b7212be58dffe68e3a499a04ec3706407f87fab6dd",
+      "size_bytes": 1105,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v1/held_out/heldout-000.result.json",
+      "sha256": "7d8900daccee12d4a7b3bcd21b35221099ab865f4ed4756302bc1bbc3b1c3ce3",
+      "size_bytes": 666,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v1/held_out/heldout-000.trajectory.json.gz",
+      "sha256": "a7dff746a85a55a46b61ae07349d79c9d4d0b68dc7d16487f26b4f09543566ac",
+      "size_bytes": 304110,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v1/held_out/heldout-001.result.json",
+      "sha256": "9a856a799d4d7db4615391789f971d9c86cad48524cd72a39c5c47788b8473c9",
+      "size_bytes": 956,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v1/held_out/heldout-001.trajectory.json.gz",
+      "sha256": "e9dad730e5b114ba5339ffc7705257973b9603fb3a7145a14e876d1882beae5e",
+      "size_bytes": 299613,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v1/held_out/heldout-002.result.json",
+      "sha256": "17865b5cf11332d5bbce9baf95dfab713532e4f3cc54d51820de7f0c6b12414a",
+      "size_bytes": 666,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v1/held_out/heldout-002.trajectory.json.gz",
+      "sha256": "c271f500d3e8616028caf1b77b6ff4ad3e8803eee0e3462c44adb92046b23d4e",
+      "size_bytes": 355618,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v1/held_out/heldout-003.result.json",
+      "sha256": "686db4ac12118a40b421e913eabab2ad9355ebd7344b138754020e9205a17c09",
+      "size_bytes": 667,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v1/held_out/heldout-003.trajectory.json.gz",
+      "sha256": "a8347c548564e1351de16dc6d37598e50ddf98339cd256b260a493e3a3b46c3c",
+      "size_bytes": 358505,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v1/held_out/heldout-004.result.json",
+      "sha256": "29c2471c1e0a1f3699a93cc4c8e4effcbe80497ab9fbf00b62fa6407e15d43c2",
+      "size_bytes": 959,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v1/held_out/heldout-004.trajectory.json.gz",
+      "sha256": "9188cea4b6a1b6b800bc0b8b2426da54166277c2d39a837bb55e88c1b4e5b819",
+      "size_bytes": 355789,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v1/nominal/nominal-s0.result.json",
+      "sha256": "df435a42ddf082309dc757bc47fe551cfffac2db2d4b7a173e6fb537385ff7cf",
+      "size_bytes": 640,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v1/nominal/nominal-s0.trajectory.json.gz",
+      "sha256": "7bfeb5b2b33efc7c4f32417a89e61b910e3eb15fc4f356a1f2af71a25bb8dd54",
+      "size_bytes": 293603,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v1/nominal/nominal-s1.result.json",
+      "sha256": "02506b1f9c1212f7b5b57106f722dd7f3858814b006c64c21332e3caf8efc801",
+      "size_bytes": 641,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v1/nominal/nominal-s1.trajectory.json.gz",
+      "sha256": "986559219d9b220aa73c83eb5fa6500c366b4fceb3838c0710da94ac1df20580",
+      "size_bytes": 293604,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v1/nominal/nominal-s2.result.json",
+      "sha256": "cde4440bc05b725971b5ccaa593ceec3b9fe16d39abf043fbcc8124f502a0761",
+      "size_bytes": 640,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v1/nominal/nominal-s2.trajectory.json.gz",
+      "sha256": "bfb96782d84803547e3cf3d2c55d40c9dd28765bbbadb56a02f93ba3058e7e06",
+      "size_bytes": 293604,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v1/regression/reg-ce-act-020-minimized.result.json",
+      "sha256": "ef645907fb5c8105191b27e5d9a4ec99788a994d9d6601cb2d9fd942db1c105b",
+      "size_bytes": 1008,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v1/regression/reg-ce-act-020-minimized.trajectory.json.gz",
+      "sha256": "cc478adb215c8dc7ba40ace4822f790f4433d0ddfbca6448ac76a9e74f272ddd",
+      "size_bytes": 340028,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v1/regression/reg-ce-act-020-original.result.json",
+      "sha256": "d89102e788516e648e66a3b2dbdc57409ffd7abe95f79d231122c470dd4c6aa4",
+      "size_bytes": 999,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v1/regression/reg-ce-act-020-original.trajectory.json.gz",
+      "sha256": "cbd17e191691aea5103794daf00757dc3953c2aebdff023e5bbe921b667b4006",
+      "size_bytes": 311424,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v2/held_out/heldout-000.result.json",
+      "sha256": "00ef87d5387bc68863c1cd7274621594d3b11dc0de3eebe721310919095320fa",
+      "size_bytes": 666,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v2/held_out/heldout-000.trajectory.json.gz",
+      "sha256": "84afaa924321e28e40ec312d693c380c7e9368de7f6646b188ac3d1adf817d6f",
+      "size_bytes": 357002,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v2/held_out/heldout-001.result.json",
+      "sha256": "1f8e2d5a6b84eab310af1d8fa3183e268d457aed107cdebc89515cff243ee9ac",
+      "size_bytes": 666,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v2/held_out/heldout-001.trajectory.json.gz",
+      "sha256": "a3d229cd633e8089e913c20f409136585942a0f8ed412f0b11e803ae0bf33429",
+      "size_bytes": 299271,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v2/held_out/heldout-002.result.json",
+      "sha256": "4002f1c3a204b34d78fc8e28dc29c42b6b9d2d52a641ae98107fb5f159f0c619",
+      "size_bytes": 666,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v2/held_out/heldout-002.trajectory.json.gz",
+      "sha256": "810c625c7b04a8bcf62c2895cbb16a2696cb579324565c4e12247b89cf3fbfa0",
+      "size_bytes": 359631,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v2/held_out/heldout-003.result.json",
+      "sha256": "a3ee6c5573814d01f87bcfb99dc76aeca4d5b6eb86827e4181eac7a433e600e4",
+      "size_bytes": 665,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v2/held_out/heldout-003.trajectory.json.gz",
+      "sha256": "55d8fb0e4a175bce41fd1cad6af8a323eebbe01e38e01dd110aa2d4544d6df7f",
+      "size_bytes": 358207,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v2/held_out/heldout-004.result.json",
+      "sha256": "9a9e72e5f7a0bc5b3618c372be57f91e4650e6f203f2e89336e98f6de91dd6f4",
+      "size_bytes": 667,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v2/held_out/heldout-004.trajectory.json.gz",
+      "sha256": "da43cfd1e4792d2ca77ee0e7bfb5bc73280203d000b3c6091501eaf86a8c1613",
+      "size_bytes": 334281,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v2/nominal/nominal-s0.result.json",
+      "sha256": "43e55ccc95e49ac54baec4941bdabbe0fcdee7ff8954c621de56f220df9ee2b1",
+      "size_bytes": 639,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v2/nominal/nominal-s0.trajectory.json.gz",
+      "sha256": "3333be8ba65f01952cf9cc079c6737ace0f458869b7c6d254e5c6987efe6d0f1",
+      "size_bytes": 297809,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v2/nominal/nominal-s1.result.json",
+      "sha256": "88306f951c22e2fbf3c11a4bbff824956916d72d1942c8422151070682371cc6",
+      "size_bytes": 640,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v2/nominal/nominal-s1.trajectory.json.gz",
+      "sha256": "bbccc33e6586b333b0cb22c04d5a24731dd6a66dc1443de413e463e366f3ca91",
+      "size_bytes": 297809,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v2/nominal/nominal-s2.result.json",
+      "sha256": "2db8e82b6ba1c6bfcdd06dc20ef1ed2eba7c0cba05eecca0277d1a022e379873",
+      "size_bytes": 640,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v2/nominal/nominal-s2.trajectory.json.gz",
+      "sha256": "55616319e3dfa765fa0b401ee9826379262fac676390954dd0279c24d366e028",
+      "size_bytes": 297809,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v2/regression/reg-ce-act-020-minimized.result.json",
+      "sha256": "42f9cee75f59b37bd9e5ac8144029f0153f94cfcd3b43feba7ff4f044d84e0de",
+      "size_bytes": 714,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v2/regression/reg-ce-act-020-minimized.trajectory.json.gz",
+      "sha256": "060ac72a9d82a844d219f1bf6e92fdb7b191ea8cdbdb4c34702f1073d817aa75",
+      "size_bytes": 326372,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v2/regression/reg-ce-act-020-original.result.json",
+      "sha256": "a60c7ae01a2e810888e56ff2fcbbe0e5cec1783b3b737976cfad503441983b82",
+      "size_bytes": 710,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v2/regression/reg-ce-act-020-original.trajectory.json.gz",
+      "sha256": "ce9a28c510ad321de53accb052664497779203ef838d7b3b99b082a8e29ce4b4",
+      "size_bytes": 341903,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v2/video/reg-ce-act-020-minimized.result.json",
+      "sha256": "6b435db1a0f798f09514d9645537349e79b72ef41cb1b7f59f21e454f632e5ec",
+      "size_bytes": 707,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "push-dls-ik-v2/video/reg-ce-act-020-minimized.trajectory.json.gz",
+      "sha256": "692365751f8513edfe1d4a6a02085a35dfd6bd209d9f86d3071f888b8f6d1cba",
+      "size_bytes": 326372,
+      "producer": "scripts/g11_run.py",
+      "kind": "raw"
+    },
+    {
+      "path": "push-dls-ik-v2_on_reg-ce-act-020-minimized.mp4",
+      "sha256": "da79217a693ef0a0d97fe7d3ac2b525608eef476691988cb4306b0842b3b97dd",
+      "size_bytes": 489830,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "release_push-dls-ik-v1.json",
+      "sha256": "83004e88f6682e1e9c5583212063d762d4f64cdc3b7a59c171fc3042c87f53e1",
+      "size_bytes": 1376,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "release_push-dls-ik-v2.json",
+      "sha256": "e567f09372b6be3db6aab29ae6d1db02f731a833516e1c47f48e4180186cfbbb",
+      "size_bytes": 1082,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "test_suite.json",
+      "sha256": "927f73e758a50da0f13e4935a592b20b9fa2c2fc4e0fca70392f819e6d5685ce",
+      "size_bytes": 4459,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    },
+    {
+      "path": "tests-sim-venv.txt",
+      "sha256": "f72262da99113a7056fd7d442ab297f7e18ddb562275eb5e50c796204570e445",
+      "size_bytes": 179,
+      "producer": "scripts/g11_run.py",
+      "kind": "derived"
+    }
+  ]
+}

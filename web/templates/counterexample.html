@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Counterexample Replay</h1>
+<p class="lede">The nearest failure found by active search, reduced by greedy revert and bisection to the smallest change that still fails under this simulator and controller.</p>
+
+{% if ce %}
+<div class="grid">
+  <div class="card"><div class="k">Counterexample</div><div class="v" style="font-size:16px" >{{ ce.counterexample_id }}</div></div>
+  <div class="card"><div class="k">Removed variables</div><div class="v">{{ ce.removed_variables | length }} <small>of {{ variables | length }}</small></div></div>
+  <div class="card"><div class="k">Kept variables</div><div class="v" style="font-size:16px">{{ ce.kept_variables | join(', ') }}</div></div>
+  <div class="card"><div class="k">Replay seed set</div><div class="v">{{ ce.replay_seeds | join(', ') }}</div></div>
+  <div class="card"><div class="k">Observed replay failures</div><div class="v">{{ ce.replay_failures }} / {{ ce.replay_runs }}</div>
+    <div class="note">{% if replay %}bit-identical steps: {{ replay.bit_identical_steps }}. {{ replay.note }}{% endif %}</div></div>
+  <div class="card"><div class="k">Distance from nominal</div>
+    <div class="v">{{ '%.3f' % mins.initial_distance if mins else '—' }} → {{ '%.3f' % mins.minimized_distance if mins else '—' }}</div></div>
+</div>
+
+<h2>Original vs minimized scenario</h2>
+<table>
+<tr><th>variable</th><th>unit</th><th>nominal</th><th>original ({{ ce.original.scenario_id }})</th><th>minimized</th><th></th></tr>
+{% for r in rows %}
+<tr><td class="{{ 'removed' if r.removed else 'kept' }}">{{ r.name }}</td><td>{{ r.unit }}</td><td>{{ '%.4g' % r.nominal }}</td><td>{{ '%.4g' % r.original }}</td><td>{{ '%.4g' % r.minimized }}</td>
+  <td class="note">{{ 'reverted to nominal, still fails' if r.removed else 'kept: reverting it makes the episode pass' }}</td></tr>
+{% endfor %}
+</table>
+{% if mins %}
+<p class="note">Refinement: {% for k, v in mins.refined.items() %}{{ k }} bisected {{ v.bisections }} times toward nominal, pass bound {{ '%.4g' % v.pass_bound }}, probe at {{ '%.4g' % v.probe_value if v.probe_value is defined else '—' }} {{ 'failed (non-monotone)' if v.probe_failed else 'passed' }}. {% endfor %}
+Non-monotone variables: {{ mins.non_monotone_variables or 'none observed' }}. Locally minimized; no claim of a global minimum or of causation.</p>
+{% endif %}
+
+<div class="two">
+  <div><h2>Original failure</h2>
+    {% if videos.original %}<video controls preload="metadata" src="/evidence/G10/{{ videos.original.path }}"></video>
+    <div class="note">oracle on the rendered run: <span class="badge {{ videos.original.status }}">{{ videos.original.status }}</span></div>{% else %}<p class="note">no video</p>{% endif %}</div>
+  <div><h2>Minimized failure</h2>
+    {% if videos.minimized %}<video controls preload="metadata" src="/evidence/G10/{{ videos.minimized.path }}"></video>
+    <div class="note">oracle on the rendered run: <span class="badge {{ videos.minimized.status }}">{{ videos.minimized.status }}</span></div>{% else %}<p class="note">no video</p>{% endif %}</div>
+</div>
+
+<h2>Minimizer ledger</h2>
+<table>
+<tr><th>#</th><th>phase</th><th>move</th>{% for v in variables %}<th>{{ v }}</th>{% endfor %}<th>distance</th><th>verdict</th><th>adopted</th></tr>
+{% for r in ledger %}
+<tr class="{{ 'accepted' if r.accepted == 'True' }}"><td>{{ r.index }}</td><td>{{ r.phase }}</td><td>{{ r.move }}</td>
+  {% for v in variables %}<td>{{ '%.4g' % (r[v] | float) }}</td>{% endfor %}
+  <td>{{ '%.3f' % (r.distance_from_nominal | float) }}</td><td><span class="badge {{ r.status }}">{{ r.status }}</span></td><td>{{ '✓' if r.accepted == 'True' else '' }}</td></tr>
+{% endfor %}
+</table>
+{% else %}
+<p>No counterexample record found.</p>
+{% endif %}
+{% endblock %}

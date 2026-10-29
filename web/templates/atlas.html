@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Failure Atlas</h1>
+<p class="lede">Every stored episode plotted over two perturbation variables. Points are observations; no boundary is fitted or inferred.</p>
+
+<form method="get" style="margin-bottom:10px">
+  <label>x <select name="x">{% for v in variables %}<option value="{{ v }}" {{ 'selected' if v == x }}>{{ v }}</option>{% endfor %}</select></label>
+  <label style="margin-left:12px">y <select name="y">{% for v in variables %}<option value="{{ v }}" {{ 'selected' if v == y }}>{{ v }}</option>{% endfor %}</select></label>
+  <button type="submit" style="margin-left:12px">redraw</button>
+</form>
+
+<div class="two">
+<div>
+<svg width="{{ w }}" height="{{ h }}" viewBox="0 0 {{ w }} {{ h }}" style="background:#fff;border-radius:6px;max-width:100%">
+  <line x1="{{ pad }}" y1="{{ h - pad }}" x2="{{ w - pad }}" y2="{{ h - pad }}" stroke="#333"/>
+  <line x1="{{ pad }}" y1="{{ pad }}" x2="{{ pad }}" y2="{{ h - pad }}" stroke="#333"/>
+  <text x="{{ w / 2 }}" y="{{ h - 12 }}" text-anchor="middle" style="fill:#333">{{ x }} ({{ sx.unit }}) · {{ sx.min }} to {{ sx.max }}</text>
+  <text x="14" y="{{ h / 2 }}" text-anchor="middle" transform="rotate(-90 14 {{ h / 2 }})" style="fill:#333">{{ y }} ({{ sy.unit }}) · {{ sy.min }} to {{ sy.max }}</text>
+  <line x1="{{ nominal[0] }}" y1="{{ pad }}" x2="{{ nominal[0] }}" y2="{{ h - pad }}" stroke="#bbb" stroke-dasharray="4 4"/>
+  <line x1="{{ pad }}" y1="{{ nominal[1] }}" x2="{{ w - pad }}" y2="{{ nominal[1] }}" stroke="#bbb" stroke-dasharray="4 4"/>
+  {% for p in points %}
+  <circle cx="{{ p.cx }}" cy="{{ p.cy }}" r="{{ 5 if p.e.failed else 3.5 }}" fill="{{ '#f85149' if p.e.failed else '#3fb950' }}" fill-opacity="0.8">
+    <title>{{ p.e.scenario_id }} ({{ p.e.source }}): {{ p.e.status }}, distance {{ '%.3f' % p.e.distance }}</title></circle>
+  {% endfor %}
+  {% if ce_pt %}
+  <circle cx="{{ ce_pt.cx }}" cy="{{ ce_pt.cy }}" r="9" fill="none" stroke="#000" stroke-width="2"><title>minimized counterexample</title></circle>
+  {% endif %}
+  <text x="{{ nominal[0] + 4 }}" y="{{ pad + 10 }}" style="fill:#777">nominal</text>
+</svg>
+<p class="note">red = TASK_FAIL or SAFETY_FAIL, green = PASS, black ring = minimized counterexample (G10). Dashed lines mark nominal values. Points from other variables are projected onto this plane, so a red and a green point can overlap.</p>
+</div>
+<div>
+  <div class="grid">
+    <div class="card"><div class="k">Episodes shown</div><div class="v">{{ n_total }}</div><div class="note">{{ sources | join(' · ') }}</div></div>
+    <div class="card"><div class="k">Valid failures</div><div class="v">{{ n_fail }}</div></div>
+    <div class="card"><div class="k">Robustness margin M(π)</div>
+      <div class="v">{{ '%.3f' % nearest.distance if nearest else '—' }}</div>
+      <div class="note">nearest <em>observed</em> failure distance ({{ nearest.scenario_id if nearest else '' }}); an observation under the tested envelope, not a bound.</div></div>
+  </div>
+  {% if ce_pt %}
+  <h2>Minimized counterexample</h2>
+  <table>{% for k, v in ce_pt['values'].items() %}<tr><td>{{ k }}</td><td>{{ '%.4g' % v }}</td></tr>{% endfor %}</table>
+  {% endif %}
+</div>
+</div>
+{% endblock %}

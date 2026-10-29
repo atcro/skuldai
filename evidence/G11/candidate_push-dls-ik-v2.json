@@ -1,0 +1,26 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "candidate_id": "rc-push-dls-ik-v2-ada1953",
+  "policy_ref": "push-dls-ik-v2",
+  "sim_name": "mujoco",
+  "sim_version": "3.17.0",
+  "test_suite_ref": "skuld-push-protocol-suite-97c97ea27eb0",
+  "seed_lists": {
+    "nominal": [
+      0,
+      1,
+      2
+    ],
+    "regression": [
+      0
+    ],
+    "held_out": [
+      1000,
+      1001,
+      1002,
+      1003,
+      1004
+    ]
+  },
+  "commit_sha": "ada1953a85ea72d89d78153e1736c264e8636828"
+}

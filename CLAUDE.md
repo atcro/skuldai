@@ -17,16 +17,18 @@ regression test, and blocks releases that fail. Built for the Nebius x NVIDIA
 Global AI Hackathon, Physical AI track.
 
 - **Deadline:** Fri 2026-10-30 10:00 AM PDT. Internal target: submit Thu 2026-10-29.
-- **Status (2026-10-28):** G01, G02, G05, G06, G07, G08 and G10 PASS (toolchain,
-  contracts, closed-loop MuJoCo Panda push with 4 perturbations, replay, video,
-  deterministic oracle with fault injection, locked protocol + 25-episode
-  random baseline, live Tavily evidence -> approved constraint -> hypothesis
-  -> executed scenario, active search beating the archived random baseline on
-  a matched budget of 25, one-variable minimized counterexample replayed
-  bit-identically with two videos; 65 tests). TestSpec push-block-v1 and
-  constraint panda-payload-kg approved by Adam 2026-10-26. G00 BLOCKED on
-  human Devpost confirmation. G03/G04 (credits, Nemotron) not started. Current
-  gate: G11 fail-closed release gate + dashboard. See the newest
+- **Status (2026-10-28, late):** G01, G02, G05, G06, G07, G08, G10 and G11 PASS
+  (toolchain, contracts, closed-loop MuJoCo Panda push with 4 perturbations,
+  deterministic oracle, locked protocol + 25-episode random baseline, live
+  Tavily evidence -> approved constraint -> hypothesis -> executed scenario,
+  active search beating the archived random baseline on a matched budget of
+  25, one-variable minimized counterexample replayed bit-identically, fail-closed
+  release gate: v1 BLOCKED by its stored counterexample + 2 held-out cases, v2
+  repair ELIGIBLE, 9/9 faults fail closed, 4 dashboard surfaces on real
+  records; 80 tests). TestSpec push-block-v1 and constraint panda-payload-kg
+  approved by Adam 2026-10-26. G00 BLOCKED on human Devpost confirmation.
+  G03/G04 (credits, Nemotron) not started. Current gate: G12 freeze, rerun,
+  README results, video, public repo, submission. See the newest
   `docs/gates/G##_report.md`.
 - **Critical path:** closed-loop MuJoCo simulator -> deterministic oracle ->
   random baseline -> active search -> minimized reproducible counterexample ->
@@ -153,6 +155,9 @@ anything needing root goes in a script the human runs.
 - full G07 check (EXECUTED 2026-10-26): `scripts/g07_run.sh [--no-video]`; sim venv; locked protocol, 3 nominal + 25 random unrendered episodes (~0.6 s each), spot-check replays, one 15 s video (~2 min); writes `evidence/G07/`
 - full G08 check (EXECUTED 2026-10-26): `scripts/g08_run.sh` (phase 1: live Tavily search + proposed constraint) then `scripts/g08_run.sh --approved-by "Name"` (phase 2: human approval, domain check, hypothesis, one executed scenario). Reads `TAVILY_API_KEY` from the git-ignored `.env`; set it with `scripts/set_tavily_key.ps1` (hidden input)
 - full G10 check (EXECUTED 2026-10-28): `scripts/g10_run.sh [--no-video] [--no-hypothesis]`; sim venv; refuses to run unless protocol, policy and scene hashes match `evidence/G07`; 25 active + 25 hypothesis-seeded episodes, minimization, 3 replays, two 15 s videos (~3.5 min); writes `evidence/G10/`. Lint + tests only: `scripts/g10_check.sh`
+- full G11 check (EXECUTED 2026-10-28): `scripts/g11_run.sh [--no-video]`; sim venv; builds the policy registry and test suite (3 nominal + 2 regression from `evidence/G10/counterexample.json` + 5 held-out), runs all suites for v1 and the v2 repair, decides fail-closed, runs 9 fault-injection cases, one video (~3 min); writes `evidence/G11/`
+- dashboard (EXECUTED 2026-10-28): `uvicorn skuld.api.main:app --host 127.0.0.1 --port 8765` then open `/`, `/atlas`, `/counterexample`, `/release`; read-only over `evidence/` (override with `SKULD_EVIDENCE_DIR`)
+- lint + full tests without a sim run: `scripts/quick_check.sh [paths to ruff-format]`
 - inventory: `scripts/inventory_wsl.sh`
 - Token Factory smoke arrives in G04 from the pinned npa docs (the old `scripts/smoke_tavily.py` is superseded by G08)
 - simulator env (EXECUTED 2026-10-26): `~/.venvs/skuld-mujoco` with `skuld[dev,sim]`, created by `scripts/g05_setup.sh` (also sparse-clones the pinned Menagerie Panda to `~/src/mujoco_menagerie` and runs the EGL smoke test)

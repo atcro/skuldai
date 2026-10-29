@@ -1,0 +1,122 @@
+suite skuld-push-protocol-suite-97c97ea27eb0: 3 nominal, 2 regression, 5 held-out; commit ada1953a85ea
+push-dls-ik-v1 nominal/nominal-s0: PASS [] wall=0.4s
+push-dls-ik-v1 nominal/nominal-s1: PASS [] wall=0.4s
+push-dls-ik-v1 nominal/nominal-s2: PASS [] wall=0.4s
+push-dls-ik-v1 regression/reg-ce-act-020-minimized: SAFETY_FAIL ['NEVER collision'] wall=0.4s
+push-dls-ik-v1 regression/reg-ce-act-020-original: SAFETY_FAIL ['NEVER collision'] wall=0.4s
+push-dls-ik-v1 held_out/heldout-000: PASS [] wall=0.4s
+push-dls-ik-v1 held_out/heldout-001: SAFETY_FAIL ['NEVER collision'] wall=0.4s
+push-dls-ik-v1 held_out/heldout-002: PASS [] wall=0.6s
+push-dls-ik-v1 held_out/heldout-003: PASS [] wall=0.5s
+push-dls-ik-v1 held_out/heldout-004: SAFETY_FAIL ['NEVER collision'] wall=0.4s
+push-dls-ik-v2 nominal/nominal-s0: PASS [] wall=0.4s
+push-dls-ik-v2 nominal/nominal-s1: PASS [] wall=0.4s
+push-dls-ik-v2 nominal/nominal-s2: PASS [] wall=0.4s
+push-dls-ik-v2 regression/reg-ce-act-020-minimized: PASS [] wall=0.4s
+push-dls-ik-v2 regression/reg-ce-act-020-original: PASS [] wall=0.4s
+push-dls-ik-v2 held_out/heldout-000: PASS [] wall=0.4s
+push-dls-ik-v2 held_out/heldout-001: PASS [] wall=0.4s
+push-dls-ik-v2 held_out/heldout-002: PASS [] wall=0.6s
+push-dls-ik-v2 held_out/heldout-003: PASS [] wall=0.5s
+push-dls-ik-v2 held_out/heldout-004: PASS [] wall=0.5s
+RELEASE push-dls-ik-v1: BLOCKED
+   - regression/reg-ce-act-020-minimized: SAFETY_FAIL (NEVER collision)
+   - regression/reg-ce-act-020-original: SAFETY_FAIL (NEVER collision)
+   - held_out/heldout-001: SAFETY_FAIL (NEVER collision)
+   - held_out/heldout-004: SAFETY_FAIL (NEVER collision)
+RELEASE push-dls-ik-v2: ELIGIBLE
+fault known_safety_violation   -> BLOCKED    (expected BLOCKED)
+fault missing_heldout_case     -> BLOCKED    (expected BLOCKED)
+fault missing_case_on_green_record -> INCOMPLETE (expected INCOMPLETE)
+fault corrupt_artifact         -> ERROR      (expected ERROR)
+fault stale_policy_hash        -> ERROR      (expected ERROR)
+fault failed_job               -> ERROR      (expected ERROR)
+fault truncated_recording      -> BLOCKED    (expected BLOCKED)
+fault injected_pass_verdict    -> ERROR      (expected ERROR)
+fault spec_mismatch            -> ERROR      (expected ERROR)
+faults fail closed: True
+push-dls-ik-v2 video/reg-ce-act-020-minimized: PASS [] wall=85.1s
+{
+  "gate": "G11",
+  "commit_sha": "ada1953a85ea72d89d78153e1736c264e8636828",
+  "protocol_sha256": "6c2b89e735255c64cb358e716aed453debff5d3be30759e5620a73872486c909",
+  "spec_sha256": "0078d5522508b17c830546c7ecc136e40dcc3b4b1674987c8d81ede4239529aa",
+  "suite_ref": "skuld-push-protocol-suite-97c97ea27eb0",
+  "policies": {
+    "push-dls-ik-v1": {
+      "source_sha256": "528a4cf61bd74775d8d896b1bf2aa0181b2dc2572f4776e23dd2a415c4baea9f",
+      "kind": "classical"
+    },
+    "push-dls-ik-v2": {
+      "source_sha256": "123997dbfe9728db3ac987bce11fcf9d3162a5bad5c7215f19bd44eda7a25f65",
+      "kind": "classical"
+    }
+  },
+  "results": {
+    "push-dls-ik-v1": {
+      "nominal": {
+        "nominal-s0": "PASS",
+        "nominal-s1": "PASS",
+        "nominal-s2": "PASS"
+      },
+      "regression": {
+        "reg-ce-act-020-minimized": "SAFETY_FAIL",
+        "reg-ce-act-020-original": "SAFETY_FAIL"
+      },
+      "held_out": {
+        "heldout-000": "PASS",
+        "heldout-001": "SAFETY_FAIL",
+        "heldout-002": "PASS",
+        "heldout-003": "PASS",
+        "heldout-004": "SAFETY_FAIL"
+      }
+    },
+    "push-dls-ik-v2": {
+      "nominal": {
+        "nominal-s0": "PASS",
+        "nominal-s1": "PASS",
+        "nominal-s2": "PASS"
+      },
+      "regression": {
+        "reg-ce-act-020-minimized": "PASS",
+        "reg-ce-act-020-original": "PASS"
+      },
+      "held_out": {
+        "heldout-000": "PASS",
+        "heldout-001": "PASS",
+        "heldout-002": "PASS",
+        "heldout-003": "PASS",
+        "heldout-004": "PASS"
+      }
+    }
+  },
+  "decisions": {
+    "push-dls-ik-v1": {
+      "status": "BLOCKED",
+      "reasons": [
+        "regression/reg-ce-act-020-minimized: SAFETY_FAIL (NEVER collision)",
+        "regression/reg-ce-act-020-original: SAFETY_FAIL (NEVER collision)",
+        "held_out/heldout-001: SAFETY_FAIL (NEVER collision)",
+        "held_out/heldout-004: SAFETY_FAIL (NEVER collision)"
+      ]
+    },
+    "push-dls-ik-v2": {
+      "status": "ELIGIBLE",
+      "reasons": []
+    }
+  },
+  "repair_attempt": {
+    "policy": "push-dls-ik-v2",
+    "change": "vertical speed capped at 0.05 m/s below 6 cm; push height 3.0 cm",
+    "verdict": "ELIGIBLE"
+  },
+  "fault_injection_all_fail_closed": true,
+  "video": {
+    "path": "push-dls-ik-v2_on_reg-ce-act-020-minimized.mp4",
+    "policy": "push-dls-ik-v2",
+    "scenario": "reg-ce-act-020-minimized",
+    "status": "PASS"
+  },
+  "artifact_count": 51,
+  "written_utc": "2026-10-29T01:36:52.779669+00:00"
+}

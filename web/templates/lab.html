@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Test Lab</h1>
+<p class="lede">Policy under test, budget, failures found, nearest counterexample and the candidate ledger of the matched active-search run (G10).</p>
+
+{% set act = comparison.get('active') or {} %}
+{% set rnd = comparison.get('random_baseline_G07') or {} %}
+<div class="grid">
+  <div class="card"><div class="k">Policy under test</div>
+    <div class="v" style="font-size:16px">{{ policy.policy_id if policy else '—' }}</div>
+    <div class="note">kind: <b>{{ policy.kind if policy else '—' }}</b> · source sha256 <span class="mono">{{ short(policy.source_sha256) if policy else '—' }}</span></div></div>
+  <div class="card"><div class="k">Workers</div><div class="v">1 <small>local CPU, {{ sim or 'MuJoCo' }}</small></div></div>
+  <div class="card"><div class="k">Experiments done / budget</div>
+    <div class="v">{{ act.get('episodes_used', '—') }} / {{ act.get('budget', '—') }}</div>
+    <div class="note">EXEC_ERROR not counted: {{ act.get('exec_errors_not_counted', '—') }}</div></div>
+  <div class="card"><div class="k">Failures so far (active)</div><div class="v">{{ act.get('valid_failures_within_budget', '—') }} <small>vs {{ rnd.get('valid_failures_within_budget', '—') }} random</small></div></div>
+  <div class="card"><div class="k">Nearest counterexample distance</div>
+    <div class="v">{{ '%.3f' % act['min_distance_from_nominal_among_valid_failures'] if act.get('min_distance_from_nominal_among_valid_failures') is not none else '—' }}
+      <small>vs {{ '%.3f' % rnd['min_distance_from_nominal_among_valid_failures'] if rnd.get('min_distance_from_nominal_among_valid_failures') is not none else '—' }} random</small></div></div>
+  <div class="card"><div class="k">Episodes to first failure</div><div class="v">{{ act.get('episodes_to_first_valid_failure', '—') }} <small>vs {{ rnd.get('episodes_to_first_valid_failure', '—') }} random</small></div></div>
+</div>
+<p class="note">Protocol sha256 <span class="mono">{{ protocol_sha or '—' }}</span>. Same domain, oracle, policy and budget for both strategies; one run each. {{ comparison.get('note', '') }}</p>
+
+<div class="two">
+  <div>
+    <h2>Latest simulation video</h2>
+    {% if video %}
+    <video controls preload="metadata" src="/evidence/{{ video }}"></video>
+    <div class="note">{{ video }} · rendered from a separate run of the stored scenario; oracle verdict recorded in the gate report.</div>
+    {% else %}<p class="note">No video recorded.</p>{% endif %}
+  </div>
+  <div>
+    <h2>Comparison curves</h2>
+    {% if 'G10/comparison.svg' not in missing %}<img src="/evidence/G10/comparison.svg" alt="failures found and running min distance vs episodes" style="width:100%;background:#fff;border-radius:6px">{% endif %}
+  </div>
+</div>
+
+<h2>Job ledger · active search, every candidate</h2>
+<table>
+<tr><th>#</th><th>scenario</th><th>phase</th><th>move</th><th>parent</th>{% for v in variables %}<th>{{ v }}</th>{% endfor %}<th>distance</th><th>verdict</th><th>accepted</th></tr>
+{% for r in ledger %}
+<tr class="{{ 'accepted' if r.scenario_id in incumbents }}">
+  <td>{{ r.index }}</td><td class="mono">{{ r.scenario_id }}</td><td>{{ r.phase }}</td><td>{{ r.move }}</td><td class="mono">{{ r.parent }}</td>
+  {% for v in variables %}<td>{{ '%.3f' % (r[v] | float) }}</td>{% endfor %}
+  <td>{{ '%.3f' % (r.distance_from_nominal | float) }}</td>
+  <td><span class="badge {{ r.status }}">{{ r.status }}</span></td>
+  <td>{{ '✓' if r.accepted == 'True' else '' }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "candidate_ref": "rc-push-dls-ik-v2-ada1953",
+  "status": "ELIGIBLE",
+  "suites": [
+    {
+      "suite": "nominal",
+      "required": true,
+      "episode_refs": [
+        "traj-nominal-s0-s0",
+        "traj-nominal-s1-s1",
+        "traj-nominal-s2-s2"
+      ],
+      "statuses": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "suite": "regression",
+      "required": true,
+      "episode_refs": [
+        "traj-reg-ce-act-020-minimized-s0",
+        "traj-reg-ce-act-020-original-s0"
+      ],
+      "statuses": [
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "suite": "held_out",
+      "required": true,
+      "episode_refs": [
+        "traj-heldout-000-s1000",
+        "traj-heldout-001-s1001",
+        "traj-heldout-002-s1002",
+        "traj-heldout-003-s1003",
+        "traj-heldout-004-s1004"
+      ],
+      "statuses": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ]
+    }
+  ],
+  "blocking_reasons": [],
+  "decided_at": "2026-10-29T01:35:26.448754Z"
+}

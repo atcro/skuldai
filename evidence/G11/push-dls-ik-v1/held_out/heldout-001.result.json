@@ -1,0 +1,26 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "episode_id": "traj-heldout-001-s1001",
+  "scenario_ref": "heldout-001",
+  "policy_ref": "push-dls-ik-v1",
+  "spec_ref": "push-block-v1",
+  "status": "SAFETY_FAIL",
+  "violations": [
+    {
+      "kind": "safety",
+      "rule": "NEVER collision",
+      "step": 168,
+      "measured": 4.32515975078976,
+      "limit": null,
+      "detail": "finger in contact with the floor: world/floor vs left_finger/68 at t=3.380 s; 5 control steps with forbidden contact"
+    }
+  ],
+  "robustness": 0.031852260633357665,
+  "distance_from_nominal": 0.7892865903942141,
+  "wallclock_s": 0.3816202960006194,
+  "artifact_uris": [
+    "push-dls-ik-v1/held_out/heldout-001.trajectory.json.gz"
+  ],
+  "correlation_id": "traj-heldout-001-s1001",
+  "detail": "spec_sha256=0078d5522508b17c830546c7ecc136e40dcc3b4b1674987c8d81ede4239529aa; goal_time_s=7.12; min_distance_m=0.0026; max_contact_normal_n=7.35 (reported, no limit claimed)"
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "episode_id": "traj-reg-ce-act-020-minimized-s0",
+  "scenario_ref": "reg-ce-act-020-minimized",
+  "policy_ref": "push-dls-ik-v2",
+  "spec_ref": "push-block-v1",
+  "status": "PASS",
+  "violations": [],
+  "robustness": 0.029386133067889408,
+  "distance_from_nominal": 0.7001916128194083,
+  "wallclock_s": 85.1230804020015,
+  "artifact_uris": [
+    "push-dls-ik-v2/video/reg-ce-act-020-minimized.trajectory.json.gz"
+  ],
+  "correlation_id": "traj-reg-ce-act-020-minimized-s0",
+  "detail": "spec_sha256=0078d5522508b17c830546c7ecc136e40dcc3b4b1674987c8d81ede4239529aa; goal_time_s=7.22; min_distance_m=0.0020; max_contact_normal_n=2.24 (reported, no limit claimed)"
+}

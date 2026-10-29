@@ -1,0 +1,58 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "candidate_ref": "rc-push-dls-ik-v1-ada1953",
+  "status": "BLOCKED",
+  "suites": [
+    {
+      "suite": "nominal",
+      "required": true,
+      "episode_refs": [
+        "traj-nominal-s0-s0",
+        "traj-nominal-s1-s1",
+        "traj-nominal-s2-s2"
+      ],
+      "statuses": [
+        "PASS",
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "suite": "regression",
+      "required": true,
+      "episode_refs": [
+        "traj-reg-ce-act-020-minimized-s0",
+        "traj-reg-ce-act-020-original-s0"
+      ],
+      "statuses": [
+        "SAFETY_FAIL",
+        "SAFETY_FAIL"
+      ]
+    },
+    {
+      "suite": "held_out",
+      "required": true,
+      "episode_refs": [
+        "traj-heldout-000-s1000",
+        "traj-heldout-001-s1001",
+        "traj-heldout-002-s1002",
+        "traj-heldout-003-s1003",
+        "traj-heldout-004-s1004"
+      ],
+      "statuses": [
+        "PASS",
+        "SAFETY_FAIL",
+        "PASS",
+        "PASS",
+        "SAFETY_FAIL"
+      ]
+    }
+  ],
+  "blocking_reasons": [
+    "regression/reg-ce-act-020-minimized: SAFETY_FAIL (NEVER collision)",
+    "regression/reg-ce-act-020-original: SAFETY_FAIL (NEVER collision)",
+    "held_out/heldout-001: SAFETY_FAIL (NEVER collision)",
+    "held_out/heldout-004: SAFETY_FAIL (NEVER collision)"
+  ],
+  "decided_at": "2026-10-29T01:35:26.368352Z"
+}

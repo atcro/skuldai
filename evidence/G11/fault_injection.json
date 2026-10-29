@@ -1,0 +1,86 @@
+{
+  "all_fail_closed": true,
+  "cases": [
+    {
+      "fault": "known_safety_violation",
+      "injected": "the real v1 evidence: stored regression tests fail",
+      "status": "BLOCKED",
+      "expected": "BLOCKED",
+      "as_expected": true,
+      "never_eligible": true,
+      "first_reason": "regression/reg-ce-act-020-minimized: SAFETY_FAIL (NEVER collision)"
+    },
+    {
+      "fault": "missing_heldout_case",
+      "injected": "heldout-004 result removed (v1 is also BLOCKED, which outranks INCOMPLETE)",
+      "status": "BLOCKED",
+      "expected": "BLOCKED",
+      "as_expected": true,
+      "never_eligible": true,
+      "first_reason": "regression/reg-ce-act-020-minimized: SAFETY_FAIL (NEVER collision)"
+    },
+    {
+      "fault": "missing_case_on_green_record",
+      "injected": "regression statuses forced to PASS, a held-out case removed",
+      "status": "INCOMPLETE",
+      "expected": "INCOMPLETE",
+      "as_expected": true,
+      "never_eligible": true,
+      "first_reason": "held_out/heldout-001: not executed (no result)"
+    },
+    {
+      "fault": "corrupt_artifact",
+      "injected": "nominal-s0 trajectory truncated to half its bytes; checksum mismatch",
+      "status": "ERROR",
+      "expected": "ERROR",
+      "as_expected": true,
+      "never_eligible": true,
+      "first_reason": "nominal/nominal-s0: artifact missing, unreadable or checksum mismatch (truncated gzip)"
+    },
+    {
+      "fault": "stale_policy_hash",
+      "injected": "candidate names push-dls-ik-v0, results were produced by push-dls-ik-v1",
+      "status": "ERROR",
+      "expected": "ERROR",
+      "as_expected": true,
+      "never_eligible": true,
+      "first_reason": "nominal/nominal-s0: result is for policy 'push-dls-ik-v1', candidate is 'push-dls-ik-v0' (stale policy)"
+    },
+    {
+      "fault": "failed_job",
+      "injected": "heldout-000 replaced by an EXEC_ERROR (job status unknown)",
+      "status": "ERROR",
+      "expected": "ERROR",
+      "as_expected": true,
+      "never_eligible": true,
+      "first_reason": "held_out/heldout-000: EXEC_ERROR: simulated: job status unknown"
+    },
+    {
+      "fault": "truncated_recording",
+      "injected": "nominal-s0 recording cut at step 100 -> oracle TIMEOUT; v1 regressions still fail so BLOCKED outranks INCOMPLETE",
+      "status": "BLOCKED",
+      "expected": "BLOCKED",
+      "as_expected": true,
+      "never_eligible": true,
+      "first_reason": "regression/reg-ce-act-020-minimized: SAFETY_FAIL (NEVER collision)"
+    },
+    {
+      "fault": "injected_pass_verdict",
+      "injected": "regression result status edited to PASS with violations kept; schema refused: True",
+      "status": "ERROR",
+      "expected": "ERROR",
+      "as_expected": true,
+      "never_eligible": true,
+      "first_reason": "regression/reg-ce-act-020-minimized: artifact present but unusable (1 validation error for EpisodeResult)"
+    },
+    {
+      "fault": "spec_mismatch",
+      "injected": "nominal-s0 result claims spec push-block-v0",
+      "status": "ERROR",
+      "expected": "ERROR",
+      "as_expected": true,
+      "never_eligible": true,
+      "first_reason": "nominal/nominal-s0: judged under spec 'push-block-v0', suite requires 'push-block-v1'"
+    }
+  ]
+}

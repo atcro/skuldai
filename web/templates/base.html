@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skuld · {{ title }}</title>
+<link rel="stylesheet" href="/static/skuld.css">
+</head>
+<body>
+<header>
+  <div class="brand">Skuld <small>falsification-driven CI/CD for robot policies</small></div>
+  <nav>
+    <a href="/" class="{{ 'active' if title == 'Test Lab' }}">Test Lab</a>
+    <a href="/atlas" class="{{ 'active' if title == 'Failure Atlas' }}">Failure Atlas</a>
+    <a href="/counterexample" class="{{ 'active' if title == 'Counterexample Replay' }}">Counterexample Replay</a>
+    <a href="/release" class="{{ 'active' if title == 'Release Gate' }}">Release Gate</a>
+  </nav>
+</header>
+<main>
+{% if missing %}
+<div class="warnbox">Records not found under {{ evidence_root }}: {{ missing | join(', ') }}. Nothing is shown in their place.</div>
+{% endif %}
+{% block content %}{% endblock %}
+<p class="note" style="margin-top:28px">Read-only view over archived run records. Every value comes from a file hashed in a gate manifest under <span class="mono">{{ evidence_root }}</span>. Simulator results describe the tested simulation envelope, not a real robot.</p>
+</main>
+</body>
+</html>

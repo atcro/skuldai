@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Release Gate</h1>
+<p class="lede">Fail-closed decision per release candidate over three mandatory suites. ELIGIBLE means "passed the named simulation suite", never "safe".</p>
+
+{% if not decisions %}
+<p>No release decision recorded yet (G11 has not run).</p>
+{% endif %}
+
+{% for pid, d in decisions.items() %}
+{% set cand = candidates[pid] %}
+<div class="card" style="margin:14px 0">
+  <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+    <span class="badge status-big {{ d.status if d else 'ERROR' }}">{{ d.status if d else 'ERROR' }}</span>
+    <div>
+      <div style="font-size:16px;font-weight:600">{{ pid }}</div>
+      <div class="note">candidate <span class="mono">{{ cand.candidate_id if cand else '—' }}</span> · commit <span class="mono">{{ short(cand.commit_sha) if cand else '—' }}</span> · {{ cand.sim_name if cand else '' }} {{ cand.sim_version if cand else '' }} · suite <span class="mono">{{ cand.test_suite_ref if cand else '—' }}</span></div>
+      {% if registry %}{% for p in registry.policies if p.policy_id == pid %}<div class="note">kind <b>{{ p.kind }}</b> · source sha256 <span class="mono">{{ short(p.source_sha256, 16) }}</span> · {{ p.description }}</div>{% endfor %}{% endif %}
+    </div>
+  </div>
+  {% if d %}
+  <table style="margin-top:10px">
+  <tr><th>suite</th><th>required</th><th>episodes</th><th>verdicts</th></tr>
+  {% for s in d.suites %}
+  <tr><td>{{ s.suite }}</td><td>yes</td><td>{{ s.statuses | length }}</td>
+    <td>{% for sc, st in (results.get(pid, {}).get(s.suite, {})).items() %}<span class="badge {{ st }}" title="{{ sc }}">{{ sc }}: {{ st }}</span> {% endfor %}</td></tr>
+  {% endfor %}
+  </table>
+  {% if d.blocking_reasons %}
+  <h2>Reasons</h2>
+  <ul class="reasons">{% for r in d.blocking_reasons %}<li>{{ r }}</li>{% endfor %}</ul>
+  {% else %}<p class="note" style="margin-top:8px">All required scenarios passed under the named simulation suite.</p>{% endif %}
+  {% endif %}
+</div>
+{% endfor %}
+
+{% if report.repair_attempt %}
+<h2>Repair attempt</h2>
+<p>{{ report.repair_attempt.policy }}: {{ report.repair_attempt.change }}. Gate verdict: <span class="badge {{ report.repair_attempt.verdict }}">{{ report.repair_attempt.verdict }}</span>.
+{% if report.video %} Video of {{ report.video.policy }} on {{ report.video.scenario }} (oracle: <span class="badge {{ report.video.status }}">{{ report.video.status }}</span>):{% endif %}</p>
+{% if report.video %}<video controls preload="metadata" src="/evidence/G11/{{ report.video.path }}" style="max-width:640px"></video>{% endif %}
+{% endif %}
+
+{% if suite %}
+<h2>Test suite registry · {{ suite.suite_id }}</h2>
+<p class="note">protocol sha256 <span class="mono">{{ suite.protocol_sha256 }}</span> · spec {{ suite.spec_ref }} · domain {{ suite.domain_ref }}</p>
+<table>
+<tr><th>suite</th><th>scenario</th><th>seed</th><th>source</th><th>values</th></tr>
+{% for s in suite.nominal %}<tr><td>nominal</td><td class="mono">{{ s.scenario_id }}</td><td>{{ s.seed }}</td><td>protocol</td><td class="mono">{{ s['values'] }}</td></tr>{% endfor %}
+{% for t in suite.regression %}<tr><td>regression</td><td class="mono">{{ t.scenario.scenario_id }}</td><td>{{ t.scenario.seed }}</td><td>{{ t.source_gate }} {{ t.source_counterexample_id }}: {{ t.reproduced_failure }} ({{ t.replay_failures }}/{{ t.replay_runs }} replays)</td><td class="mono">{{ t.scenario['values'] }}</td></tr>{% endfor %}
+{% for s in suite.held_out %}<tr><td>held_out</td><td class="mono">{{ s.scenario_id }}</td><td>{{ s.seed }}</td><td>protocol (reserved, never searched)</td><td class="mono">{{ s['values'] }}</td></tr>{% endfor %}
+</table>
+{% endif %}
+
+{% if faults %}
+<h2>Fault injection · all fail closed: {{ faults.all_fail_closed }}</h2>
+<table>
+<tr><th>fault</th><th>injected</th><th>decision</th><th>expected</th><th>first reason</th></tr>
+{% for f in faults.cases %}
+<tr><td>{{ f.fault }}</td><td class="note" style="white-space:normal">{{ f.injected }}</td><td><span class="badge {{ f.status }}">{{ f.status }}</span></td><td>{{ f.expected }} {{ '✓' if f.as_expected else '✗' }}</td><td class="note" style="white-space:normal">{{ f.first_reason }}</td></tr>
+{% endfor %}
+</table>
+{% endif %}
+{% endblock %}
