@@ -62,7 +62,7 @@ next_action: 'G02: schemas, adapter interface, artifact manifest, tests, pinned 
 
 - **Checkout location:** repo stays at `/mnt/c/Skuld` so Windows-side tools and the editor see it. **Virtualenvs live in the Linux filesystem** at `~/.venvs/skuld` (app) and later `~/.venvs/skuld-mujoco` (simulator), per the spec's separate-environment rule. If pytest on `/mnt/c` becomes slow as the test suite grows, move the checkout to `~/skuld` and open it from Windows via `\\wsl$`.
 - **Invocation path:** Claude drives WSL from the PowerShell tool with `wsl.exe -d Ubuntu-24.04 -- bash /mnt/c/Skuld/scripts/<name>.sh`. The Git Bash tool rewrites `/mnt/c` paths and is unusable for this.
-- **Git identity (repo-local):** author Adam Crozier <adam.r.crozier@gmail.com>; every Claude-assisted commit carries `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`. Remote: https://github.com/atcro/skuldai (private as of 2026-10-26, HTTP 404 unauthenticated).
+- **Git identity (repo-local):** author Adam Crozier (email as configured in the repo-local git identity); every Claude-assisted commit carries `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`. Remote: https://github.com/atcro/skuldai (private as of 2026-10-26, HTTP 404 unauthenticated).
 
 ## Notes and warnings
 
