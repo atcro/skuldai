@@ -1,0 +1,62 @@
+running: npa workbench token-factory generate --model nvidia/Nemotron-3_5-Lightning --temperature 0 --max-tokens 600
+{
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "exit_code": 0,
+  "wallclock_s": 4.52,
+  "nonempty_completion": {
+    "constraint": true,
+    "hypothesis": true
+  },
+  "validation": {
+    "constraint": {
+      "accepted": false,
+      "reason": "ValueError: quote does not occur verbatim in the cited snippet",
+      "completion_head": "{\n  \"property\": \"object_mass_kg\",\n  \"value\": 3,\n  \"unit\": \"kg\",\n  \"source_url\": \"https://robodk.com/robot/Franka/Emika-Panda\",\n  \"quote\": \"Payload 3.0 kg\",\n  \"confidence\": 1\n}"
+    },
+    "hypothesis": {
+      "accepted": true,
+      "variables": [
+        {
+          "name": "observation_delay_ms",
+          "min": 140.0,
+          "max": 200.0
+        }
+      ],
+      "hypothesis": "Increasing observation_delay_ms beyond 100ms while keeping other variables nominal will cause the finger to touch the floor before the push completes."
+    }
+  },
+  "outcome": "EXECUTED: nonempty completion(s) from the model id above, captured to generations.jsonl"
+}
+running: npa workbench token-factory generate --model nvidia/Nemotron-3_5-Lightning --temperature 0 --max-tokens 600
+{
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "exit_code": 0,
+  "wallclock_s": 4.07,
+  "nonempty_completion": {
+    "constraint": true,
+    "hypothesis": true
+  },
+  "validation": {
+    "constraint": {
+      "accepted": true,
+      "value": 3.0,
+      "unit": "kg",
+      "source_url": "https://www.wiredworkers.io/wp-content/uploads/2019/12/Panda_FrankaEmika_ENG.pdf",
+      "confidence": 1.0
+    },
+    "hypothesis": {
+      "accepted": true,
+      "variables": [
+        {
+          "name": "observation_delay_ms",
+          "min": 100.0,
+          "max": 200.0
+        }
+      ],
+      "hypothesis": "Increasing observation_delay_ms beyond 100ms while keeping other variables nominal will cause the finger to touch the floor before the push completes."
+    }
+  },
+  "outcome": "EXECUTED: nonempty completion(s) from the model id above, captured to generations.jsonl"
+}
+domain check: {"property": "object_mass_kg", "in_domain": true, "domain_min": 0.05, "domain_max": 0.5, "documented_limit": 3.0, "unit": "kg", "consistent": true}
+executed: SAFETY_FAIL ['NEVER collision'] wall=0.7s

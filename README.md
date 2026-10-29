@@ -56,7 +56,7 @@ Videos: `evidence/G05/nominal.mp4`, `evidence/G07/first_random_failure.mp4`, `ev
 |---|---|---|
 | MuJoCo 3.17.0 (CPU, local, WSL2) | EXECUTED, closed-loop control every step | `evidence/G05/`, `G07/`, `G10/`, `G11/`, `G12/` |
 | Tavily Search API | EXECUTED, one live runtime call with request id, status, URLs | `evidence/G08/tavily_search.json` |
-| Nebius Token Factory / NVIDIA Nemotron | **NOT EXECUTED.** Code paths exist for a typed hypothesis client; no key and no runtime call at submission time. The hypothesis in `evidence/G08/hypothesis.json` is labelled human-authored. | none; see `docs/gates/` |
+| Nebius Token Factory / NVIDIA Nemotron (`nvidia/Nemotron-3_5-Lightning`) | EXECUTED, two `npa workbench token-factory generate` calls with nonempty completions; the model extracted the payload constraint from the Tavily snippets and authored the falsification hypothesis, both validated (`extra='forbid'`, verbatim quote, in-domain box), then a human approved the constraint and the simulator ran the scenario (SAFETY_FAIL). The first call's paraphrased quote was rejected and is kept unpatched. | `evidence/G04/generations.jsonl`, `generate_call.json`, `scenario.result.json`; `docs/gates/G04_report.md` |
 | Nebius AI Cloud GPU rollouts, Isaac Lab, GR00T, Cosmos | not used (zero-spend decision; no local GPU) | none |
 
 ## Scope
@@ -91,9 +91,9 @@ bash scripts/g12_run.sh              # frozen rerun of nominal / random / active
 ```
 
 Environment variables (see `.env.example`; real values live only in a git-ignored `.env`):
-`TAVILY_API_KEY` (G08 only), `NEBIUS_TOKEN_FACTORY_API_KEY` and `SKULD_NEMOTRON_MODEL_ID` (G04, unused so far), `SKULD_MENAGERIE_DIR`, `MUJOCO_GL`, `SKULD_EVIDENCE_DIR` (dashboard root, defaults to `evidence/`).
+`TAVILY_API_KEY` (G08 only), `NEBIUS_TOKEN_FACTORY_API_KEY` (G04; the model id is passed explicitly to `scripts/g04_run.sh propose`), `SKULD_MENAGERIE_DIR`, `MUJOCO_GL`, `SKULD_EVIDENCE_DIR` (dashboard root, defaults to `evidence/`).
 
-Smoke tests: `curl http://127.0.0.1:8765/health`; `bash scripts/dashboard_smoke.sh`; `python -m pytest -q` (80 tests, including 13 release-gate fault cases and a render of all four surfaces over the archived evidence).
+Smoke tests: `curl http://127.0.0.1:8765/health`; `bash scripts/dashboard_smoke.sh`; `python -m pytest -q` (82 tests in the simulator venv, including 13 release-gate fault cases and a render of all four surfaces over the archived evidence).
 
 ## Limitations
 
@@ -101,7 +101,7 @@ Smoke tests: `curl http://127.0.0.1:8765/health`; `bash scripts/dashboard_smoke.
 - **Small budgets.** 25 episodes per strategy, one run each. The active-vs-random comparison is one observation, not a statistical claim.
 - **One mechanism found.** Every failure observed so far is the same signature: fingers touching the floor under observation delay. The task failure modes of the controller were not exercised.
 - **Classical policy.** The controller under test is hand-written; no learned policy was evaluated. GR00T and Isaac Lab were out of reach on this hardware and budget.
-- **Nemotron not called.** The hypothesis step was performed by a human and labelled so. The NVIDIA-model and Token Factory runtime requirement is therefore **not met by a runtime artifact in this repository**.
+- **Nemotron proposes, nothing more.** The G04 hypothesis and constraint came from `nvidia/Nemotron-3_5-Lightning` via Token Factory and were validated before use; the G08 hypothesis is human-authored and labelled so. The model never touches the simulator, the oracle, the bounds or the gate. Temperature 0 did not reproduce the same hypothesis box across two calls; the archived JSONL is the record.
 - **Minimization is local.** Greedy revert plus bisection; the monotonicity probe is one extra episode per axis.
 
 ## Repository map

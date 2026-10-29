@@ -1,0 +1,98 @@
+                                                                                
+ Usage: npa workbench token-factory [OPTIONS] COMMAND [ARGS]...                 
+                                                                                
+ Nebius Token Factory hosted inference (zero-GPU, OpenAI-compatible).           
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --help          Show this message and exit.                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ───────────────────────────────────────────────────────────────────╮
+│ robot-sdg       Generate real simulated robot episodes with RGB and actions  │
+│                 in LeRobot format.                                           │
+│ sdg             Generate a reviewed instruction dataset using automatic      │
+│                 open-weight routing.                                         │
+│ caption         Caption a folder of images with a hosted Token Factory       │
+│                 vision model.                                                │
+│ generate        Generate completions for each prompt in a JSONL/text file.   │
+│ batch-generate  Generate completions for a prompt file through batch         │
+│                 inference.                                                   │
+│ batch-status    Check a batch operation and collect its generations once it  │
+│                 has finished.                                                │
+│ reason          Reason over scene images for physical understanding and a    │
+│                 plan of action.                                              │
+│ models          List models available to the configured Token Factory API    │
+│                 key.                                                         │
+│ verify          Verify Token Factory authentication with a live models call. │
+│ status          Show Token Factory connection status (no network call).      │
+│ list            List Token Factory tool capabilities.                        │
+│ workflow        Show the checked-in Token Factory npa.workflow specs.        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+=== npa workbench token-factory status --help ===
+                                                                                
+ Usage: npa workbench token-factory status [OPTIONS]                            
+                                                                                
+ Show Token Factory connection status (no network call).                        
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --output        <text|json>  Output format. [default: text]                  │
+│ --help                       Show this message and exit.                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+=== npa workbench token-factory verify --help ===
+                                                                                
+ Usage: npa workbench token-factory verify [OPTIONS]                            
+                                                                                
+ Verify Token Factory authentication with a live models call.                   
+                                                                                
+ Confirms NEBIUS_TOKEN_FACTORY_KEY is resolvable and the key authenticates      
+ against the                                                                    
+ configured base URL. Exits non-zero on any auth or connectivity failure.       
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --output        <text|json>  Output format. [default: text]                  │
+│ --help                       Show this message and exit.                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+=== npa workbench token-factory models --help ===
+                                                                                
+ Usage: npa workbench token-factory models [OPTIONS]                            
+                                                                                
+ List models available to the configured Token Factory API key.                 
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ --output        <text|json>  Output format. [default: text]                  │
+│ --help                       Show this message and exit.                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+=== npa workbench token-factory generate --help ===
+                                                                                
+ Usage: npa workbench token-factory generate [OPTIONS]                          
+                                                                                
+ Generate completions for each prompt in a JSONL/text file.                     
+                                                                                
+╭─ Options ────────────────────────────────────────────────────────────────────╮
+│ *  --input-path           <str>        S3 or local JSONL/text prompt file.   │
+│                                        [required]                            │
+│ *  --output-path          <str>        S3 or local path for generations      │
+│                                        JSONL.                                │
+│                                        [required]                            │
+│    --model                <str>        Token Factory text model.             │
+│                                        [default:                             │
+│                                        nvidia/Nemotron-3_5-Lightning]        │
+│    --system-prompt        <str>        System prompt applied to every        │
+│                                        request.                              │
+│                                        [default: You are a helpful assistant │
+│                                        generating concise, high-quality text │
+│                                        for a physical-AI dataset. Respond    │
+│                                        with the requested content only.]     │
+│    --max-prompts          <int>        Limit prompts processed (0 = all).    │
+│                                        [default: 0]                          │
+│    --max-tokens           <int>        Max tokens per completion.            │
+│                                        [default: 512]                        │
+│    --temperature          <float>      Sampling temperature. [default: 0.7]  │
+│    --dry-run                           Do not write the result artifact.     │
+│    --output               <text|json>  Output format. [default: text]        │
+│    --help                              Show this message and exit.           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+

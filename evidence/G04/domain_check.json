@@ -1,0 +1,9 @@
+{
+  "property": "object_mass_kg",
+  "in_domain": true,
+  "domain_min": 0.05,
+  "domain_max": 0.5,
+  "documented_limit": 3.0,
+  "unit": "kg",
+  "consistent": true
+}

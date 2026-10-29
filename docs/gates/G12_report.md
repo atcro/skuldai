@@ -97,6 +97,11 @@ store. The nearest v2 failure is farther from nominal than v1's (1.013 vs
 | 9 | Are keys, licenses and public assets safe? | Secret scan of tree and history clean; `.env` git-ignored; Tavily key never in evidence (G08 scrub documented). Licenses recorded. Repo is still private, which is correct until a human flips it. | no |
 | 10 | Does the video honestly show functioning modules for >= 60 s, under 3:00? | **Not recorded.** The script totals 2:42 with about 52 s of simulator footage plus dashboard recordings; every clip is an archived artifact. | **yes, until recorded** |
 
+**Update 2026-10-29:** finding 7 is resolved on the engineering side. G04 ran
+(`docs/gates/G04_report.md`, `evidence/G04/`): two `generate` calls to
+`nvidia/Nemotron-3_5-Lightning`, validated outputs, human approval, executed
+scenario. Finding 10 (video) remains open. The text below is kept as written.
+
 Remediation for the two blocking findings: (7) obtain a Token Factory key and
 run G04 as specified (pinned npa docs, nonempty completion to JSONL with model
 id), then re-run the G08 phase 2 with Nemotron as extractor and author; if that

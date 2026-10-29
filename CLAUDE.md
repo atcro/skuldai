@@ -23,11 +23,13 @@ Global AI Hackathon, Physical AI track.
   a matched budget, one-variable minimized counterexample, fail-closed release
   gate (v1 BLOCKED, v2 repair ELIGIBLE, 9/9 faults closed), 4 dashboard surfaces,
   frozen rerun reproducing G07/G10 byte for byte and finding a new v2 failure;
-  80 tests; README results from evidence/G12. **Human items block submission:**
-  G00 Devpost rules confirmation, G03 credits, **G04 Nemotron runtime call (R3/R4
-  eligibility: no Token Factory artifact exists)**, video recording, repo flip to
-  public, Devpost + YouTube. See `docs/gates/G12_report.md` section
-  "Adversarial review".
+  README results from evidence/G12. **G04 PASS (2026-10-29):** two real
+  `npa workbench token-factory generate` calls to `nvidia/Nemotron-3_5-Lightning`
+  (constraint extraction + hypothesis, validated, one rejected and kept), human
+  approval, executed scenario SAFETY_FAIL; `evidence/G04/`, `docs/gates/G04_report.md`.
+  **Human items block submission:** G00 Devpost rules confirmation (R3/R4 now
+  have a runtime artifact), G03 credits, video recording, repo flip to public,
+  Devpost + YouTube. See `docs/gates/G12_report.md` section "Adversarial review".
 - **Critical path:** closed-loop MuJoCo simulator -> deterministic oracle ->
   random baseline -> active search -> minimized reproducible counterexample ->
   fail-closed release gate -> verified sponsor integrations -> demo.
@@ -158,7 +160,7 @@ anything needing root goes in a script the human runs.
 - lint + full tests without a sim run: `scripts/quick_check.sh [paths to ruff-format]`
 - full G12 check (EXECUTED 2026-10-29): `scripts/g12_run.sh`; sim venv; refuses a dirty tree; 3 nominal + 25 random + 25 active for v1 and v2, byte-identical check against `evidence/G07` and `evidence/G10`, results table; writes `evidence/G12/` (~2 min). Dashboard smoke: `scripts/dashboard_smoke.sh`
 - inventory: `scripts/inventory_wsl.sh`
-- Token Factory smoke arrives in G04 from the pinned npa docs (the old `scripts/smoke_tavily.py` is superseded by G08)
+- full G04 check (EXECUTED 2026-10-29): `scripts/g04_setup.sh` (pinned npa clone + venv, no key), then `scripts/g04_run.sh catalog` (read-only), `scripts/g04_run.sh propose nvidia/<model-id>` (one billed `generate` call, model chosen by a human from `evidence/G04/models_list.json`), `scripts/g04_run.sh execute "Name"` (sim venv, approves the proposed constraint, runs the hypothesis corner). Key: `scripts/set_env_key.ps1 -Name NEBIUS_TOKEN_FACTORY_API_KEY` (hidden input, PowerShell window). The old `scripts/smoke_tavily.py` is superseded by G08
 - simulator env (EXECUTED 2026-10-26): `~/.venvs/skuld-mujoco` with `skuld[dev,sim]`, created by `scripts/g05_setup.sh` (also sparse-clones the pinned Menagerie Panda to `~/src/mujoco_menagerie` and runs the EGL smoke test)
 - full G05 check (EXECUTED 2026-10-26): `scripts/g05_run.sh`; runs ruff + pytest in the sim venv (MuJoCo tests need `SKULD_MENAGERIE_DIR`, skipped elsewhere), then `scripts/g05_run.py` which writes trajectories, MP4s and `g05_run_report.json` to `evidence/G05/`. About 2 min per rendered episode on this laptop; run it in the background.
 

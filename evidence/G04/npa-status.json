@@ -1,0 +1,15 @@
+{
+  "api_key_configured": true,
+  "base_url": "https://api.tokenfactory.nebius.com/v1/",
+  "caption_workflow": "workflows/testing/token-factory-caption.yaml",
+  "default_batch_model": "openai/gpt-oss-120b",
+  "default_reasoner_model": "MiniMaxAI/MiniMax-M3",
+  "default_text_model": "nvidia/Nemotron-3_5-Lightning",
+  "default_vision_model": "MiniMaxAI/MiniMax-M3",
+  "generate_workflow": "workflows/testing/token-factory-generate.yaml",
+  "provider": "nebius-token-factory",
+  "reason_workflow": "workflows/testing/token-factory-cosmos-reason.yaml",
+  "robot_sdg_workflow": "workflows/testing/token-factory-robot-sdg.yaml",
+  "sdg_workflow": "workflows/testing/token-factory-sdg.yaml",
+  "vlm_eval_workflow": "workflows/testing/vlm-eval-token-factory.yaml"
+}

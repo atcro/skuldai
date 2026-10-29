@@ -1,0 +1,48 @@
+{
+  "cli": "npa workbench token-factory generate",
+  "npa_pin": "repo: https://github.com/nebius/nebius-physical-ai\ncommit: 10102f5102bd3a7bbefc62d195f1b1f3646f5816\ncloned_utc: 2026-10-29T02:24:18Z\npath: /home/kang/src/nebius-physical-ai\n",
+  "model": "nvidia/Nemotron-3_5-Lightning",
+  "temperature": 0,
+  "max_tokens": 600,
+  "prompts": [
+    "constraint",
+    "hypothesis"
+  ],
+  "started_utc": "2026-10-29T02:41:51.384104+00:00",
+  "wallclock_s": 4.07,
+  "exit_code": 0,
+  "stdout": "\\u5fdc\\u3067\\u304d\\u308b\\u305f\\u3081\\u3001\\u30e9\\u30a4\\u30f3\\u306e\\u67d4\\u8edf\\u6027\\u304c\\u5411\\u4e0a\\u3057\\u3001\\u3055\\u307e\\u3056\\u307e\\u306a\\u88fd\\u54c1\\u306b\\u5bfe\\u5fdc\\u53ef\\u80fd\\u3067\\u3059\\u3002 [...] |  |  |\\n --- |\\n| Application Date | 8/20/2020 |\\n| Grant Date | 9/2/2025 |\\n| Title | System and method for controlling at least one machine, more particularly a collective of machines |\\n| Related Topics | Instruction set architectures, Instruction processing, Machine code, Embedded systems, Computers |\\n| Status | Grant |\\n\\n## LatestFranka Emika News\\n\\n\\u5354\\u50cd\\u30ed\\u30dc\\u30c3\\u30c8\\u306e\\u4e16\\u754c\\u5e02\\u5834\\uff082026\\u5e74\\uff5e2032\\u5e74\\uff09\\u3001\\u5e02\\u5834\\u898f\\u6a21\\uff085kg\\u4ee5\\u4e0b\\u30015\\uff5e10kg\\u300110kg\\u8d85\\uff09\\u30fb\\u5206\\u6790\\u30ec\\u30dd\\u30fc\\u30c8\\u3092\\u767a\\u8868\\n\\nSep 13, 2026\\n\\nTask: find the manufacturer's rated payload. Answer with one JSON object with exactly these keys: \\\"property\\\" (must be \\\"object_mass_kg\\\"), \\\"value\\\" (number, in kg), \\\"unit\\\" (must be \\\"kg\\\"), \\\"source_url\\\" (one of the urls above, verbatim), \\\"quote\\\" (the exact sentence fragment you relied on, copied character for character from that snippet: keep its wording, capitalisation and number format, do not paraphrase or reformat numbers (never turn \\\"reach of 850 mm\\\" into \\\"Reach 850.0 mm\\\"); the check is an exact substring match), \\\"confidence\\\" (0 to 1). If no snippet states the payload, answer {\\\"property\\\":\\\"object_mass_kg\\\",\\\"value\\\":0,\\\"unit\\\":\\\"kg\\\",\\\"source_url\\\":\\\"https://robodk.com/robot/Franka/Emika-Panda\\\",\\\"quote\\\":\\\"none\\\",\\\"confidence\\\":0}.\"\n    },\n    {\n      \"completion\": \"{\\n  \\\"hypothesis\\\": \\\"Increasing observation_delay_ms beyond 100ms while keeping other variables nominal will cause the finger to touch the floor before the push completes.\\\",\\n  \\\"variables\\\": [\\n    {\\n      \\\"name\\\": \\\"observation_delay_ms\\\",\\n      \\\"min\\\": 100.0,\\n      \\\"max\\\": 200.0\\n    }\\n  ],\\n  \\\"reason_to_test\\\": \\\"The random baseline showed all 3 safety failures occurred when observation_delay_ms >= 152ms, and a minimized counterexample confirmed failure at exactly 140.0ms with nominal other variables. Nominal runs (0ms delay) pass reliably.\\\",\\n  \\\"expected_failure_signature\\\": \\\"Finger contacts the floor during the push motion due to delayed state estimation.\\\"\\n}\",\n      \"id\": \"hypothesis\",\n      \"prompt\": \"A push controller moves a block into a target in simulation. Perturbation variables and their approved bounds (you may not go outside them):\\n- object_offset_m (m): nominal 0.0, allowed [-0.1, 0.1]\\n- object_mass_kg (kg): nominal 0.1, allowed [0.05, 0.5]\\n- friction_coefficient (1): nominal 0.6, allowed [0.2, 1.0]\\n- observation_delay_ms (ms): nominal 0.0, allowed [0.0, 200.0]\\n\\nDocumented constraint (human-approved): object_mass_kg <= 3.0 kg, source https://download.franka.de/Datasheet-EN.pdf.\\n\\nObserved so far:\\n- random baseline: 3 of 25 episodes were SAFETY_FAIL (finger touched the floor); first at episode 16; all failures had observation_delay_ms >= 152.\\n- minimized counterexample: observation_delay_ms=140.0 with every other variable nominal still fails; reverting delay to 0 passes.\\n- nominal runs (all variables nominal) pass.\\n\\nPropose one falsification hypothesis: a box over at most 2 variables, inside the bounds, where the controller is most likely to violate a safety rule. Answer with one JSON object with exactly these keys: \\\"hypothesis\\\" (one sentence), \\\"variables\\\" (list of {\\\"name\\\",\\\"min\\\",\\\"max\\\"} using the names above), \\\"reason_to_test\\\" (one or two sentences citing the observations), \\\"expected_failure_signature\\\" (short).\"\n    }\n  ],\n  \"input_path\": \"/mnt/c/Skuld/evidence/G04/prompts.jsonl\",\n  \"model\": \"nvidia/Nemotron-3_5-Lightning\",\n  \"output_path\": \"/mnt/c/Skuld/evidence/G04/generations.jsonl\",\n  \"prompt_count\": 2,\n  \"result_uri\": \"/mnt/c/Skuld/evidence/G04/generations.jsonl\",\n  \"status\": \"completed\",\n  \"written_uri\": \"/mnt/c/Skuld/evidence/G04/generations.jsonl\"\n}\n",
+  "stderr": "",
+  "generations_rows": 2,
+  "generations_sha256": "5072ab1674f515876215b9c008527ff2b59534cefa959c2514aceb923d514713",
+  "generation_keys": [
+    "completion",
+    "id",
+    "prompt"
+  ],
+  "nonempty_completion": {
+    "constraint": true,
+    "hypothesis": true
+  },
+  "validation": {
+    "constraint": {
+      "accepted": true,
+      "value": 3.0,
+      "unit": "kg",
+      "source_url": "https://www.wiredworkers.io/wp-content/uploads/2019/12/Panda_FrankaEmika_ENG.pdf",
+      "confidence": 1.0
+    },
+    "hypothesis": {
+      "accepted": true,
+      "variables": [
+        {
+          "name": "observation_delay_ms",
+          "min": 100.0,
+          "max": 200.0
+        }
+      ],
+      "hypothesis": "Increasing observation_delay_ms beyond 100ms while keeping other variables nominal will cause the finger to touch the floor before the push completes."
+    }
+  },
+  "outcome": "EXECUTED: nonempty completion(s) from the model id above, captured to generations.jsonl"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "scenario_id": "g04-nemotron-corner",
+  "domain_ref": "push-v1",
+  "values": {
+    "object_offset_m": 0.0,
+    "object_mass_kg": 0.1,
+    "friction_coefficient": 0.6,
+    "observation_delay_ms": 200.0
+  },
+  "seed": 0
+}

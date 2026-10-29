@@ -1,0 +1,19 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "hypothesis": "Increasing observation_delay_ms beyond 100ms while keeping other variables nominal will cause the finger to touch the floor before the push completes.",
+  "variables": [
+    {
+      "name": "observation_delay_ms",
+      "min": 100.0,
+      "max": 200.0
+    }
+  ],
+  "reason_to_test": "The random baseline showed all 3 safety failures occurred when observation_delay_ms >= 152ms, and a minimized counterexample confirmed failure at exactly 140.0ms with nominal other variables. Nominal runs (0ms delay) pass reliably.",
+  "expected_failure_signature": "Finger contacts the floor during the push motion due to delayed state estimation.",
+  "model_id": "nvidia/Nemotron-3_5-Lightning",
+  "request_id": "hypothesis",
+  "evidence_refs": [
+    "panda-payload-kg",
+    "https://download.franka.de/Datasheet-EN.pdf"
+  ]
+}

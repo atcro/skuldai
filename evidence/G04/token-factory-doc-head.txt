@@ -1,0 +1,80 @@
+# Nebius Token Factory integration
+
+[Workbench docs](README.md)
+
+For robot demonstrations with actual camera video and actions, use
+[robot SDG and LeRobot export](token-factory-robot-sdg.md). `robot-sdg` routes
+scene planning through Token Factory, then runs MuJoCo and physics acceptance.
+
+Token Factory provides hosted text generation, image captioning, and scene
+reasoning. Use these capabilities to annotate inputs or interpret results from
+your Nebius GPU workloads. Direct CLI calls run from your machine; the
+checked-in NPA workflows run their calling stages on Kubernetes CPUs.
+
+For seed-to-training-data generation, use the
+[automatically routed SDG pipeline](token-factory-sdg.md). It selects a hosted
+open-weight generator per seed, reviews candidates, and exports training JSONL
+with separate rejection and provenance artifacts.
+
+The public defaults were migrated after the August 2026 model retirements. See
+[the verification report](token-factory-deprecation-verification.md) for exact
+IDs, observed provider differences, explicit override behavior, and vendor terms.
+
+## Configure and verify the key
+
+Complete the [installation](../install.md), then create a key in the
+[Token Factory console](https://tokenfactory.nebius.com/) and enter it through
+`npa configure`. The key is separate from your Nebius Cloud IAM token. See
+[key setup](token-factory-key.md) for credential-file and environment options.
+
+```bash
+npa workbench token-factory status
+npa workbench token-factory verify
+npa workbench token-factory models
+```
+
+`status` checks local settings. `verify` makes a live model-list request and
+reports `authenticated` and `model_count`; it does not test inference or
+billing access. Select compatible text and vision models from your key's
+catalog. The implementation defaults below are not guaranteed to be available:
+
+| Command | Default model |
+| --- | --- |
+| `generate` | `nvidia/Nemotron-3_5-Lightning` |
+| `caption` | `MiniMaxAI/MiniMax-M3` |
+| `reason` | `MiniMaxAI/MiniMax-M3` |
+| `batch-generate` | `openai/gpt-oss-120b` |
+| `sdg` | Lightning router; Lightning or MiniMax generator; MiniMax reviewer |
+| `robot-sdg` | Lightning router; Lightning or MiniMax scene planner; MuJoCo physics judge |
+
+NPA reads `NEBIUS_TOKEN_FACTORY_KEY` from the environment or
+`tokens.NEBIUS_TOKEN_FACTORY_KEY` in `~/.npa/credentials.yaml`. Keep the file
+mode `0600`. The default API URL is
+`https://api.tokenfactory.nebius.com/v1/`; use
+`NEBIUS_TOKEN_FACTORY_BASE_URL` only when selecting another endpoint deliberately.
+
+## Generate and inspect artifacts
+
+The generation, captioning, and reasoning commands below accept local paths or
+`s3://` URIs. The new `sdg` CLI uses S3 handoffs; its SDK also supports local
+development files. Direct S3 calls require
+`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and the correct `AWS_ENDPOINT_URL`
+in the process environment; their storage client does not load those values
+from the NPA credential file. Supply them through your protected credential
+loader. Workflow submission resolves named secrets from the selected project's
+credentials instead. Use inputs you are authorized to send to the hosted model.
+
+Set the model names selected above, then create a prompt file:
+
+```bash
+text_model="<available-text-model>"
+vision_model="<available-vision-model>"
+reason_model="<available-vision-reasoning-model>"
+mkdir -p ./token-factory-results
+cat > ./token-factory-results/prompts.jsonl <<'PROMPTS'
+{"id":"pick-place","prompt":"Write a robot task instruction for moving a red block into a tray."}
+{"id":"inspection","prompt":"List observable success criteria for a robot moving a red block into a tray."}
+PROMPTS
+
+npa workbench token-factory generate \
+  --input-path ./token-factory-results/prompts.jsonl \

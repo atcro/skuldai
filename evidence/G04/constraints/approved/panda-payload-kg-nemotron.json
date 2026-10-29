@@ -1,0 +1,14 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "constraint_id": "panda-payload-kg-nemotron",
+  "property": "object_mass_kg",
+  "value": 3.0,
+  "unit": "kg",
+  "source_url": "https://www.wiredworkers.io/wp-content/uploads/2019/12/Panda_FrankaEmika_ENG.pdf",
+  "quote_or_paraphrase": "Payload 3 kg",
+  "extraction_confidence": 1.0,
+  "retrieved_at": "2026-10-27T03:38:55.402413Z",
+  "approval_state": "approved",
+  "authorizer": "Adam Crozier",
+  "approved_at": "2026-10-29T02:43:22.188574Z"
+}

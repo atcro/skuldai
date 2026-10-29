@@ -1,0 +1,144 @@
+{
+  "endpoint": "https://api.tokenfactory.nebius.com/v1/models?verbose=true",
+  "started_utc": "2026-10-29T02:36:21.962381+00:00",
+  "status_code": 200,
+  "response_time_s": 0.463,
+  "request_id": "cb3fdabd0c824c5528392c281e30e380",
+  "model_count": 30,
+  "nvidia_models": [
+    {
+      "id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+      "status": null,
+      "status_reason": null,
+      "context_length": 262144,
+      "pricing": {
+        "prompt": "0.00000006",
+        "input_cache_read": "0.000000012",
+        "completion": "0.00000024",
+        "image": "0",
+        "price_per_video_second": "0",
+        "request": "0",
+        "price_per_minute": "0"
+      },
+      "modality": "text->text",
+      "supported_features": [
+        "tools",
+        "reasoning"
+      ]
+    },
+    {
+      "id": "nvidia/Nemotron-3_5-Lightning",
+      "status": null,
+      "status_reason": null,
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0.00000006",
+        "input_cache_read": "0.00000003",
+        "completion": "0.00000024",
+        "image": "0",
+        "price_per_video_second": "0",
+        "request": "0",
+        "price_per_minute": "0"
+      },
+      "modality": "text->text",
+      "supported_features": [
+        "tools",
+        "reasoning"
+      ]
+    },
+    {
+      "id": "nvidia/Nemotron-3-Ultra-550b-a55b",
+      "status": null,
+      "status_reason": null,
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0.000001",
+        "input_cache_read": "0.00000012",
+        "completion": "0.000003",
+        "image": "0",
+        "price_per_video_second": "0",
+        "request": "0",
+        "price_per_minute": "0"
+      },
+      "modality": "text->text",
+      "supported_features": [
+        "tools",
+        "reasoning"
+      ]
+    },
+    {
+      "id": "nvidia/nemotron-3-super-120b-a12b",
+      "status": null,
+      "status_reason": null,
+      "context_length": 262144,
+      "pricing": {
+        "prompt": "0.0000003",
+        "input_cache_read": "0.00000006",
+        "completion": "0.0000009",
+        "image": "0",
+        "price_per_video_second": "0",
+        "request": "0",
+        "price_per_minute": "0"
+      },
+      "modality": "text->text",
+      "supported_features": [
+        "tools",
+        "reasoning"
+      ]
+    },
+    {
+      "id": "nvidia/Nemotron-3.5-Super-VL",
+      "status": null,
+      "status_reason": null,
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0.0000003",
+        "input_cache_read": "0.00000006",
+        "completion": "0.0000009",
+        "image": "0",
+        "price_per_video_second": "0",
+        "request": "0",
+        "price_per_minute": "0"
+      },
+      "modality": "text+image->text",
+      "supported_features": [
+        "tools",
+        "reasoning"
+      ]
+    }
+  ],
+  "all_model_ids": [
+    "MiniMaxAI/MiniMax-M3",
+    "MiniMaxAI/MiniMax-M3.1-Flash",
+    "NousResearch/Hermes-4-405B",
+    "Qwen/Qwen3-235B-A22B-Instruct-2507",
+    "Qwen/Qwen3-30B-A3B-Instruct-2507",
+    "Qwen/Qwen3-Embedding-8B",
+    "Qwen/Qwen3.5-397B-A17B",
+    "Qwen/Qwen3.8-27B",
+    "deepseek-ai/DeepSeek-V4-Flash-0731",
+    "deepseek-ai/DeepSeek-V4-Pro",
+    "deepseek-ai/DeepSeek-V4-Pro-0813",
+    "deepseek-ai/DeepSeek-V4.1-Flash",
+    "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+    "google/gemma-3-27b-it",
+    "meta-models/muse-spark-open",
+    "moonshotai/Kimi-K2.6",
+    "moonshotai/Kimi-K2.7-Code",
+    "moonshotai/Kimi-K3",
+    "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+    "nvidia/Nemotron-3-Ultra-550b-a55b",
+    "nvidia/Nemotron-3.5-Super-VL",
+    "nvidia/Nemotron-3_5-Lightning",
+    "nvidia/nemotron-3-super-120b-a12b",
+    "openai/gpt-oss-120b",
+    "openbmb/MiniCPM-V-4_5",
+    "reflection/beam",
+    "zai-org/GLM-5.1",
+    "zai-org/GLM-5.2",
+    "zai-org/GLM-5.3",
+    "zai-org/GLM-5.3-Flash"
+  ],
+  "finished_utc": "2026-10-29T02:36:22.484220+00:00",
+  "note": "catalog listing only; not inference (CLAUDE.md rule 4)"
+}

@@ -23,12 +23,13 @@ Mock screens: none.
 - Active: 6 failures / 25, first at 6, nearest 0.781: `evidence/G10/comparison.json`.
 - Minimized counterexample: delay 140.0 ms, others nominal, distance 0.700, 3/3 replays identical: `evidence/G10/counterexample.json`, `g10_report.json`.
 - Tavily request id `8910bea1-...`, 5 results, constraint 3 kg approved by Adam Crozier: `evidence/G08/`.
+- Nemotron (`nvidia/Nemotron-3_5-Lightning` via `npa workbench token-factory generate`, 2 calls): constraint 3 kg from the datasheet snippet, hypothesis delay 100 to 200 ms; first call's quote rejected as not verbatim; executed corner SAFETY_FAIL: `evidence/G04/generate_call.json`, `scenario.result.json`.
 - Release: v1 BLOCKED (2 regression + 2 held-out SAFETY_FAIL), v2 ELIGIBLE, 9/9 faults fail closed: `evidence/G11/g11_report.json`.
 - G12 rerun: v1 reproduces G07/G10 25/25 + 25/25; v2 random 1/25, active 7/25, nearest 1.013 at 182 ms delay: `evidence/G12/g12_report.json`.
 
 ## Words not to use
 
-certified, safe, proven, global minimum, causal, learned (for this controller), GR00T, Nemotron (until G04 has a runtime artifact).
+certified, safe, proven, global minimum, causal, learned (for this controller), GR00T. Nemotron may be named for the G04 step only, with its model id, as "proposed" or "authored", never as deciding anything.
 
 ## Recording notes
 
