@@ -31,7 +31,7 @@ All numbers from `evidence/G12/g12_report.json` (frozen rerun at the commit name
 | Episodes to first failure | - | 16 | 6 |
 | Closest failure distance (normalized L2 to nominal) | - | 0.885 | 0.781 |
 | Reproducible failures | 3/3 nominal byte-identical | 25/25 episodes byte-identical to the G07 archive | 25/25 byte-identical to the G10 archive; minimized failure 3/3 replays identical |
-| Compute time (CPU laptop, unrendered 15 s episodes) | 1.4 s | 14.4 s | 12.0 s |
+| Compute time (CPU laptop, unrendered 15 s episodes) | 2.5 s | 19.8 s | 17.8 s |
 
 **Minimized counterexample** (`evidence/G10/counterexample.json`): the nearest active failure had all four variables perturbed. Offset, mass and friction were reverted to nominal and the episode still failed. What remains is **an observation delay of 140 ms with everything else nominal**: the fingers touch the floor during descent (`SAFETY_FAIL: NEVER collision`), distance 0.700. Bisection puts the pass bound at 131 ms on that axis. Locally minimized under this simulator and controller; not a global minimum, not a causal claim.
 

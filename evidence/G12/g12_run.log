@@ -1,0 +1,198 @@
+=== push-dls-ik-v1 ===
+nominal s0: PASS
+nominal s1: PASS
+nominal s2: PASS
+rand-000: PASS        dist=0.858 wall=1.2s
+rand-001: PASS        dist=1.193 wall=0.8s
+rand-002: PASS        dist=0.811 wall=0.7s
+rand-003: PASS        dist=1.082 wall=0.8s
+rand-004: PASS        dist=1.171 wall=0.9s
+rand-005: PASS        dist=0.732 wall=0.7s
+rand-006: PASS        dist=0.547 wall=0.6s
+rand-007: PASS        dist=0.892 wall=0.7s
+rand-008: PASS        dist=0.480 wall=0.7s
+rand-009: PASS        dist=0.714 wall=0.9s
+rand-010: PASS        dist=0.613 wall=0.8s
+rand-011: PASS        dist=0.559 wall=0.7s
+rand-012: PASS        dist=0.855 wall=0.7s
+rand-013: PASS        dist=0.442 wall=0.7s
+rand-014: PASS        dist=0.965 wall=0.8s
+rand-015: SAFETY_FAIL dist=0.885 wall=1.0s
+rand-016: SAFETY_FAIL dist=1.262 wall=1.3s
+rand-017: PASS        dist=0.986 wall=0.7s
+rand-018: PASS        dist=0.733 wall=0.8s
+rand-019: PASS        dist=0.707 wall=0.6s
+rand-020: PASS        dist=0.570 wall=0.6s
+rand-021: PASS        dist=0.457 wall=0.6s
+rand-022: PASS        dist=0.468 wall=0.7s
+rand-023: PASS        dist=0.535 wall=0.7s
+rand-024: SAFETY_FAIL dist=1.068 wall=0.9s
+act-000: PASS        dist=1.173 wall=0.6s
+act-001: PASS        dist=0.463 wall=0.6s
+act-002: PASS        dist=0.344 wall=0.6s
+act-003: PASS        dist=1.204 wall=0.9s
+act-004: PASS        dist=0.729 wall=0.8s
+act-005: SAFETY_FAIL dist=1.061 wall=1.4s
+act-006: PASS        dist=0.531 wall=1.1s
+act-007: SAFETY_FAIL dist=0.796 wall=0.9s
+act-008: PASS        dist=0.934 wall=0.8s
+act-009: PASS        dist=0.663 wall=0.7s
+act-010: PASS        dist=0.730 wall=0.7s
+act-011: PASS        dist=0.704 wall=0.8s
+act-012: PASS        dist=0.763 wall=0.8s
+act-013: PASS        dist=0.747 wall=0.6s
+act-014: SAFETY_FAIL dist=0.893 wall=0.7s
+act-015: PASS        dist=0.780 wall=0.6s
+act-016: SAFETY_FAIL dist=0.829 wall=0.6s
+act-017: SAFETY_FAIL dist=0.787 wall=0.5s
+act-018: PASS        dist=0.393 wall=0.5s
+act-019: PASS        dist=0.590 wall=0.5s
+act-020: SAFETY_FAIL dist=0.781 wall=0.6s
+act-021: PASS        dist=0.391 wall=0.8s
+act-022: PASS        dist=0.586 wall=0.6s
+act-023: PASS        dist=0.672 wall=0.6s
+act-024: PASS        dist=0.684 wall=0.6s
+reproduction: {"random_vs_G07": {"identical": 25, "of": 25}, "active_vs_G10": {"identical": 25, "of": 25}, "mismatches": []}
+=== push-dls-ik-v2 ===
+nominal s0: PASS
+nominal s1: PASS
+nominal s2: PASS
+rand-000: PASS        dist=0.858 wall=0.6s
+rand-001: PASS        dist=1.193 wall=0.6s
+rand-002: PASS        dist=0.811 wall=0.6s
+rand-003: PASS        dist=1.082 wall=0.6s
+rand-004: PASS        dist=1.171 wall=0.7s
+rand-005: PASS        dist=0.732 wall=0.6s
+rand-006: PASS        dist=0.547 wall=0.6s
+rand-007: PASS        dist=0.892 wall=0.6s
+rand-008: PASS        dist=0.480 wall=0.6s
+rand-009: PASS        dist=0.714 wall=0.7s
+rand-010: PASS        dist=0.613 wall=0.5s
+rand-011: PASS        dist=0.559 wall=0.6s
+rand-012: PASS        dist=0.855 wall=0.6s
+rand-013: PASS        dist=0.442 wall=0.6s
+rand-014: PASS        dist=0.965 wall=0.7s
+rand-015: PASS        dist=0.885 wall=0.6s
+rand-016: SAFETY_FAIL dist=1.262 wall=0.6s
+rand-017: PASS        dist=0.986 wall=0.6s
+rand-018: PASS        dist=0.733 wall=0.6s
+rand-019: PASS        dist=0.707 wall=0.5s
+rand-020: PASS        dist=0.570 wall=0.5s
+rand-021: PASS        dist=0.457 wall=0.6s
+rand-022: PASS        dist=0.468 wall=0.6s
+rand-023: PASS        dist=0.535 wall=0.5s
+rand-024: PASS        dist=1.068 wall=0.5s
+act-000: PASS        dist=1.173 wall=0.6s
+act-001: PASS        dist=0.463 wall=0.5s
+act-002: PASS        dist=0.344 wall=0.5s
+act-003: PASS        dist=1.204 wall=0.5s
+act-004: PASS        dist=0.729 wall=0.6s
+act-005: SAFETY_FAIL dist=1.061 wall=0.6s
+act-006: PASS        dist=0.531 wall=0.6s
+act-007: PASS        dist=0.796 wall=0.6s
+act-008: SAFETY_FAIL dist=1.154 wall=0.6s
+act-009: PASS        dist=0.928 wall=0.6s
+act-010: PASS        dist=0.995 wall=0.6s
+act-011: PASS        dist=0.965 wall=0.6s
+act-012: SAFETY_FAIL dist=1.028 wall=0.6s
+act-013: PASS        dist=0.960 wall=0.5s
+act-014: SAFETY_FAIL dist=1.123 wall=0.6s
+act-015: PASS        dist=1.012 wall=0.6s
+act-016: SAFETY_FAIL dist=1.061 wall=0.6s
+act-017: SAFETY_FAIL dist=1.019 wall=0.7s
+act-018: PASS        dist=0.509 wall=0.5s
+act-019: PASS        dist=0.764 wall=0.5s
+act-020: SAFETY_FAIL dist=1.013 wall=0.6s
+act-021: PASS        dist=0.506 wall=0.5s
+act-022: PASS        dist=0.760 wall=0.5s
+act-023: PASS        dist=0.896 wall=0.6s
+act-024: PASS        dist=0.886 wall=0.5s
+{
+  "results": {
+    "push-dls-ik-v1": {
+      "episodes_used": {
+        "nominal": 3,
+        "random": 25,
+        "active": 25
+      },
+      "failures_found": {
+        "nominal": 0,
+        "random": 3,
+        "active": 6
+      },
+      "episodes_to_first_failure": {
+        "random": 16,
+        "active": 6
+      },
+      "closest_failure_distance": {
+        "random": 0.8846445254130554,
+        "active": 0.7813441094153285
+      },
+      "compute_s": {
+        "nominal": 2.5,
+        "random": 19.8,
+        "active": 17.8
+      },
+      "held_out_G11": {
+        "heldout-000": "PASS",
+        "heldout-001": "SAFETY_FAIL",
+        "heldout-002": "PASS",
+        "heldout-003": "PASS",
+        "heldout-004": "SAFETY_FAIL"
+      },
+      "regression_G11": {
+        "reg-ce-act-020-minimized": "SAFETY_FAIL",
+        "reg-ce-act-020-original": "SAFETY_FAIL"
+      },
+      "release_decision_G11": "BLOCKED"
+    },
+    "push-dls-ik-v2": {
+      "episodes_used": {
+        "nominal": 3,
+        "random": 25,
+        "active": 25
+      },
+      "failures_found": {
+        "nominal": 0,
+        "random": 1,
+        "active": 7
+      },
+      "episodes_to_first_failure": {
+        "random": 17,
+        "active": 6
+      },
+      "closest_failure_distance": {
+        "random": 1.2616037867615815,
+        "active": 1.0126907499457587
+      },
+      "compute_s": {
+        "nominal": 1.5,
+        "random": 14.9,
+        "active": 14.2
+      },
+      "held_out_G11": {
+        "heldout-000": "PASS",
+        "heldout-001": "PASS",
+        "heldout-002": "PASS",
+        "heldout-003": "PASS",
+        "heldout-004": "PASS"
+      },
+      "regression_G11": {
+        "reg-ce-act-020-minimized": "PASS",
+        "reg-ce-act-020-original": "PASS"
+      },
+      "release_decision_G11": "ELIGIBLE"
+    }
+  },
+  "reproduction_of_archived_runs": {
+    "random_vs_G07": {
+      "identical": 25,
+      "of": 25
+    },
+    "active_vs_G10": {
+      "identical": 25,
+      "of": 25
+    },
+    "mismatches": []
+  }
+}

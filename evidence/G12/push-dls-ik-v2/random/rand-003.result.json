@@ -1,0 +1,17 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "episode_id": "traj-rand-003-s3",
+  "scenario_ref": "rand-003",
+  "policy_ref": "push-dls-ik-v2",
+  "spec_ref": "push-block-v1",
+  "status": "PASS",
+  "violations": [],
+  "robustness": 0.026484809655549918,
+  "distance_from_nominal": 1.081575178627622,
+  "wallclock_s": 0.5885858860019653,
+  "artifact_uris": [
+    "push-dls-ik-v2/random/rand-003.trajectory.json.gz"
+  ],
+  "correlation_id": "traj-rand-003-s3",
+  "detail": "spec_sha256=0078d5522508b17c830546c7ecc136e40dcc3b4b1674987c8d81ede4239529aa; goal_time_s=7.18; min_distance_m=0.0087; max_contact_normal_n=6.47 (reported, no limit claimed)"
+}

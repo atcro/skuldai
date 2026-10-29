@@ -1,0 +1,26 @@
+{
+  "schema_version": "skuld.schemas.v1",
+  "episode_id": "traj-act-016-s16",
+  "scenario_ref": "act-016",
+  "policy_ref": "push-dls-ik-v2",
+  "spec_ref": "push-block-v1",
+  "status": "SAFETY_FAIL",
+  "violations": [
+    {
+      "kind": "safety",
+      "rule": "NEVER collision",
+      "step": 470,
+      "measured": 7.0643631937486076,
+      "limit": null,
+      "detail": "finger in contact with the floor: world/floor vs left_finger/68 at t=9.420 s; 10 control steps with forbidden contact"
+    }
+  ],
+  "robustness": 0.023073580305326313,
+  "distance_from_nominal": 1.0608877481412111,
+  "wallclock_s": 0.5920356860005995,
+  "artifact_uris": [
+    "push-dls-ik-v2/active/act-016.trajectory.json.gz"
+  ],
+  "correlation_id": "traj-act-016-s16",
+  "detail": "spec_sha256=0078d5522508b17c830546c7ecc136e40dcc3b4b1674987c8d81ede4239529aa; goal_time_s=10.18; min_distance_m=0.0066; max_contact_normal_n=10.26 (reported, no limit claimed)"
+}

@@ -1,0 +1,12 @@
+dashboard smoke 2026-10-29T02:00:34Z commit 1d11d51
+GET /health -> 200, 144 bytes
+GET / -> 200, 9856 bytes
+GET /atlas?x=observation_delay_ms&y=object_mass_kg -> 200, 16909 bytes
+GET /counterexample -> 200, 5821 bytes
+GET /release -> 200, 12525 bytes
+GET /evidence/G10/comparison.svg -> 200, 4373 bytes
+release page shows for v1:
+status-big BLOCKED
+status-big ELIGIBLE
+missing-record warnings:
+0

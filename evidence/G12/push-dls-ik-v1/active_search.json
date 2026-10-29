@@ -1,0 +1,765 @@
+{
+  "method": "explore-then-contract-v1",
+  "config": {
+    "method": "explore-then-contract-v1",
+    "budget": 25,
+    "sampler_seed": 20261027,
+    "explore_box": null,
+    "sigma0": 0.25,
+    "sigma_min": 0.02,
+    "sigma_max": 0.5,
+    "sigma_up": 1.5,
+    "sigma_down": 0.7,
+    "ray_tol": 0.05,
+    "jitter_every": 3,
+    "max_exec_errors": 5
+  },
+  "candidates": [
+    {
+      "index": 0,
+      "phase": "explore",
+      "move": "uniform",
+      "scenario_id": "act-000",
+      "seed": 0,
+      "values": {
+        "friction_coefficient": 0.22709418080783816,
+        "object_mass_kg": 0.4830162802008107,
+        "object_offset_m": 0.09741862345158067,
+        "observation_delay_ms": 88.62674380694018
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 1.1727566682067392,
+      "robustness": 0.03431348160271867,
+      "parent": null,
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.6087043439983972,
+      "note": ""
+    },
+    {
+      "index": 1,
+      "phase": "explore",
+      "move": "uniform",
+      "scenario_id": "act-001",
+      "seed": 1,
+      "values": {
+        "friction_coefficient": 0.3820942527863793,
+        "object_mass_kg": 0.11384854112722236,
+        "object_offset_m": -0.023342757629048624,
+        "observation_delay_ms": 70.91408789785045
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.46312139999006763,
+      "robustness": 0.038956872621796375,
+      "parent": null,
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.6179583519988228,
+      "note": ""
+    },
+    {
+      "index": 2,
+      "phase": "explore",
+      "move": "uniform",
+      "scenario_id": "act-002",
+      "seed": 2,
+      "values": {
+        "friction_coefficient": 0.5946279389211467,
+        "object_mass_kg": 0.14153360156799571,
+        "object_offset_m": -0.043966588348698266,
+        "observation_delay_ms": 49.66348859523133
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.3443136409640984,
+      "robustness": 0.0291396820078516,
+      "parent": null,
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.5821705430025759,
+      "note": ""
+    },
+    {
+      "index": 3,
+      "phase": "explore",
+      "move": "uniform",
+      "scenario_id": "act-003",
+      "seed": 3,
+      "values": {
+        "friction_coefficient": 0.8963005801737753,
+        "object_mass_kg": 0.4264803201054416,
+        "object_offset_m": -0.06873415400598379,
+        "observation_delay_ms": 163.33280025874208
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 1.2035760347964717,
+      "robustness": 0.027883952080564444,
+      "parent": null,
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.9004999639982998,
+      "note": ""
+    },
+    {
+      "index": 4,
+      "phase": "explore",
+      "move": "uniform",
+      "scenario_id": "act-004",
+      "seed": 4,
+      "values": {
+        "friction_coefficient": 0.7857636875901794,
+        "object_mass_kg": 0.060789569191118976,
+        "object_offset_m": -0.07389508935258167,
+        "observation_delay_ms": 115.43428199881254
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.7288005951945663,
+      "robustness": 0.030740261873590274,
+      "parent": null,
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.7847380610000982,
+      "note": ""
+    },
+    {
+      "index": 5,
+      "phase": "explore",
+      "move": "uniform",
+      "scenario_id": "act-005",
+      "seed": 5,
+      "values": {
+        "friction_coefficient": 0.31176192346527265,
+        "object_mass_kg": 0.21429224313829304,
+        "object_offset_m": -0.03500090247291905,
+        "observation_delay_ms": 189.84260669317197
+      },
+      "status": "SAFETY_FAIL",
+      "valid_failure": true,
+      "distance_from_nominal": 1.061109590643682,
+      "robustness": 0.02136268808886573,
+      "parent": null,
+      "accepted": true,
+      "counts_against_budget": true,
+      "wallclock_s": 1.3848080999996455,
+      "note": ""
+    },
+    {
+      "index": 6,
+      "phase": "contract",
+      "move": "contract",
+      "scenario_id": "act-006",
+      "seed": 6,
+      "values": {
+        "friction_coefficient": 0.4558809617326363,
+        "object_mass_kg": 0.15714612156914654,
+        "object_offset_m": -0.017500451236459526,
+        "observation_delay_ms": 94.92130334658599
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.530554795321841,
+      "robustness": 0.02746294583029025,
+      "parent": "act-005",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 1.1231581030006055,
+      "note": "a=0.5000 a_lo=0.0000"
+    },
+    {
+      "index": 7,
+      "phase": "contract",
+      "move": "contract",
+      "scenario_id": "act-007",
+      "seed": 7,
+      "values": {
+        "friction_coefficient": 0.38382144259895445,
+        "object_mass_kg": 0.18571918235371979,
+        "object_offset_m": -0.02625067685468929,
+        "observation_delay_ms": 142.38195501987897
+      },
+      "status": "SAFETY_FAIL",
+      "valid_failure": true,
+      "distance_from_nominal": 0.7958321929827616,
+      "robustness": 0.026892598482510854,
+      "parent": "act-005",
+      "accepted": true,
+      "counts_against_budget": true,
+      "wallclock_s": 0.8737821440008702,
+      "note": "a=0.7500 a_lo=0.5000"
+    },
+    {
+      "index": 8,
+      "phase": "contract",
+      "move": "jitter",
+      "scenario_id": "act-008",
+      "seed": 8,
+      "values": {
+        "friction_coefficient": 0.2755135944088948,
+        "object_mass_kg": 0.09012056964404615,
+        "object_offset_m": -0.1,
+        "observation_delay_ms": 135.185261925467
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.9337431243202111,
+      "robustness": 0.027137668796408665,
+      "parent": "act-007",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.8071684669994283,
+      "note": "sigma=0.2500"
+    },
+    {
+      "index": 9,
+      "phase": "contract",
+      "move": "contract",
+      "scenario_id": "act-009",
+      "seed": 9,
+      "values": {
+        "friction_coefficient": 0.4198512021657954,
+        "object_mass_kg": 0.17143265196143315,
+        "object_offset_m": -0.021875564045574405,
+        "observation_delay_ms": 118.65162918323247
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.6631934941523012,
+      "robustness": 0.023240391239944053,
+      "parent": "act-007",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.6890906010012259,
+      "note": "a=0.8333 a_lo=0.6667"
+    },
+    {
+      "index": 10,
+      "phase": "contract",
+      "move": "contract",
+      "scenario_id": "act-010",
+      "seed": 10,
+      "values": {
+        "friction_coefficient": 0.40183632238237493,
+        "object_mass_kg": 0.17857591715757648,
+        "object_offset_m": -0.024063120450131845,
+        "observation_delay_ms": 130.51679210155572
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.7295128435675313,
+      "robustness": 0.02965969676461582,
+      "parent": "act-007",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.7442974629993842,
+      "note": "a=0.9167 a_lo=0.8333"
+    },
+    {
+      "index": 11,
+      "phase": "contract",
+      "move": "jitter",
+      "scenario_id": "act-011",
+      "seed": 11,
+      "values": {
+        "friction_coefficient": 0.5013329050008335,
+        "object_mass_kg": 0.1936036807348086,
+        "object_offset_m": -0.03649565052083938,
+        "observation_delay_ms": 127.06864793637297
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.7038735616325291,
+      "robustness": 0.029361930085867655,
+      "parent": "act-007",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.8089517720000003,
+      "note": "sigma=0.1750"
+    },
+    {
+      "index": 12,
+      "phase": "contract",
+      "move": "contract",
+      "scenario_id": "act-012",
+      "seed": 12,
+      "values": {
+        "friction_coefficient": 0.3928288824906647,
+        "object_mass_kg": 0.18214754975564812,
+        "object_offset_m": -0.025156898652410567,
+        "observation_delay_ms": 136.44937356071733
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.7626725182751464,
+      "robustness": 0.03162008838821416,
+      "parent": "act-007",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.7690647279996483,
+      "note": "a=0.9583 a_lo=0.9167"
+    },
+    {
+      "index": 13,
+      "phase": "contract",
+      "move": "jitter",
+      "scenario_id": "act-013",
+      "seed": 13,
+      "values": {
+        "friction_coefficient": 0.4777679459243626,
+        "object_mass_kg": 0.18747853045414536,
+        "object_offset_m": -0.08579383177259851,
+        "observation_delay_ms": 111.84423139798018
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.7469121345642599,
+      "robustness": 0.03371766268445694,
+      "parent": "act-007",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.5737666489985713,
+      "note": "sigma=0.1225"
+    },
+    {
+      "index": 14,
+      "phase": "contract",
+      "move": "jitter",
+      "scenario_id": "act-014",
+      "seed": 14,
+      "values": {
+        "friction_coefficient": 0.3121189108328471,
+        "object_mass_kg": 0.22193202650283195,
+        "object_offset_m": -0.04649388814890045,
+        "observation_delay_ms": 147.01300534298863
+      },
+      "status": "SAFETY_FAIL",
+      "valid_failure": true,
+      "distance_from_nominal": 0.8929025648075135,
+      "robustness": 0.030240504820848495,
+      "parent": "act-007",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.7033902479997778,
+      "note": "sigma=0.0857"
+    },
+    {
+      "index": 15,
+      "phase": "contract",
+      "move": "jitter",
+      "scenario_id": "act-015",
+      "seed": 15,
+      "values": {
+        "friction_coefficient": 0.3695308426212348,
+        "object_mass_kg": 0.18398113709254202,
+        "object_offset_m": -0.023864531866690974,
+        "observation_delay_ms": 138.0368949415651
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.78000968193893,
+      "robustness": 0.025469854205306744,
+      "parent": "act-007",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.6487578689993825,
+      "note": "sigma=0.0600"
+    },
+    {
+      "index": 16,
+      "phase": "contract",
+      "move": "jitter",
+      "scenario_id": "act-016",
+      "seed": 16,
+      "values": {
+        "friction_coefficient": 0.332393197383147,
+        "object_mass_kg": 0.18814684327487446,
+        "object_offset_m": -0.03417645737550344,
+        "observation_delay_ms": 142.61038192172091
+      },
+      "status": "SAFETY_FAIL",
+      "valid_failure": true,
+      "distance_from_nominal": 0.8294030558573403,
+      "robustness": 0.013975671469861926,
+      "parent": "act-007",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.5598969839993515,
+      "note": "sigma=0.0420"
+    },
+    {
+      "index": 17,
+      "phase": "contract",
+      "move": "jitter",
+      "scenario_id": "act-017",
+      "seed": 17,
+      "values": {
+        "friction_coefficient": 0.4020309749574803,
+        "object_mass_kg": 0.17728666198874046,
+        "object_offset_m": -0.032546804786926814,
+        "observation_delay_ms": 141.64728469096246
+      },
+      "status": "SAFETY_FAIL",
+      "valid_failure": true,
+      "distance_from_nominal": 0.7866483983456387,
+      "robustness": 0.02569722465446362,
+      "parent": "act-007",
+      "accepted": true,
+      "counts_against_budget": true,
+      "wallclock_s": 0.4883373929988011,
+      "note": "sigma=0.0294"
+    },
+    {
+      "index": 18,
+      "phase": "contract",
+      "move": "contract",
+      "scenario_id": "act-018",
+      "seed": 18,
+      "values": {
+        "friction_coefficient": 0.5010154874787401,
+        "object_mass_kg": 0.13864333099437023,
+        "object_offset_m": -0.016273402393463407,
+        "observation_delay_ms": 70.82364234548123
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.39332419917281936,
+      "robustness": 0.03454037673130053,
+      "parent": "act-017",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.48668868000095244,
+      "note": "a=0.5000 a_lo=0.0000"
+    },
+    {
+      "index": 19,
+      "phase": "contract",
+      "move": "contract",
+      "scenario_id": "act-019",
+      "seed": 19,
+      "values": {
+        "friction_coefficient": 0.4515232312181102,
+        "object_mass_kg": 0.15796499649155535,
+        "object_offset_m": -0.02441010359019511,
+        "observation_delay_ms": 106.23546351822185
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.589986298759229,
+      "robustness": 0.03521972061765694,
+      "parent": "act-017",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.525620329000958,
+      "note": "a=0.7500 a_lo=0.5000"
+    },
+    {
+      "index": 20,
+      "phase": "contract",
+      "move": "jitter",
+      "scenario_id": "act-020",
+      "seed": 20,
+      "values": {
+        "friction_coefficient": 0.3592758393693032,
+        "object_mass_kg": 0.16999877121629636,
+        "object_offset_m": -0.014818503907910504,
+        "observation_delay_ms": 140.03832256388168
+      },
+      "status": "SAFETY_FAIL",
+      "valid_failure": true,
+      "distance_from_nominal": 0.7813441094153285,
+      "robustness": 0.028183370982207315,
+      "parent": "act-017",
+      "accepted": true,
+      "counts_against_budget": true,
+      "wallclock_s": 0.6112756220027222,
+      "note": "sigma=0.0441"
+    },
+    {
+      "index": 21,
+      "phase": "contract",
+      "move": "contract",
+      "scenario_id": "act-021",
+      "seed": 21,
+      "values": {
+        "friction_coefficient": 0.4796379196846516,
+        "object_mass_kg": 0.13499938560814817,
+        "object_offset_m": -0.007409251953955252,
+        "observation_delay_ms": 70.01916128194084
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.39067205470766425,
+      "robustness": 0.025330317441177835,
+      "parent": "act-020",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.7997605589989689,
+      "note": "a=0.5000 a_lo=0.0000"
+    },
+    {
+      "index": 22,
+      "phase": "contract",
+      "move": "contract",
+      "scenario_id": "act-022",
+      "seed": 22,
+      "values": {
+        "friction_coefficient": 0.4194568795269774,
+        "object_mass_kg": 0.15249907841222227,
+        "object_offset_m": -0.011113877930932877,
+        "observation_delay_ms": 105.02874192291125
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.5860080820614963,
+      "robustness": 0.025021542658611225,
+      "parent": "act-020",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.593025302998285,
+      "note": "a=0.7500 a_lo=0.5000"
+    },
+    {
+      "index": 23,
+      "phase": "contract",
+      "move": "jitter",
+      "scenario_id": "act-023",
+      "seed": 23,
+      "values": {
+        "friction_coefficient": 0.36445882226824783,
+        "object_mass_kg": 0.09698685238959527,
+        "object_offset_m": -0.004446873612226378,
+        "observation_delay_ms": 120.69878224622325
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.6718861885649625,
+      "robustness": 0.027775486416044257,
+      "parent": "act-020",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.5508751859997574,
+      "note": "sigma=0.0662"
+    },
+    {
+      "index": 24,
+      "phase": "contract",
+      "move": "contract",
+      "scenario_id": "act-024",
+      "seed": 24,
+      "values": {
+        "friction_coefficient": 0.3893663594481403,
+        "object_mass_kg": 0.16124892481425931,
+        "object_offset_m": -0.01296619091942169,
+        "observation_delay_ms": 122.53353224339646
+      },
+      "status": "PASS",
+      "valid_failure": false,
+      "distance_from_nominal": 0.6836760957384125,
+      "robustness": 0.03380778751598209,
+      "parent": "act-020",
+      "accepted": false,
+      "counts_against_budget": true,
+      "wallclock_s": 0.5930326750021777,
+      "note": "a=0.8750 a_lo=0.7500"
+    }
+  ],
+  "curve": [
+    {
+      "cumulative_episodes": 1,
+      "valid_failures_found": 0,
+      "running_min_distance": null,
+      "cumulative_wallclock_s": 0.609
+    },
+    {
+      "cumulative_episodes": 2,
+      "valid_failures_found": 0,
+      "running_min_distance": null,
+      "cumulative_wallclock_s": 1.227
+    },
+    {
+      "cumulative_episodes": 3,
+      "valid_failures_found": 0,
+      "running_min_distance": null,
+      "cumulative_wallclock_s": 1.809
+    },
+    {
+      "cumulative_episodes": 4,
+      "valid_failures_found": 0,
+      "running_min_distance": null,
+      "cumulative_wallclock_s": 2.709
+    },
+    {
+      "cumulative_episodes": 5,
+      "valid_failures_found": 0,
+      "running_min_distance": null,
+      "cumulative_wallclock_s": 3.494
+    },
+    {
+      "cumulative_episodes": 6,
+      "valid_failures_found": 1,
+      "running_min_distance": 1.061109590643682,
+      "cumulative_wallclock_s": 4.879
+    },
+    {
+      "cumulative_episodes": 7,
+      "valid_failures_found": 1,
+      "running_min_distance": 1.061109590643682,
+      "cumulative_wallclock_s": 6.002
+    },
+    {
+      "cumulative_episodes": 8,
+      "valid_failures_found": 2,
+      "running_min_distance": 0.7958321929827616,
+      "cumulative_wallclock_s": 6.876
+    },
+    {
+      "cumulative_episodes": 9,
+      "valid_failures_found": 2,
+      "running_min_distance": 0.7958321929827616,
+      "cumulative_wallclock_s": 7.683
+    },
+    {
+      "cumulative_episodes": 10,
+      "valid_failures_found": 2,
+      "running_min_distance": 0.7958321929827616,
+      "cumulative_wallclock_s": 8.372
+    },
+    {
+      "cumulative_episodes": 11,
+      "valid_failures_found": 2,
+      "running_min_distance": 0.7958321929827616,
+      "cumulative_wallclock_s": 9.116
+    },
+    {
+      "cumulative_episodes": 12,
+      "valid_failures_found": 2,
+      "running_min_distance": 0.7958321929827616,
+      "cumulative_wallclock_s": 9.925
+    },
+    {
+      "cumulative_episodes": 13,
+      "valid_failures_found": 2,
+      "running_min_distance": 0.7958321929827616,
+      "cumulative_wallclock_s": 10.694
+    },
+    {
+      "cumulative_episodes": 14,
+      "valid_failures_found": 2,
+      "running_min_distance": 0.7958321929827616,
+      "cumulative_wallclock_s": 11.268
+    },
+    {
+      "cumulative_episodes": 15,
+      "valid_failures_found": 3,
+      "running_min_distance": 0.7958321929827616,
+      "cumulative_wallclock_s": 11.972
+    },
+    {
+      "cumulative_episodes": 16,
+      "valid_failures_found": 3,
+      "running_min_distance": 0.7958321929827616,
+      "cumulative_wallclock_s": 12.62
+    },
+    {
+      "cumulative_episodes": 17,
+      "valid_failures_found": 4,
+      "running_min_distance": 0.7958321929827616,
+      "cumulative_wallclock_s": 13.18
+    },
+    {
+      "cumulative_episodes": 18,
+      "valid_failures_found": 5,
+      "running_min_distance": 0.7866483983456387,
+      "cumulative_wallclock_s": 13.669
+    },
+    {
+      "cumulative_episodes": 19,
+      "valid_failures_found": 5,
+      "running_min_distance": 0.7866483983456387,
+      "cumulative_wallclock_s": 14.155
+    },
+    {
+      "cumulative_episodes": 20,
+      "valid_failures_found": 5,
+      "running_min_distance": 0.7866483983456387,
+      "cumulative_wallclock_s": 14.681
+    },
+    {
+      "cumulative_episodes": 21,
+      "valid_failures_found": 6,
+      "running_min_distance": 0.7813441094153285,
+      "cumulative_wallclock_s": 15.292
+    },
+    {
+      "cumulative_episodes": 22,
+      "valid_failures_found": 6,
+      "running_min_distance": 0.7813441094153285,
+      "cumulative_wallclock_s": 16.092
+    },
+    {
+      "cumulative_episodes": 23,
+      "valid_failures_found": 6,
+      "running_min_distance": 0.7813441094153285,
+      "cumulative_wallclock_s": 16.685
+    },
+    {
+      "cumulative_episodes": 24,
+      "valid_failures_found": 6,
+      "running_min_distance": 0.7813441094153285,
+      "cumulative_wallclock_s": 17.236
+    },
+    {
+      "cumulative_episodes": 25,
+      "valid_failures_found": 6,
+      "running_min_distance": 0.7813441094153285,
+      "cumulative_wallclock_s": 17.829
+    }
+  ],
+  "metrics": {
+    "episodes_to_first_valid_failure": 6,
+    "valid_failures_within_budget": 6,
+    "min_distance_from_nominal_among_valid_failures": 0.7813441094153285,
+    "wallclock_s_to_first_valid_failure": 4.88,
+    "budget": 25,
+    "episodes_used": 25,
+    "exec_errors_not_counted": 0,
+    "status_counts": {
+      "PASS": 19,
+      "SAFETY_FAIL": 6
+    },
+    "total_wallclock_s": 17.8
+  },
+  "best": {
+    "index": 20,
+    "phase": "contract",
+    "move": "jitter",
+    "scenario_id": "act-020",
+    "seed": 20,
+    "values": {
+      "friction_coefficient": 0.3592758393693032,
+      "object_mass_kg": 0.16999877121629636,
+      "object_offset_m": -0.014818503907910504,
+      "observation_delay_ms": 140.03832256388168
+    },
+    "status": "SAFETY_FAIL",
+    "valid_failure": true,
+    "distance_from_nominal": 0.7813441094153285,
+    "robustness": 0.028183370982207315,
+    "parent": "act-017",
+    "accepted": true,
+    "counts_against_budget": true,
+    "wallclock_s": 0.6112756220027222,
+    "note": "sigma=0.0441"
+  },
+  "incumbents": [
+    "act-005",
+    "act-007",
+    "act-017",
+    "act-020"
+  ],
+  "explore_episodes": 6,
+  "contract_episodes": 19
+}

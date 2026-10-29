@@ -17,19 +17,17 @@ regression test, and blocks releases that fail. Built for the Nebius x NVIDIA
 Global AI Hackathon, Physical AI track.
 
 - **Deadline:** Fri 2026-10-30 10:00 AM PDT. Internal target: submit Thu 2026-10-29.
-- **Status (2026-10-28, late):** G01, G02, G05, G06, G07, G08, G10 and G11 PASS
-  (toolchain, contracts, closed-loop MuJoCo Panda push with 4 perturbations,
-  deterministic oracle, locked protocol + 25-episode random baseline, live
-  Tavily evidence -> approved constraint -> hypothesis -> executed scenario,
-  active search beating the archived random baseline on a matched budget of
-  25, one-variable minimized counterexample replayed bit-identically, fail-closed
-  release gate: v1 BLOCKED by its stored counterexample + 2 held-out cases, v2
-  repair ELIGIBLE, 9/9 faults fail closed, 4 dashboard surfaces on real
-  records; 80 tests). TestSpec push-block-v1 and constraint panda-payload-kg
-  approved by Adam 2026-10-26. G00 BLOCKED on human Devpost confirmation.
-  G03/G04 (credits, Nemotron) not started. Current gate: G12 freeze, rerun,
-  README results, video, public repo, submission. See the newest
-  `docs/gates/G##_report.md`.
+- **Status (2026-10-29):** G01, G02, G05, G06, G07, G08, G10, G11 and G12 (Claude
+  side) PASS: closed-loop MuJoCo Panda push, deterministic oracle, locked
+  protocol, random baseline, live Tavily chain, active search beating random on
+  a matched budget, one-variable minimized counterexample, fail-closed release
+  gate (v1 BLOCKED, v2 repair ELIGIBLE, 9/9 faults closed), 4 dashboard surfaces,
+  frozen rerun reproducing G07/G10 byte for byte and finding a new v2 failure;
+  80 tests; README results from evidence/G12. **Human items block submission:**
+  G00 Devpost rules confirmation, G03 credits, **G04 Nemotron runtime call (R3/R4
+  eligibility: no Token Factory artifact exists)**, video recording, repo flip to
+  public, Devpost + YouTube. See `docs/gates/G12_report.md` section
+  "Adversarial review".
 - **Critical path:** closed-loop MuJoCo simulator -> deterministic oracle ->
   random baseline -> active search -> minimized reproducible counterexample ->
   fail-closed release gate -> verified sponsor integrations -> demo.
@@ -158,6 +156,7 @@ anything needing root goes in a script the human runs.
 - full G11 check (EXECUTED 2026-10-28): `scripts/g11_run.sh [--no-video]`; sim venv; builds the policy registry and test suite (3 nominal + 2 regression from `evidence/G10/counterexample.json` + 5 held-out), runs all suites for v1 and the v2 repair, decides fail-closed, runs 9 fault-injection cases, one video (~3 min); writes `evidence/G11/`
 - dashboard (EXECUTED 2026-10-28): `uvicorn skuld.api.main:app --host 127.0.0.1 --port 8765` then open `/`, `/atlas`, `/counterexample`, `/release`; read-only over `evidence/` (override with `SKULD_EVIDENCE_DIR`)
 - lint + full tests without a sim run: `scripts/quick_check.sh [paths to ruff-format]`
+- full G12 check (EXECUTED 2026-10-29): `scripts/g12_run.sh`; sim venv; refuses a dirty tree; 3 nominal + 25 random + 25 active for v1 and v2, byte-identical check against `evidence/G07` and `evidence/G10`, results table; writes `evidence/G12/` (~2 min). Dashboard smoke: `scripts/dashboard_smoke.sh`
 - inventory: `scripts/inventory_wsl.sh`
 - Token Factory smoke arrives in G04 from the pinned npa docs (the old `scripts/smoke_tavily.py` is superseded by G08)
 - simulator env (EXECUTED 2026-10-26): `~/.venvs/skuld-mujoco` with `skuld[dev,sim]`, created by `scripts/g05_setup.sh` (also sparse-clones the pinned Menagerie Panda to `~/src/mujoco_menagerie` and runs the EGL smoke test)
