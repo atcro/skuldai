@@ -3,7 +3,7 @@
 ```yaml
 schema_version: skuld.gate-report.v1
 gate: G12
-status: BLOCKED        # PASS | FAIL | BLOCKED | NOT_STARTED  -- engineering side complete incl. G04 (2026-10-29); blocked only on human-only items: video, rules confirmation, public flip, submission
+status: BLOCKED        # PASS | FAIL | BLOCKED | NOT_STARTED  -- engineering side complete incl. G04; repo public and CI green (2026-10-29); blocked only on: video, rules confirmation, Devpost + YouTube submission
 source_revision: '<commit that carries this report; see git log>'
 environment: 'WSL2 Ubuntu 24.04.5, sim venv ~/.venvs/skuld-mujoco (mujoco 3.17.0; full freeze in evidence/G12/requirements.sim.freeze.txt); frozen code commit 1d11d51958dc, clean tree (evidence/G12/frozen_commit.txt)'
 commands:
@@ -20,20 +20,21 @@ evidence_paths:
   - evidence/G12/manifest.json                     # SHA-256 of 217 files
   - evidence/G12/tests-sim-venv.txt
   - evidence/G12/g12_run.log
-provider_run_ids: []
+provider_run_ids:
+  - 'GitHub Actions ci run 40811451678 on 181d8d2: success (https://github.com/atcro/skuldai/actions/runs/40811451678)'
 actual_test_results:
   - 'ruff check .: All checks passed (exit 0)'
   - 'python -m pytest -q -ra (sim venv, MuJoCo tests included): 80 passed, exit 0 (at the frozen commit; 82 after the G04 tests were added, 69 after the 2026-10-29 consolidation that removed duplicated checks, scripts/g10_check.sh)'
   - 'scripts/g12_run.py: 106 episodes; v1 random 25/25 and active 25/25 byte-identical to the G07/G10 archives; nominal byte-identical for both policies; exit 0'
   - 'secret scan: working tree and full git history grep for key patterns (tvly-, sk-, AKIA, ghp_, private keys): 0 hits; no tracked .env, .pem or credential files'
+  - 'public flip verified unauthenticated 2026-10-29T03:2xZ: API visibility public, license Apache-2.0, README/LICENSE/evidence raw 200, .env 404, latest commit 181d8d2; CI (lint + unit tests, ubuntu-24.04) success on 181d8d2, 6e04b57, efb5c8d, f58fa64, c96526e'
 spend_approved: false
 approved_by: null
 blockers:
   - 'G00: hackathon rules not yet confirmed by a human on Devpost (docs/rules.md boxes unticked). R3/R4 now have a runtime artifact (G04 PASS, docs/gates/G04_report.md, commit 2e5e024); the human ticks the boxes with that evidence in hand. G03 credit balance still unchecked.'
   - 'Video not recorded (script: docs/video_script.md); dashboard screen recording not made'
-  - 'Repository still private; flip to public after a human reviews the secret scan above'
   - 'Devpost project page and YouTube upload (submission owner)'
-next_action: 'Human: confirm rules on Devpost, record the video from docs/video_script.md (Nemotron step included), flip the repo public after the secret scan, submit on Devpost, verify incognito. Claude: run the adversarial review again on the final commit and update this report to PASS once the human items are done.'
+next_action: 'Human: confirm rules on Devpost, record the video from docs/video_script.md (Nemotron step included), submit on Devpost with the YouTube link, verify the Devpost page incognito. Claude: run the adversarial review again on the final commit and update this report to PASS once the human items are done.'
 ```
 
 ## Frozen rerun (EXECUTED 2026-10-29 UTC, commit 1d11d51, clean tree)
