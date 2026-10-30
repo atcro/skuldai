@@ -3,7 +3,7 @@
 ```yaml
 schema_version: skuld.gate-report.v1
 gate: G12
-status: BLOCKED        # PASS | FAIL | BLOCKED | NOT_STARTED  -- engineering side complete incl. G04; repo public and CI green (2026-10-29); blocked only on: video, rules confirmation, Devpost + YouTube submission
+status: BLOCKED        # PASS | FAIL | BLOCKED | NOT_STARTED  -- engineering side complete incl. G04; repo public and CI green (2026-10-29); video recorded and pushed (2026-10-30, commit 6b02f2c); blocked only on: rules confirmation, YouTube upload, Devpost submission
 source_revision: '<commit that carries this report; see git log>'
 environment: 'WSL2 Ubuntu 24.04.5, sim venv ~/.venvs/skuld-mujoco (mujoco 3.17.0; full freeze in evidence/G12/requirements.sim.freeze.txt); frozen code commit 1d11d51958dc, clean tree (evidence/G12/frozen_commit.txt)'
 commands:
@@ -32,9 +32,8 @@ spend_approved: false
 approved_by: null
 blockers:
   - 'G00: hackathon rules not yet confirmed by a human on Devpost (docs/rules.md boxes unticked). R3/R4 now have a runtime artifact (G04 PASS, docs/gates/G04_report.md, commit 2e5e024); the human ticks the boxes with that evidence in hand. G03 credit balance still unchecked.'
-  - 'Video not recorded (script: docs/video_script.md); dashboard screen recording not made'
   - 'Devpost project page and YouTube upload (submission owner)'
-next_action: 'Human: confirm rules on Devpost, record the video from docs/video_script.md (Nemotron step included), submit on Devpost with the YouTube link, verify the Devpost page incognito. Claude: run the adversarial review again on the final commit and update this report to PASS once the human items are done.'
+next_action: 'Human: upload evidence/video/skuld_demo.mp4 to YouTube (public), confirm rules on Devpost, submit on Devpost with the YouTube link, verify the Devpost page incognito. Claude: update this report to PASS once the human items are done.'
 ```
 
 ## Frozen rerun (EXECUTED 2026-10-29 UTC, commit 1d11d51, clean tree)
@@ -77,7 +76,7 @@ store. The nearest v2 failure is farther from nominal than v1's (1.013 vs
 | Asset licenses | Menagerie Panda Apache-2.0, pinned commit, copy in `evidence/G05/`; `docs/sources.md` | done |
 | Secret scan before public | clean (see actual_test_results) | done; human re-check before flipping |
 | Dashboard runs | `evidence/G12/dashboard_smoke.txt` | done |
-| Video under 3:00, >= 60 s real modules | script in `docs/video_script.md`, clips listed with sources; not recorded | **human** |
+| Video under 3:00, >= 60 s real modules | **recorded 2026-10-30**: `evidence/video/skuld_demo.mp4`, 2:29.4, 1280x720, sha256 `4d5a0101…1b423f`; storyboard with every spoken number sourced in `docs/video_script.md`; pipeline in `scripts/video/`; AI narration (Kokoro TTS) disclosed on the intro card and in a standing line under the picture; dashboard footage is real-time Chrome recordings (recorder verified against an on-screen clock, under 30 ms drift), simulator clips are the archived renders, no speed changes. YouTube upload still **human** |
 | Public repo | private | **human** |
 | Devpost page, Physical AI track, YouTube URL, repo URL | not started | **human (submission owner)** |
 | Incognito verification | not started | **human** |
@@ -99,7 +98,7 @@ copied from the first pass.
 | 7 | Are Nemotron / Nebius / Tavily claims proven by runtime artifacts? | Yes. Tavily: `evidence/G08/tavily_search.json` with request id. Nemotron / Token Factory: `evidence/G04/generations.jsonl` and `generate_call.json` (two `npa workbench token-factory generate` calls to `nvidia/Nemotron-3_5-Lightning`, nonempty completions, sha256 recorded; catalog request id in `models_list.json`). Stated limits: npa gives no provider request id or usage for `generate`; temperature 0 did not repeat across the two calls; one call was rejected by the validator and kept. README, video script and this report say exactly this. | no |
 | 8 | Are failed or unknown cloud jobs fail-closed? | No cloud jobs exist. `evidence/G11/fault_injection.json` `failed_job` (EXEC_ERROR, job status unknown) yields ERROR; `missing_case` INCOMPLETE; `corrupt_artifact`, `stale_policy_hash`, `spec_mismatch` ERROR; `injected_pass_verdict` refused by the schema. 9/9 as expected; 13 parametrised gate faults in `tests/test_release.py`. | no |
 | 9 | Are keys, licenses and public assets safe? | Yes on the repository side. Full-history `git grep` across all revisions for both key prefixes, bearer tokens, `tvly-`, `sk-`, `AKIA`, `ghp_` and private-key headers: 0 hits outside the redaction code and its tests. `.env` and `.env.*` git-ignored, no tracked credential files, LICENSE Apache-2.0, Menagerie Panda licence copied in `evidence/G05`. Repo is still private, which is correct until a human flips it. **CI status for f58fa64 is UNKNOWN from this machine** (`gh` not installed): the human checks the Actions tab before flipping public. | no (CI check is a human step) |
-| 10 | Does the video honestly show functioning modules for >= 60 s, under 3:00? | **Not recorded.** `docs/video_script.md` is at 2:50 with a G04 segment at 1:43-2:00; the simulator clips alone give 52 s and the ledger and gate recordings cover the rest; every clip is an archived artifact and no clip exists for the G04 episode (the script forbids borrowing one). | **yes, until recorded** |
+| 10 | Does the video honestly show functioning modules for >= 60 s, under 3:00? | **Yes.** `evidence/video/skuld_demo.mp4` runs 2:29.4. Real-time dashboard recordings (Test Lab 19 s, Counterexample Replay 20 s with the minimized episode playing in the page, Release Gate 20 s with the repair episode playing, Atlas 6 s) plus archived simulator clips (nominal 12 s, first random failure 17 s) give about 94 s of visibly operating modules, with a further 32 s of evidence JSON served by the dashboard (Tavily, Nemotron, G12). G04 is shown from its JSON records only, no borrowed clip. Narration is AI (Kokoro TTS) and says so on screen; no mock screens, no animation, no speed-ups. | no |
 
 Cross-checks made on this pass: every number in the README results tables
 matches `evidence/G12/g12_report.json` (3/25/25 episodes; failures 0/3/6 for v1
@@ -109,9 +108,10 @@ video script or the G04 report ("global minimum" and "causal" appear only as
 negations). `docs/rules.md` R3 and R4 boxes are still unticked: that is the
 human's confirmation on Devpost, now with an artifact to point at.
 
-One blocking finding remains: (10) record the video from
-`docs/video_script.md` with the dashboard served from this commit. Before the
-public flip, the human also reads the CI result for `f58fa64` on GitHub.
+No blocking finding remains on the engineering side. The video (10) was
+recorded on 2026-10-30 from the dashboard served at `f46da06` over the frozen
+evidence and committed as `6b02f2c`. What remains is submission: YouTube upload,
+Devpost page, rules confirmation.
 
 ## Honest limits carried into the submission
 
