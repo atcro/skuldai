@@ -1,0 +1,1 @@
+{"name":"skuld-video","private":true,"type":"module","dependencies":{"kokoro-js":"^1.2.1","puppeteer-core":"^24.43.1"}}

@@ -1,0 +1,22 @@
+[
+  {"id": "s0", "kind": "card", "card": "intro", "min_s": 7,
+   "text": "This is an AI narration over real screen recordings of Skuld running. Nothing on screen is mocked, animated, or sped up."},
+  {"id": "s1", "kind": "clip", "clip": "evidence/G05/nominal.mp4", "card": "s1", "min_s": 10,
+   "text": "In Moo-joe-co, a Franka Panda pushes a block into a target region. This classical controller passes its nominal test three times, bit for bit identical. Would you ship it?"},
+  {"id": "s2", "kind": "screen", "min_s": 16,
+   "text": "Skuld perturbs four physical variables: block offset, mass, friction and observation delay. Same budget of twenty-five episodes: random testing found three failures, the first at episode sixteen. Active search found six, the first at episode six, and closer to nominal."},
+  {"id": "s3", "kind": "clip", "clip": "evidence/G07/first_random_failure.mp4", "card": "s3", "min_s": 15,
+   "text": "The first failure random search found: delay one hundred fifty-two milliseconds, mass and friction raised. A deterministic oracle reads simulator state and applies the rule never collision. The finger touched the floor at three and a half seconds. No model decides this."},
+  {"id": "s4", "kind": "screen", "min_s": 20,
+   "text": "The minimizer reverts offset, mass and friction one at a time; the failure survives each revert. One variable remains: one hundred forty milliseconds of observation delay. Three replays, byte identical, stored as a regression test."},
+  {"id": "s5", "kind": "screen", "min_s": 12,
+   "text": "A live Tavily search pulled the manufacturer's three kilogram payload figure. It became a constraint only after a human approved it; name and timestamp are in the record."},
+  {"id": "s6", "kind": "screen", "min_s": 16,
+   "text": "Nemotron, an NVIDIA model on Nebius Token Factory, proposed the constraint and a hypothesis. Its first quote was not verbatim, so the validator refused it and kept the rejection. The accepted hypothesis ran in simulation: finger on the floor. The model proposes; physics decides."},
+  {"id": "s7", "kind": "screen", "min_s": 20,
+   "text": "The release gate blocks version one on its stored counterexample and on two held-out cases it never searched. A repaired version two is eligible: it passed the named simulation suite, which never means safe. Nine injected faults, from missing telemetry to corrupt artifacts, all fail closed."},
+  {"id": "s8", "kind": "screen", "min_s": 10,
+   "text": "Same budget, same oracle: active search found closer failures than random. The next round broke version two again at one hundred eighty-two milliseconds. That is the next regression test."},
+  {"id": "s9", "kind": "card", "card": "outro", "min_s": 6,
+   "text": "Skuld. What your robot policy owes before it ships."}
+]

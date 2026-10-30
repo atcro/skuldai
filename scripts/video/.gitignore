@@ -1,0 +1,14 @@
+node_modules/
+package-lock.json
+audio/
+cap/
+cap_old/
+seg/
+cards/
+frames/
+clockrec/
+*.webm
+*.wav
+skuld_demo.mp4
+list.txt
+bar.txt
