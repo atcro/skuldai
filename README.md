@@ -71,7 +71,21 @@ Videos: `evidence/G05/nominal.mp4`, `evidence/G07/first_random_failure.mp4`, `ev
 
 ## Running it
 
-Developed and run inside WSL2 Ubuntu 24.04 on a Windows laptop with no GPU. Exact package versions: `requirements.lock.txt` (app), `evidence/G12/requirements.sim.freeze.txt` (simulator venv).
+### Try it in five minutes (any OS, Python 3.12, no GPU, no simulator, no API keys)
+
+```bash
+git clone https://github.com/atcro/skuldai.git
+cd skuldai
+python -m pip install -e ".[dev]"
+python -m pytest -q                      # expect: 61 passed, 1 skipped (MuJoCo tests skip without the model)
+uvicorn skuld.api.main:app --host 127.0.0.1 --port 8765
+```
+
+Then open http://127.0.0.1:8765/ (Test Lab), `/atlas` (Failure Atlas), `/counterexample` (Counterexample Replay) and `/release` (Release Gate). Every page is rendered from the committed `evidence/` folder, so what you see is the archived run, not a demo. The minimized failure and its original are `evidence/G10/minimized_failure.mp4` and `evidence/G10/original_failure.mp4`. No key is needed to look around: the Tavily and Token Factory calls are already done and archived under `evidence/G08/` and `evidence/G04/`.
+
+### Full setup (simulator and gates)
+
+Developed and run inside WSL2 Ubuntu 24.04 on a Windows laptop with no GPU. Exact package versions: `requirements.lock.txt` (app), `evidence/G12/requirements.sim.freeze.txt` (simulator venv). The gate scripts below **overwrite their `evidence/G##/` folders**, so run them on your own clone, not on a checkout whose evidence you want to keep.
 
 ```bash
 # app environment: contracts, oracle, gate, dashboard, tests (no simulator)
@@ -91,7 +105,7 @@ bash scripts/g12_run.sh              # frozen rerun of nominal / random / active
 ```
 
 Environment variables (see `.env.example`; real values live only in a git-ignored `.env`):
-`TAVILY_API_KEY` (G08 only), `NEBIUS_TOKEN_FACTORY_API_KEY` (G04; the model id is passed explicitly to `scripts/g04_run.sh propose`), `SKULD_MENAGERIE_DIR`, `MUJOCO_GL`, `SKULD_EVIDENCE_DIR` (dashboard root, defaults to `evidence/`).
+none are needed for the dashboard or the tests. `TAVILY_API_KEY` (G08 live search only), `NEBIUS_TOKEN_FACTORY_API_KEY` (G04 live call only; the model id is passed explicitly to `scripts/g04_run.sh propose`), `SKULD_MENAGERIE_DIR`, `MUJOCO_GL`, `SKULD_EVIDENCE_DIR` (dashboard root, defaults to `evidence/`).
 
 Smoke tests: `curl http://127.0.0.1:8765/health`; `bash scripts/dashboard_smoke.sh`; `python -m pytest -q` (69 tests in the simulator venv, 61 without MuJoCo; one table of 19 schema refusals, 13 release-gate fault cases and a render of all four surfaces over the archived evidence).
 
